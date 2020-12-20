@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel= "stylesheet" href= "../css/fa.css">
+        <link rel= "stylesheet" href= "../css/faq.css">
         <meta charset="utf-8">
         <title id="titre">FAQ</title>
     </head>

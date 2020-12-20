@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/menu_utilisateur.css">
+        <link rel="stylesheet" href="../css/menu_principal.css">
         <title id="titre">Menu utilisateur</title>
     </head>
 

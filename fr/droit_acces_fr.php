@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/droi_acces.css">
+        <link rel="stylesheet" href="../css/droit_acces.css">
         <title id="titre">Gérer les droits d'accès</title> 
     </head>
 

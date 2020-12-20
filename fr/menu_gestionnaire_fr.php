@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="../css/menu_gestionnair.css"/>
+        <link rel="stylesheet" href="../css/menu_gestionnaire.css"/>
         <title>Gestionnaire:accueil</title>
     </head>
 

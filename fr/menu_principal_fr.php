@@ -15,8 +15,8 @@
 
    			<nav>
 				  <ul id="menu">
-    				<li><a href="MenuPrincipal.php">Accueil</a></li>
-    				<li><a href="NotreProduit.php" target="blank">Notre Produit</a></li>
+    				<li><a href="">Accueil</a></li>
+    				<li><a href="notre_produit.php" target="blank">Notre Produit</a></li>
     			</ul>
         </nav>
 
@@ -31,8 +31,8 @@
 
         <nav>
           <ul id="langue">
-            <li><a href="MenuPrincipal.php">Français</a></li>
-            <li><a href="MenuPrincipalEng.php" target="blank">Anglais</a></li>
+            <li><a href="">Français</a></li>
+            <li><a href="../en/menu_principal_en" target="blank">Anglais</a></li>
           </ul>
         </nav>
     	</header>

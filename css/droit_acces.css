@@ -1,0 +1,234 @@
+header
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 155px;
+  padding-top: 0px;
+  border: 2px #374a81 solid;
+  border-bottom: 6px #374a81 solid;
+  color:#374a81;
+  box-shadow: 3px 3px 20px #8da5eb;
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+body
+{
+  background-color: #f0f2ff;
+  font-family: "Bookman Old Style";
+}
+
+.login
+{
+  text-align: center;
+  flex:1.2;
+  font-size:20px;
+
+}
+ul[id = "menu"] li
+{
+  flex:0.6;
+  display: table-cell;
+  width: 270px;
+  text-align: center;
+  padding-right:30px;
+}
+
+a
+{
+  color:#374a81;
+  text-decoration: none;
+  font-size:25px;
+
+}
+a:hover
+{
+  color:#a2212c;
+}
+
+.langue
+{
+  flex:0.8;
+  align-self:flex-start;
+  font-size:15px;
+}
+
+.logo
+{
+  padding:0px;
+  flex:0.4;
+  font-size:15px;
+  text-align:center;
+}
+
+
+h1
+{
+    font-size: 3em;
+    font-family: calibri;
+    color: #555555;
+    text-align: center;
+}
+
+
+.img_logo
+{
+  width: 196px;
+  height: 126px;
+}
+
+footer
+{
+  display: flex;
+  justify-content: space-between;
+  margin:0px;
+  padding-left:10px;
+  border:2px #374a81 solid;
+  border-top:6px #374a81 solid;
+  color: #374a81;
+  box-shadow: 3px 3px 20px #8da5eb;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.CGU
+{
+  font-size: 20px;
+  flex:1;
+}
+
+ul[id ="footer"] li
+{
+  flex:1;
+  display: table-cell;
+  width: 170px;
+}
+
+ul[id= "footer"] a
+{
+  text-decoration: none;
+  text-align: center;
+  font-size:15px;
+}
+
+
+#mentions
+{
+    color: black;
+    font-family: calibri;
+    text-shadow: none;
+}
+
+#profil_utilisateur
+{
+    margin-left: 300px;
+    margin-right: 25px;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    color:rgb(27,205,152);
+}
+
+#conteneur
+{
+    display:flex;
+    flex-direction: row;
+    font-family: calibri;
+    font-size: 2em;
+    color: black;
+    text-shadow: 1px 1px 1px black;
+    justify-content: center;
+}
+
+
+
+#GererDroitAcces
+{
+  background-color:rgba(255,255,255,0.8);
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+  border:2px solid #374a81;
+  border-radius:5px;
+  width:95%;
+  margin-left:auto;
+  margin-right:auto;
+  display:flex;
+  box-shadow:2px 2px 8px #8da5eb;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.TitreSection
+{
+  font-size:25px;
+  text-align:center;
+  width:100%
+}
+.Box
+{
+  width:30%;margin:10px 1% 10px 1%;
+  border: solid black 1px;
+  padding: 5px;
+}
+.Titrebox
+{
+  font-size:15px;text-align:center; 
+}
+.BoutonSupprimer
+{
+  background-color:#A2212C;
+  color:white;
+  font-size:18px;
+  padding:2px;
+  border : 1px solid black;
+  margin:5px;
+  border-radius:5px;
+  transition: background-color 0.5s ease 0s;
+}
+.BoutonSupprimer:hover
+{
+  background-color:#FF8C8C;
+  color:white;
+}
+.BoutonModifier
+{
+  background-color:#374A81;
+  color:white;
+  font-size:18px;
+  padding:2px;
+  border : 1px solid black;
+  margin:5px;
+  border-radius:5px;
+  transition: background-color 0.5s ease 0s;
+}
+.BoutonModifier:hover
+{
+  background-color:#939DBB;
+  color:white;
+}
+
+ul[id = "langue"] li
+{
+  flex:0.3;
+  font-size:17px;
+  display: table-cell;
+  width: 10px;
+  height:30px;
+  text-align: right;
+  padding-right:10px;
+}
+
+.icone
+{
+  width: 35px;
+  height: auto;
+  margin-bottom: 70px;
+  margin-right: 20px;
+}

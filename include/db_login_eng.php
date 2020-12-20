@@ -1,7 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost","root","","db") or die ("Failed to connect to MySQL: " );
-
+$con = mysqli_connect("mysql-g5c.alwaysdata","g5c","informatique","g5c_infy") or die ("Failed to connect to MySQL: " );
 //Login 
 
 session_start();

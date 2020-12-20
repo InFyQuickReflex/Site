@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="../css/notre_produit.css" />
+        <link rel="stylesheet" href="../css/menu_principal.css" />
         <title>Quick Reflex - Our Product</title>
     </head>
 

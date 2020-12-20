@@ -1,11 +1,11 @@
-<?php require('include/db_login.php');
+<?php require('../include/db_login.php');
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="CSS/MenuCSS.css" />
+        <link rel="stylesheet" href="../css/menu_principal.css" />
         <title>Quick Reflex - Tests Psychotechniques</title>
     </head>
 
@@ -16,7 +16,7 @@
    			<nav>
 				  <ul id="menu">
     				<li><a href="">Accueil</a></li>
-    				<li><a href="notre_produit.php" target="blank">Notre Produit</a></li>
+    				<li><a href="notre_produit_fr.php" target="blank">Notre Produit</a></li>
     			</ul>
         </nav>
 

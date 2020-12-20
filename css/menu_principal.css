@@ -227,3 +227,34 @@ div[id = "conteneur"] p
 	text-align:right;
 	color:374a81;
 }
+
+//partie utilisateur
+
+.conteneur
+{
+  margin: 50px;
+}
+
+#nouveautest
+
+{
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;	
+	border-radius: 80px;
+	background-color: rgb(170,170,170);
+	margin-left: 30%;
+  margin-right: 30%;
+	margin-bottom: 3%;
+  color: black;
+}
+
+p
+{
+  font-size: 1em;
+}
+
+#nouveautest:hover
+{
+  background-color: #70898a;
+}

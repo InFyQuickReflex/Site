@@ -6,7 +6,7 @@ include("include/auth.php");
 <html>
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="../css/menu_admin.css" />
+        <link rel="stylesheet" href="../css/menu_principal.css" />
         <title> Accueil Administrateur </title>
     </head>
     

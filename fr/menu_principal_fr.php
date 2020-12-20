@@ -30,11 +30,11 @@
         </div>
 
         <nav>
-          <ul id="langue">
-            <li><a href="">Français</a></li>
-            <li><a href="../en/menu_principal_en" target="blank">Anglais</a></li>
-          </ul>
-        </nav>
+        <ul id="langue">
+          <li><a href=""><img src="../img/ic_fr.png" class="icone"></a></li>
+          <li><a href="../en/notre_produit_en.php"><img src="../img/ic_en.png" class="icone"></a></li>
+        </ul>
+      </nav>
     	</header>
 
       <div class="photofond">

@@ -1,5 +1,5 @@
 <?php
-//include("include/auth.php");
+include("include/auth.php");
 ?>
 
 <!DOCTYPE html>
@@ -14,17 +14,17 @@
     	<header> 
 			<p class="logo"> <img src="../img/infy2.png" alt="logo InFy" class="img_logo"> </br> by InFy Corporation </p>
 			
-			<nav>
+			<!--<nav>
                 <ul id="menu">
                     <li><a href="menu_principal_fr.php">Accueil</a></li>
                     <li><a href="notre_produit_fr.php">Notre Produit</a></li>
                 </ul>
-			</nav>
+			</nav>-->
 			
             <figure>
                 <img src="logoprofil2.png" alt = "logo profil" id="tof">
                 <figcaption id="monprofil"><a href="profil_utilisateur_fr.php" id="monprofil"> Mon profil</a></figcaption>
-                <a href="">Déconexion</a>
+                <a href="../include/logout.php">Déconexion</a>
 			</figure>
 			
 			<nav>

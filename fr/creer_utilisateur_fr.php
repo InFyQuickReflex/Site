@@ -1,3 +1,5 @@
+<?php require('../include/db_register.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +21,7 @@
 			<figure>
 				<img src="logoprofil2.png" alt = "logo profil" id="tof">
 				<figcaption id="monprofil"><a href="profil_utilisateur_fr.php" id="monprofil">Mon profil</a></figcaption>
-				<a href="">Se deconnecter</a>
+				<a href="../include/logout.php">Déconnexion</a>
 			</figure>
 
         	<nav>
@@ -33,28 +35,37 @@
     	<section>
     		<form method="post" action="compte" class="Création">
     			<p> 
-                    <label for="pseudo"> *Identifiant:</label>
-                    <input type="text" name="pseudo" id="pseudo" /> <br/>
+                    <label for="username"> Identifiant:</label>
+                    <input type="text" name="username" required /> <br/>
 
-                    <label for="pass"> *Mot de passe:</label>
-                    <input type="password" name="pass" id="pass" /> <br/>   
-                    
-                    <label for="naissance"> Date de naissance:</label>
-                    <input type="date" name="naissance" id="naissance" /> <br/>
-                    
+                    <label for="name"> Nom:</label>
+                    <input type="text" name="nom" required /> <br/>
+
+                    <label for="surname"> Prénom:</label>
+                    <input type="text" name="prenom" required /><br/>
+
                     <label for="mail"> Adresse mail:</label>
-                    <input type="email" name="mail" id="mail" /> <br/>
+                    <input type="email" name="email" required /> <br/>
+
+                    <label for="pass"> Mot de passe:</label>
+                    <input type="password" name="password" required /> <br/>  
+                    
+                    <label for="birth"> Date de naissance:</label>
+                    <input type="date" name="birth" id="birth" /> <br/>
                     
                     <label for="tel"> Numéro de téléphone:</label>
                     <input type="tel" name="tel" id="tel" /> <br/>
-                    
-                    <label for="adresse"> Adresse:</label>
-                    <input type="text" name="adresse" id="adresse" />  <br/>
-       			  
+
+                    <select name="type" class = "type" required>
+                        <option name = "user" value="utilisateur">Utilisateur</option>
+                        <option name = "admin" value="admin">Administrateur</option>
+                        <option name = "manager" value="gestionnaire">Gestionnaire</option>
+                    </select></br>
    				</p>
                </form>
-               
-   			<a href="#">Créer le compte</a> 
+
+            <input type="submit" name="submit" value="Créer le compte" />
+
     	</section>
 
     	<footer>

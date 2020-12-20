@@ -33,7 +33,7 @@
     	</header>
 
     	<section>
-    		<form method="post" action="compte" class="Création">
+    		<form method="post" action="" name = "registration" class="Création">
     			<p> 
                     <label for="username"> Identifiant:</label>
                     <input type="text" name="username" required /> <br/>
@@ -61,11 +61,9 @@
                         <option name = "admin" value="admin">Administrateur</option>
                         <option name = "manager" value="gestionnaire">Gestionnaire</option>
                     </select></br>
-   				</p>
+                </p>
+                    <input type="submit" name="submit" value="Créer le compte" />
                </form>
-
-            <input type="submit" name="submit" value="Créer le compte" />
-
     	</section>
 
     	<footer>

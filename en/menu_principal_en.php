@@ -32,7 +32,7 @@
 
             <nav>
                 <ul id="langue">
-                    <li><a href="..//fr/menu_principal_fr.php"><img src="../img/ic_fr.png" class="icone"></a></li>
+                    <li><a href="../fr/menu_principal_fr.php"><img src="../img/ic_fr.png" class="icone"></a></li>
                     <li><a href=""><img src="../img/ic_en.png" class="icone"></a></li>
                 </ul>
             </nav>

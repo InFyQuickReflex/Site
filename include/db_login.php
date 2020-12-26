@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("mysql-g5c.alwaysdata","g5c","informatique","g5c_infy") or die ("Failed to connect to MySQL: " );
+$con = mysqli_connect("mysql-g5c.alwaysdata.net","g5c","informatique","g5c_infy") or die ("Failed to connect to MySQL: " );
 
 //Login 
 
@@ -28,17 +28,17 @@ if (isset($_POST['username'])){
 
                 if($type == 'admin'){
                     $_SESSION['username'] = $username;
-                    header("Location: AcceuilAdmin.php"); 
+                    header("Location: ../fr/menu_admin_fr.php"); 
                 }
 
                  if($type == 'utilisateur'){
                     $_SESSION['username'] = $username;
-                    header("Location: include/indexutilisateur.php"); 
+                    header("Location: ../fr/menu_utilisateur.php"); 
                 }
 
                  if($type == 'gestionnaire'){
                     $_SESSION['username'] = $username;
-                    header("Location: include/indexgestionnaire.php"); 
+                    header("Location: ../fr/menu_gestionnaire.php"); 
                 }
         }
         else{

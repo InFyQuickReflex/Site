@@ -10,13 +10,7 @@
 
     <body>
     	<header> 
-        <p class="logo"> <img src="../img/infy2.png" alt="logo InFy" class="img_logo"> </br> by InFy Corporation </p>
-   			<nav>
-				<ul id="menu">
-    				<li><a href="menu_principal_fr.php">Accueil</a></li>
-    				<li><a href="notre_produit_fr.php">Notre Produit</a></li>
-    			</ul>
-			</nav>
+        <p class="logo"><img src="../img/infy2.png" alt="logo InFy" class="img_logo"> </br> by InFy Corporation </p>
 
 			<figure>
 				<img src="logoprofil2.png" alt = "logo profil" id="tof">
@@ -57,7 +51,7 @@
                     <input type="tel" name="tel" id="tel" /> <br/>
 
                     <select name="type" class = "type" required>
-                        <option name = "user" value="utilisateur">Utilisateur</option>
+                        <option name = "user"value="utilisateur">Utilisateur</option>
                         <option name = "admin" value="admin">Administrateur</option>
                         <option name = "manager" value="gestionnaire">Gestionnaire</option>
                     </select></br>

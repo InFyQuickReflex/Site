@@ -15,7 +15,7 @@ include("../include/auth.php");
 			<p class="logo"> <img src="../img/infy2.png" alt="logo InFy" class="img_logo"> </br> by InFy Corporation </p>
 			
 			<!--<nav>
-                <ul id="menu">
+                <ul id="menu"> 
                     <li><a href="menu_principal_fr.php">Accueil</a></li>
                     <li><a href="notre_produit_fr.php">Notre Produit</a></li>
                 </ul>
@@ -35,7 +35,7 @@ include("../include/auth.php");
             </nav>
     	</header>
 
-    	<h1>Bienvenue <?php echo $_SESSION['username']; ?>! </h1>
+    	<h1> Bienvenue! </h1>
     	<div id="conteneur">
 			<div id="interieur" class="button">
                 <a href="#"><p>Gérer les capteurs</p></a>

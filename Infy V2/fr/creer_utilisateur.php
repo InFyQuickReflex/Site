@@ -55,6 +55,8 @@
                   <label for="identifiant">Identifiant : </label><input type="text" name="identifiant" id="identifiant" required><br><br>
                   <label for="email">Adresse email : </label><input type="text" name="email" id="email"required><br><br>
                   <label for="mot_de_passe">Mot de passe : </label><input type="password" name="mot_de_passe" id="mot_de_passe" required><br><br>
+                  <label for="date_de_naissance"> Date de naissance : </label><input type="date" name="date_de_naissance" id="date_de_naissance" required><br><br>
+                  <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" required><br><br>
 
                   <input type="submit" value="Valider">
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>

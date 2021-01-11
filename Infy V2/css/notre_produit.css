@@ -1,0 +1,18 @@
+main article
+{
+    margin-left: 20%;
+    margin-right: 20%;
+
+    text-align: justify;
+}
+
+main h2
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+main p, main li
+{
+    font-size: 16px;
+}

@@ -1,0 +1,134 @@
+main
+{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+main h2
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+main .profil
+{
+    display: flex;
+}
+
+main .profil img
+{
+    height: 200px;
+    border: solid 1px #000;
+}
+
+main .profil p
+{
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+main .profil a
+{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+main .profil .button
+{
+    font-family: Montserrat;
+    font-size: 16px;
+    border-radius: 2000px;
+    color: #fff;
+    background-color: rgb(59, 59, 107);
+    border: solid 0px;
+    text-decoration: none;
+}
+
+main .profil .button:hover
+{
+    background-color: rgb(210, 72, 72);
+}
+
+main .create_user
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+main .create_user a
+{
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid  rgb(59, 59, 107);
+    margin-bottom: 20px;
+
+    text-decoration: none;
+    
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(59, 59, 107);
+    font-size: 20px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+main .create_user a:hover
+{
+    background-color:  rgb(59, 59, 107);
+    color: #fff;
+}
+
+main form
+{
+    display: flex;
+    flex-direction: row;
+}
+
+main form input
+{
+    font-size: 16px;
+    border: 2px solid rgb(150, 150, 150);
+    border-radius: 5px;
+}
+
+main form input[type="search"]
+{
+    width: 100%;
+    margin-right: 10px;
+}
+
+main form input[type="submit"]
+{
+    background-color: #fff;
+    color:  rgb(150, 150, 150);
+    font-family: Montserrat;
+}
+
+main form input[type="submit"]:hover
+{
+    background-color: rgb(150, 150, 150);
+    color: #fff;
+}
+
+main .result p
+{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .result a
+{
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+}
+
+main .result a:hover
+{
+    color: rgb(100, 100, 100);
+    text-decoration: underline;
+}

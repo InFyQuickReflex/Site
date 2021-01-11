@@ -1,0 +1,39 @@
+.formule1
+{
+    background-image: url("../img/f1.jpg");
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: flex;
+    
+}
+
+.formule1 h1
+{   
+    font-family: Montserrat;
+    font-size: 35px;
+    color: #fff;
+    margin-left: 50px;
+    margin-top: 150px;
+}
+
+main article
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+
+main h2
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+main p, main li
+{
+    font-size: 16px;
+}

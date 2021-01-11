@@ -1,0 +1,154 @@
+/*Code INDISPENSABLE*/
+html
+{
+    height: 100%;
+}
+body
+{
+    font-family: Roboto;
+    background-color: #fff;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+main
+{
+    margin-top: 55px;
+    height: auto;
+    flex: 1 0 auto;
+}
+/*Code INDISPENSABEL*/
+
+/* Code Header */
+header
+{
+    font-family: Montserrat;
+    font-weight: bold;
+    background-color: rgb(59, 59, 107);
+    padding-inline-start: 10px;
+
+    
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-inline-start: 10px;
+
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    
+    
+    margin-bottom: 10px;
+}
+
+.logo
+{
+    height: 50px;   
+}
+
+.menu
+{
+    width: 100%;
+}
+
+.menu ul
+{
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+}
+
+.menu li
+{
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.menu a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size : 20px;
+}
+
+.menu a:hover
+{
+    color: rgb(210, 72, 72);
+
+}
+
+.langue ul
+{
+    display: table-cell;
+    flex-direction: row;
+    justify-content: left;
+    list-style: none;
+}
+
+.langue li
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: table-cell;
+    padding-right: 10px;    
+}
+
+.icone
+{
+    height: 30px;
+}
+
+.icone:hover
+{
+    height: 35px;
+}
+/* Code Header */
+
+/* Code Footer */
+footer
+{   font-family: Montserrat;
+    background-color: rgb(59, 59, 107);
+    color: #fff;
+    padding-inline-start: 10px;
+    font-size: 15px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer ul
+{
+    display: flex;
+    flex-direction: row;
+
+    list-style: none;
+}
+
+footer li
+{
+    margin-right: 20px;
+}
+
+footer a
+{
+    text-decoration: none;
+    color: #fff;
+    font-size : 12px;
+}
+
+footer a:hover
+{
+    color: rgb(210, 72, 72);
+}
+/* Code Footer */

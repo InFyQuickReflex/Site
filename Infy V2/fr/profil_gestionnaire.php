@@ -26,7 +26,7 @@
                     <?php
                     try
                     {
-                        $bdd = new PDO("mysql:host=localhost;dbname=infy;charset=utf8", "root", "root");
+                        $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
                     }
     
                     catch (Exception $e)
@@ -82,7 +82,7 @@
                 <?php
                 try
                 {
-                    $bdd = new PDO("mysql:host=localhost;dbname=infy;charset=utf8", "root", "root");
+                    $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
                 }
 
                 catch (Exception $e)

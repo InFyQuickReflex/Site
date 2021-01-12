@@ -67,7 +67,7 @@
 
             <br>
             <div class="button_container">
-                <a href="">Gérer les capteurs</a>
+                <a href="gerer_capteurs.php">Gérer les capteurs</a>
                 <a href="">Gérer les droits d'accès</a>
                 <a href="">Gérer la FAQ</a>
             </div>

@@ -3,8 +3,9 @@ session_start();
 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=infy;charset=utf8', 'root', 'root');
+	 $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
 }
+
 catch (Exception $e)
 {
         die('Erreur : ' . $e->getMessage());
@@ -22,7 +23,7 @@ while($donnees = $reponse->fetch())
     if(($identifiant == $donnees["identifiant"]) AND (password_verify($mot_de_passe, $donnees["mot_de_passe"])))
     {
         $_verif = TRUE;
-        $_SESSION["ID"] = $donnees["id"];
+        $_SESSION["ID"] = $donnees["id_user"];
         $_permission = $donnees["permission"];
         break;
     }   

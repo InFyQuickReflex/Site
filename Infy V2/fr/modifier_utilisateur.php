@@ -55,10 +55,19 @@
               <h2>Modifier l'utilisateur</h2>
               <form method="POST" action="../php_fr/modifier.php">
                   <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
+
                   <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" value="<?php echo $donnees["prenom"] ?>"><br><br>
+
                   <label for="nom">Nom : </label><input type="text" name="nom" id="nom" value="<?php echo $donnees["nom"] ?>"><br><br>
+
                   <label for="identifiant">Identifiant : </label><input type="text" name="identifiant" id="identifiant" value="<?php echo $donnees["identifiant"] ?>"><br><br>
+
                   <label for="email">Adresse email : </label><input type="text" name="email" id="email" value="<?php echo $donnees["email"] ?>"><br><br>
+
+                  <label for="date_de_naissance"> Date de naissance : </label><input type="date" name="date_de_naissance" id="date_de_naissance" value="<?php echo $donnees["date_de_naissance"] ?>"><br><br>
+
+                  <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
+
 
                   <input type="submit" value="Valider">
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>

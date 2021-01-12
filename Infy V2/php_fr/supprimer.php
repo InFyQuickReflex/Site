@@ -11,7 +11,7 @@ catch (Exception $e)
     die("Erreur : " . $e->getMessage());
 }
 
-$req = $bdd->prepare("DELETE FROM users WHERE ID = ?");
+$req = $bdd->prepare("DELETE FROM users WHERE id_user = ?");
 $req->execute(array($_GET["ID"]));
 
 $req->closeCursor();

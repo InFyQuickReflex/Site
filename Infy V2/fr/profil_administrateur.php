@@ -34,7 +34,7 @@
                         die("Erreur : " . $e->getMessage());
                     }
     
-                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE ID = ?");
+                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
                     $req->execute(array($_SESSION["ID"]));
                     $donnees = $req->fetch();
 

@@ -34,7 +34,7 @@
                         die("Erreur : " . $e->getMessage());
                     }
     
-                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE ID = ?");
+                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
                     $req->execute(array($_SESSION["ID"]));
                     $donnees = $req->fetch();
 
@@ -95,7 +95,7 @@
                     $recherche = htmlspecialchars($_GET["recherche"]);
                     $recherche=str_replace(' ','',$recherche);
 
-                    $reponse = $bdd->prepare("SELECT ID, prenom, nom, identifiant FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
+                    $reponse = $bdd->prepare("SELECT id_user, prenom, nom, identifiant FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
                     $reponse->execute(array("%".$recherche."%"));
 
                     if($reponse->rowCount() == 0)
@@ -106,12 +106,12 @@
 
                 else
                 {
-                    $reponse = $bdd->query("SELECT ID, prenom, nom, identifiant FROM users ORDER BY nom");
+                    $reponse = $bdd->query("SELECT id_user, prenom, nom, identifiant FROM users ORDER BY nom");
                 }
 
                 while($donnees = $reponse->fetch())
                 {
-                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='modifier_utilisateur.php?ID=".$donnees["ID"]."'>Modifier</a><hr></p>";
+                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='modifier_utilisateur.php?ID=".$donnees["id_user"]."'>Modifier</a><hr></p>";
                 }
 
                 $reponse->closeCursor();

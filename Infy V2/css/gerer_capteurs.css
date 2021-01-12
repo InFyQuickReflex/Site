@@ -1,0 +1,77 @@
+#NosCapteurs, #NosTypesCapteur
+{
+	background-color:rgba(255,255,255,0.8);
+	padding:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:2px solid #374a81;
+	border-radius:5px;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	display:flex;
+	box-shadow:2px 2px 8px #8da5eb;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+.TitreSection
+{
+	font-size:25px;
+	text-align:center;
+	width:100%
+}
+.Capteur
+{
+	width:30%;margin:10px 1% 10px 1%;
+	border: solid black 1px;
+	padding: 5px;
+}
+.TitreCapteur
+{
+	font-size:15px;text-align:center;	
+}
+.BoutonSupprimer
+{
+	background-color:#A2212C;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+	transition: background-color 0.5s ease 0s;
+}
+.BoutonSupprimer:hover
+{
+	background-color:#FF8C8C;
+	color:white;
+}
+.BoutonModifier
+{
+	background-color:#374A81;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+	transition: background-color 0.5s ease 0s;
+}
+.BoutonModifier:hover
+{
+	background-color:#939DBB;
+	color:white;
+}
+#AjouterCapteur, #AjouterTypeCapteur
+{
+	background-color:rgba(255,255,255,0.8);
+	padding:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:2px solid #374a81;
+	border-radius:5px;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow:2px 2px 8px #8da5eb;
+}

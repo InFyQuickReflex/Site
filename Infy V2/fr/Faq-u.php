@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>FAQ - Utilisateur</title>
         <link rel="stylesheet" href="../css/header_footer.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/stylefaq.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="stylefaq.css">
@@ -34,7 +34,7 @@
     
       </main>
 
-      <script src="faq.js"></script>
+      <script src="../css/faq.js"></script>
       <?php include("header_footer/footer.php")?>
     </body>
 </html>

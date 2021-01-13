@@ -81,7 +81,7 @@
 
                 while ($donnees = $reponse->fetch())
                 {
-                    echo 'Test du ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Voir les résultats </a> </br>';       
+                    echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Voir les résultats </a> </br></p>';       
                 }
                ?>
             </div>

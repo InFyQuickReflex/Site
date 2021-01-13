@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"> 
         <title>Infy - Mon profil</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/profil_utilisateur.css">
@@ -76,7 +76,7 @@
             
             <div class="test">
                <?php
-               $reponse = $bdd->prepare("SELECT users.id_user, id_test, date_test FROM tests INNER JOIN users ON (tests.id_user = users.id_user AND users.id_user = ?) ORDER BY date_test DESC");
+               $reponse = $bdd->prepare("SELECT users.id_user, id_test, date_test FROM tests INNER JOIN users ON (tests.id_user = users.id_user AND users.id_user = ?) ORDER BY date_test DESC LIMIT 0,4");
                 $reponse->execute(array($_SESSION["ID"])); 
 
                 while ($donnees = $reponse->fetch())

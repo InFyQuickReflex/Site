@@ -1,16 +1,13 @@
 #NosCapteurs, #NosTypesCapteur
 {
 	background-color:rgba(255,255,255,0.8);
-	padding:10px;
-	margin-top:10px;
-	margin-bottom:10px;
-	border:2px solid #374a81;
-	border-radius:5px;
+	padding-bottom:5px;
+	margin-top:5px;
+	border-bottom:2px solid #374a81;
 	width:95%;
 	margin-left:auto;
 	margin-right:auto;
 	display:flex;
-	box-shadow:2px 2px 8px #8da5eb;
 	flex-wrap:wrap;
 	justify-content:center;
 }
@@ -23,14 +20,15 @@
 .Capteur
 {
 	width:30%;margin:10px 1% 10px 1%;
-	border: solid black 1px;
+	border: solid grey 1px;
 	padding: 5px;
+	border-radius:5px;
 }
 .TitreCapteur
 {
 	font-size:15px;text-align:center;	
 }
-.BoutonSupprimer
+.BoutonSupprimer, form input[type = reset]
 {
 	background-color:#A2212C;
 	color:white;
@@ -39,9 +37,10 @@
 	border : 1px solid black;
 	margin:5px;
 	border-radius:5px;
+    text-decoration:none;
 	transition: background-color 0.5s ease 0s;
 }
-.BoutonSupprimer:hover
+.BoutonSupprimer:hover, form input[type = reset]:hover
 {
 	background-color:#FF8C8C;
 	color:white;
@@ -55,6 +54,7 @@
 	border : 1px solid black;
 	margin:5px;
 	border-radius:5px;
+    text-decoration:none;
 	transition: background-color 0.5s ease 0s;
 }
 .BoutonModifier:hover
@@ -65,13 +65,28 @@
 #AjouterCapteur, #AjouterTypeCapteur
 {
 	background-color:rgba(255,255,255,0.8);
-	padding:10px;
-	margin-top:10px;
-	margin-bottom:10px;
-	border:2px solid #374a81;
-	border-radius:5px;
+	padding-bottom:5px;
+	margin-top:5px;
+	border-bottom:2px solid #374a81;
 	width:95%;
 	margin-left:auto;
 	margin-right:auto;
-	box-shadow:2px 2px 8px #8da5eb;
 }
+form input[type = submit]
+{
+	background-color:green;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+    text-decoration:none;
+	transition: background-color 0.5s ease 0s;
+}
+
+form input[type = submit]:hover
+{
+    background-color: lime;
+}
+

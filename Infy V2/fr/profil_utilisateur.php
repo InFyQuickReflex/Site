@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8"> 
         <title>Infy - Mon profil</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/profil_utilisateur.css">
@@ -75,11 +75,15 @@
             <h3>Historique des tests</h3>
             
             <div class="test">
-                <!--- Code PHP ici --->
-                <p>Test du 20/12/2020 <a href="">Voir les résultats</a><hr></p>
-                <p>Test du 14/10/2020 <a href="">Voir les résultats</a><hr></p>
-                <p>Test du 05/09/2020 <a href="">Voir les résultats</a><hr></p>
-                <p>Test du 23/06/2020 <a href="">Voir les résultats</a><hr></p>
+               <?php
+               $reponse = $bdd->prepare("SELECT users.id_user, id_test, date_test FROM tests INNER JOIN users ON (tests.id_user = users.id_user AND users.id_user = ?) ORDER BY date_test DESC LIMIT 0,4");
+                $reponse->execute(array($_SESSION["ID"])); 
+
+                while ($donnees = $reponse->fetch())
+                {
+                    echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Voir les résultats </a> </br></p>';       
+                }
+               ?>
             </div>
                        
             <?php
@@ -95,3 +99,4 @@
       <?php include("header_footer/footer.php")?>
     </body>
 </html>
+

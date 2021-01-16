@@ -1,0 +1,22 @@
+main
+{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align:justify;
+
+}
+main h1
+{
+	text-align:center;
+}
+main h3
+{
+	color: rgb(59, 59, 107);
+	text-decoration: underline;
+}
+.CGU
+{
+	border:2px black solid;
+    padding-left:15px;
+    padding-right:15px;
+}

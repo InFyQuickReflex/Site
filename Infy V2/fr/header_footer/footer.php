@@ -1,5 +1,5 @@
 <footer>
-    <p> Mentions légales :</p>
+    <a href="CGU.php">Mentions légales </a>
 
     <nav>
         <ul>

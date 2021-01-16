@@ -82,26 +82,28 @@ main .start_test a:hover
 
 main h3
 {
-    font-size: 20px;
+    font-size: 27px;
     font-weight: bold;
+    color: rgb(59, 59, 107);
+    margin-top: 2px;
+
 }
 
 main .test p
 {
-    font-size: 16px;
-    display: flex;
-    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 main .test a
 {
     text-decoration: none;
-    color: rgb(150, 150, 150);
+    color: rgb(210, 72, 72);
 }
 
 main .test a:hover
 {
-    color: rgb(100, 100, 100);
-    text-decoration: underline;
+    color: rgb(59, 59, 107);
+    text-decoration: none;
 }
 

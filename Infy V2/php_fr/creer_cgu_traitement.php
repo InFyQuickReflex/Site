@@ -18,6 +18,6 @@ $req->execute(array($titre, $paragraphe));
 
 $req->closeCursor();
 
-header("Location: ../fr/gérer_cgu.php");
+header("Location: ../fr/gerer_cgu.php");
 
 ?>

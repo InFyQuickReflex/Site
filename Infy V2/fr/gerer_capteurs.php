@@ -36,36 +36,34 @@
 			}
 			?>
 			<div class='contenusection'>
-			<?php
-            $reqcapteurs = selectToutCapteur($bdd);
-
-			if($reqcapteurs->rowCount() == 0)
-                {
-				echo "Aucun capteur trouvé";
-				}            
-            else
-			{
-			while($donnees = $reqcapteurs->fetch())
-			{
-				$id_capteurs = $donnees['id_capteurs'];
-				$numero_capteur	= $donnees['numero_capteur'];
-				$id_boitier = $donnees['id_boitier'];
-				$nom_type = $donnees['nom_type'];
-				$unite_type = $donnees['unite_type'];
-				
-				echo "<article class=Capteur>
-				<h2 class=TitreCapteur>Capteur n° ".$numero_capteur."</h2>
-				ID : ".$id_capteurs
-				."<br>Boîtier associé (ID) : ".$id_boitier."<br>
-				Type : ".$nom_type." (".$unite_type.") <br><br>
-				<button id=SupCap".$id_capteurs." class=BoutonSupprimer>Supprimer</button>
-				<a href='modifier_capteur_page.php?ID=".$id_capteurs."' class=BoutonModifier>Modifier</a>
-				</article>";
-			}
-			}
-			$reqcapteurs->closeCursor();
-			
-			?>
+				<?php
+				$reqcapteurs = selectToutCapteur($bdd);
+				if($reqcapteurs->rowCount() == 0)
+				    {
+					echo "Aucun capteur trouvé";
+					}            
+				else
+				{
+				while($donnees = $reqcapteurs->fetch())
+				{
+					$id_capteurs = $donnees['id_capteurs'];
+					$numero_capteur	= $donnees['numero_capteur'];
+					$id_boitier = $donnees['id_boitier'];
+					$nom_type = $donnees['nom_type'];
+					$unite_type = $donnees['unite_type'];
+					
+					echo "<article class=Capteur>
+					<h2 class=TitreCapteur>Capteur n° ".$numero_capteur."</h2>
+					ID : ".$id_capteurs
+					."<br>Boîtier associé (ID) : ".$id_boitier."<br>
+					Type : ".$nom_type." (".$unite_type.") <br><br>
+					<button id=SupCap".$id_capteurs." class=BoutonSupprimer>Supprimer</button>
+					<a href='modifier_capteur_page.php?ID=".$id_capteurs."' class=BoutonModifier>Modifier</a>
+					</article>";
+				}
+				}
+				$reqcapteurs->closeCursor();
+				?>
 			</div>
 		</section>
 		<section id=NosTypesCapteur>
@@ -126,13 +124,15 @@
 			<h2 class=TitreSection>Ajouter un nouveau capteur</h1>
 			<div class='contenusection'>
 			<form method='post' action='../php_fr/ajouter_capteur.php'>
-			<label for="numero">Numero du Capteur : </label><input type="number" name="numero" id="numero"><br><br>
+			<label for="numero">Numero du Capteur : </label>
+			<input type="number" name="numero" id="numero"><br><br>
 			<label for="boitier">Boitier : </label>
 			<select name='boitier' id='boitier'>
 			<?php $reqboitier = selectToutBoitier($bdd); 
 			while($donnees_boitiers = $reqboitier->fetch())
 			{
-				echo "<option value = ".$donnees_boitiers['id_boitier'].">ID : ".$donnees_boitiers['id_boitier'].", n° : ".$donnees_boitiers['numero_boitier']."</option>";
+				echo "<option value = ".$donnees_boitiers['id_boitier'].">ID : ".
+				$donnees_boitiers['id_boitier'].", n° : ".$donnees_boitiers['numero_boitier']."</option>";
 			}
 			$reqboitier->closeCursor();
 			?>
@@ -142,7 +142,8 @@
 			<?php $reqtype = selectToutTypeCapteur($bdd); 
 			while($donnees_types = $reqtype->fetch())
 			{
-				echo "<option value = ".$donnees_types['id_type'].">ID : ".$donnees_types['id_type'].", nom : ".$donnees_types['nom_type']." (".$donnees_types['unite_capteur'].")</option>";
+				echo "<option value = ".$donnees_types['id_type'].">ID : ".$donnees_types['id_type'].
+				", nom : ".$donnees_types['nom_type']." (".$donnees_types['unite_capteur'].")</option>";
 			}
 			$reqtype->closeCursor();
 			?>
@@ -156,8 +157,10 @@
 			<h1 class=TitreSection>Ajouter un nouveau type de capteur</h1>
 			<div class='contenusection'>
 			<form method='post' action='../php_fr/ajouter_type_capteur.php'>
-			<label for="nom">Nom du type de capteur : </label><input type="text" name="nom" id="nom"><br><br>
-			<label for="unite">Unité de mesure du capteur : </label><input type="text" name="unite" id="unite"><br><br>
+			<label for="nom">Nom du type de capteur : </label>
+			<input type="text" name="nom" id="nom"><br><br>
+			<label for="unite">Unité de mesure du capteur : </label>
+			<input type="text" name="unite" id="unite"><br><br>
 			<input type="submit" value="Envoyer">
 			<input type="reset" value="Reset">
 			</form>
@@ -167,7 +170,8 @@
 			<h1 class=TitreSection>Ajouter un nouveau boitier</h1>
 			<div class='contenusection'>
 			<form method='post' action='../php_fr/ajouter_boitier.php'>
-			<label for="numero">Numero du boitier : </label><input type="text" name="numero" id="numero"><br><br>
+			<label for="numero">Numero du boitier : </label>
+			<input type="text" name="numero" id="numero"><br><br>
 			<input type="submit" value="Envoyer">
 			<input type="reset" value="Reset">
 			</form>

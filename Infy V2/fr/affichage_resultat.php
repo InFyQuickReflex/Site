@@ -12,6 +12,7 @@
     <body>
       <?php include("header_footer/header.php")?>
     <main>
+        <br>
         <?php
         if(isset($_SESSION["ID"]))
         {

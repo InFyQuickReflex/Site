@@ -1,0 +1,100 @@
+h1
+{
+	font-size:30px;
+	text-align:center;
+	width: 100%;
+}
+section
+{
+	background-color:rgba(255,255,255,0.8);
+	border-bottom:2px solid #374a81;
+	width:95%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.contenusection
+{
+	padding-top:10px;
+	display:none;
+	flex-wrap:wrap;
+	justify-content:center;
+
+}
+.TitreSection
+{
+	font-size:25px;
+	text-align:center;
+	width:100%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin:0px;
+	transition: 0.4s;
+
+}
+.active, .TitreSection:hover 
+{
+  background-color: #ccc;
+}
+.Capteur
+{
+	width:30%;margin:10px 1% 10px 1%;
+	border: solid grey 1px;
+	padding: 5px;
+	border-radius:5px;
+}
+.TitreCapteur
+{
+	font-size:15px;text-align:center;	
+}
+.BoutonSupprimer, form input[type = reset]
+{
+	background-color:#A2212C;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+    text-decoration:none;
+	transition: background-color 0.5s ease 0s;
+}
+.BoutonSupprimer:hover, form input[type = reset]:hover
+{
+	background-color:#FF8C8C;
+	color:white;
+}
+.BoutonModifier
+{
+	background-color:#374A81;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+    text-decoration:none;
+	transition: background-color 0.5s ease 0s;
+}
+.BoutonModifier:hover
+{
+	background-color:#939DBB;
+	color:white;
+}
+form input[type = submit]
+{
+	background-color:green;
+	color:white;
+	font-size:18px;
+	padding:2px;
+	border : 1px solid black;
+	margin:5px;
+	border-radius:5px;
+    text-decoration:none;
+	transition: background-color 0.5s ease 0s;
+}
+
+form input[type = submit]:hover
+{
+    background-color: lime;
+}
+

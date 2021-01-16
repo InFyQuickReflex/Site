@@ -17,37 +17,25 @@
         <?php
 		if(isset($_SESSION["ID"]))
         {
-          try
-          {
-              $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
-          }
+        	include('../php_fr/connexionbdd.php');
+        	include('../php_fr/fonctions_gerer_capteurs.php');
+        	$permission = permissionUser($bdd,$_SESSION["ID"]);
 
-          catch (Exception $e)
-          {
-              die("Erreur : " . $e->getMessage());
-          }
-
-          $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-          $req->execute(array($_SESSION["ID"]));
-          $donnees = $req->fetch();
-
-          if($donnees["permission"] != "administrateur")
-          {
-              if($donnees["permission"] == "gestionnaire")
-              {
-                  header("Location: profil_gestionnaire.php");
-              }
-
-              else if($donnees["permission"] == "utilisateur")
-              {
-                  header("Location: profil_utilisateur.php");
-              }
-          }
-		  else
-		  {
-			  $req = $bdd->prepare("SELECT * FROM capteurs WHERE id_capteurs = ?");
-              $req->execute(array($_GET["ID"]));
-              $donnees = $req->fetch();
+        if($permission != "administrateur")
+		{
+			if($permission == "gestionnaire")
+                {
+					header("Location: profil_gestionnaire.php");
+				}
+			else if($permission == "utilisateur")
+			{
+				header("Location: profil_utilisateur.php");
+			}
+		}
+		else
+		{
+			$req = selectCapteur($bdd,$_GET['ID']);
+            $donnees = $req->fetch();
 		?>
 		<h2>Modifier le capteur</h2>
 		<form method="POST" action="../php_fr/modifier_capteur.php">
@@ -55,7 +43,7 @@
 		<label for="numero">Numero du Capteur : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_capteur'] ?>"><br><br>
 		<label for="boitier">Boitier : </label>
 		<select name='boitier' id='boitier'>
-		<?php $reqboitier = $bdd->query('SELECT * FROM boitiers'); 
+		<?php $reqboitier = selectToutBoitier($bdd); 
 		while($donnees_boitiers = $reqboitier->fetch())
 		{
 			if ($donnees_boitiers['id_boitier']==$donnees['id_boitier'])
@@ -71,7 +59,7 @@
 		</select><br><br>
 		<label for="type">Type : </label>
 		<select name='type' id='type'>
-		<?php $reqtype = $bdd->query('SELECT * FROM type_capteurs'); 
+		<?php $reqtype = selectToutTypeCapteur($bdd); 
 		while($donnees_types = $reqtype->fetch())
 		{
 			if ($donnees_types['id_type']==$donnees['id_type'])
@@ -92,6 +80,8 @@
 		<?php
 		  }
 		  $req->closeCursor();
+		  $reqtype->closeCursor();
+		  $reqboitier->closeCursor();
         }
 		else
         {

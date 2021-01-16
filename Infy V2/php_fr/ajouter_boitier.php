@@ -7,10 +7,9 @@ if(isset($_SESSION["ID"]))
 			$permission = permissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
-				$nom_type = htmlspecialchars($_POST['nom']);
-				$unite_capteur = htmlspecialchars($_POST['unite']);
-				$req = $bdd->prepare("INSERT INTO type_capteurs (nom_type,unite_capteur) VALUES (?,?)");
-				$req->execute(array($nom_type,$unite_capteur));
+				$numero_boitier = htmlspecialchars($_POST['numero']);
+				$req = $bdd->prepare("INSERT INTO boitiers (numero_boitier) VALUES (?)");
+				$req->execute(array($numero_boitier));
 				$req->closeCursor();
 			
 			}

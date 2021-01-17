@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once("../include_path_inc.php");
 
 require_once("jpgraph.php");

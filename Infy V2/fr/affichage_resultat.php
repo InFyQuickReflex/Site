@@ -18,15 +18,8 @@
         {
             echo "<h2>Vos Résultats</h2>";
 
-            try
-            {
-                $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
-            }
-            catch (Exception $e)
-            {
-                die("Erreur : " . $e->getMessage());
-            }
-    
+            include('../php_fr/connexionbdd.php');
+
             $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
             $req->execute(array($_SESSION["ID"]));
             $donnees = $req->fetch();
@@ -43,20 +36,46 @@
                 }   
             }
             else
-            {
-	           $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
-	           $reponse->execute(array($_GET["IDtest"]));
+            {?>
+            <?php $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
+               $reponse->execute(array($_GET["IDtest"]));
 
-	           while ($donnees = $reponse->fetch())
+               while ($donnees = $reponse->fetch())
                 {
                     echo $donnees["valeur"].' '.$donnees["unite_mesure"].'</br>';
-                }
+                }?>
+            <P><table>
+                <tr>
+                    <td> Température </td>
+                    <td> 
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    while($donnees = $reponse->fetch())
+                    {
+                        echo $donnees["valeur"];
+                    }
+                    ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Fréquence Cardiaque </td>
+                    <td> 
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    while($donnees = $reponse->fetch())
+                    {
+                        echo $donnees["valeur"];
+                    }
+                   ?>
+                    </td>
+                </tr>
+                </table></P>
+                <?php 
                 echo "<a href=profil_utilisateur.php> Retour au profil </a>";
             }
-        }
-        else
-        {
-            echo"why";
         }
         ?>
     </main>

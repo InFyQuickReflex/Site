@@ -74,14 +74,15 @@
                     </td>
                 </tr>
                 </table></P>
-                <section>
+                <section id = "test">
+                    
+                    <article class="testson">
                     <?php 
                     $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
                     $reponse->execute(array($_GET["IDtest"]));
                     $donnees = $reponse->fetch();
-                    $reponse->closeCursor()
+                    $reponse->closeCursor();
                     ?>
-                    <article class="testson">
                         <h3>Test n°1: Réactivité à un son innatendu</h3>
                         <p> Vous avez mis <?php echo $donnees["valeur"] ?> secondes à réagir. </p>
                     </article>
@@ -93,8 +94,8 @@
                             $reponse= $bdd->prepare('SELECT id_test, users.id_user  FROM tests INNER JOIN users ON (users.id_user = tests.id_user)WHERE id_test = ?');
                             $reponse->execute(array($_GET["IDtest"]));
                             $donnees = $reponse->fetch();
-                            echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."'>";
-                            
+                            echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."'>"; 
+                            $reponse->closeCursor();                           
                             ?>
                         </div>
                     </article>
@@ -103,7 +104,8 @@
                         <h3>Test n°3: Reproduction d'une fréquence</h3>
                         <p> Graphique </p>
                     </article>
-                    <a href=profil_utilisateur.php> Retour au profil </a>
+                </section>
+                <a href=profil_utilisateur.php class="retour">Profil </a>
             <?php
             }
         }

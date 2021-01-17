@@ -17,6 +17,7 @@
 	<h1> Conditions Générales d'Utilisateur </h1>
 	<div class=CGU>
 	<?php
+
 	include('../php_fr/connexionbdd.php');
 
 	$req = $bdd->query("SELECT titre, paragraphe FROM CGU");
@@ -26,7 +27,9 @@
 	}
 	?>
 	</div>
+
 	<br><br>
+
     </main>
 
       <?php include("header_footer/footer.php")?>

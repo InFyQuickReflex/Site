@@ -17,6 +17,7 @@
 	<?php
     if(isset($_SESSION["ID"]))
     {
+
 	include('../php_fr/connexionbdd.php');
     
     $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");

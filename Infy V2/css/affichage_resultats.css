@@ -1,19 +1,18 @@
-main
-{
-    margin-left: 20%;
-    margin-right: 20%;
-}
 
 main h2
 {
-    font-size: 25px;
+    font-size: 35px;
     font-weight: bold;
+    text-align:center;
 }
 
 table
 {
-    border-collapse: collapse; 
+    border-collapse: collapse;
+    margin-right: 35%;
+    margin-left: 35%;
 }
+
 td,th
 {
     border: 2px solid black;
@@ -23,5 +22,47 @@ td,th
     padding-bottom:10px;
     width:55%;
     text-align: center;
+}
+
+#test
+{
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+main section article 
+{
+  border: 2px white solid;
+  border-radius: 10px; 
+  text-align: center;
+  padding: 10px;
+}
+
+.retour
+{
+    background-color: #fff;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: bold;
+    color:grey;
+    text-decoration: none;
+
+    border: 3px solid  grey;
+    border-radius: 5px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+.retour:hover
+{
+    background-color: grey;
+    color: #fff;
 }
 

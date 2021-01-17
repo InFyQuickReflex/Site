@@ -49,7 +49,7 @@
 
                 <label for="prenom">Titre : </label><input type="text" name="titre" id="titre" value="<?php echo $donnees["titre"] ?>"><br><br>
 
-                <label for="nom">Paragraphe : </label><textarea rows="10" cols="100" name="paragraphe" id="paragraphe"><?php echo $donnees["paragraphe"] ?></textarea><br><br>
+                <label for="nom">Paragraphe : </label><textarea rows="10" cols="100" name="paragraphe" id="paragraphe"><?php echo $donnees["paragraphe_fr"] ?></textarea><br><br>
 
                 <input type="submit" value="Valider">
                 <a href="gerer_cgu.php" class="cancel">Annuler</a>

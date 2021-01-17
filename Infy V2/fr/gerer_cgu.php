@@ -50,9 +50,9 @@
 	    die("Erreur : " . $e->getMessage());
 	}
 
-	$req = $bdd->query("SELECT id_CGU,titre, paragraphe FROM CGU");
+	$req = $bdd->query("SELECT id_CGU,titre, paragraphe_fr FROM CGU");
 	while ($donnees = $req->fetch()){
-		echo "<h3>".$donnees["titre"]."</h3><p> ".$donnees["paragraphe"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
+		echo "<h3>".$donnees["titre"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
 	}
     $req->closeCursor();
 	?>

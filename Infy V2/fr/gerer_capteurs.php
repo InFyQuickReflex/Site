@@ -11,6 +11,7 @@
 	<body>
 	<?php include("header_footer/header.php")?>
 	<main>
+	<br>
 	<h1>Gérer les capteurs</h1>
 	<?php
     if(isset($_SESSION["ID"]))

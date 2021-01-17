@@ -45,8 +45,14 @@
                     <?php 
                     $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température"');
                     $reponse->execute(array($_GET["IDtest"]));
-                    $donnees = $reponse->fetch();
-                        echo $donnees["valeur"];
+                    if($donnees = $reponse->fetch())
+                    {
+                        echo $donnees["valeur"]." degrés";
+                    }
+                    else
+                    {
+                        echo "Vous n'avez pas de résultats";
+                    }
                     $reponse->closeCursor();
                     ?>
                     </td>
@@ -58,36 +64,48 @@
                     <?php 
                     $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence"');
                     $reponse->execute(array($_GET["IDtest"]));
-                    $donnees = $reponse->fetch();
-                        echo $donnees["valeur"];
+                    if($donnees = $reponse->fetch())
+                    {
+                        echo $donnees["valeur"]." bpms";
+                    }
+                    else
+                    {
+                        echo "Vous n'avez pas de résultats";
+                    }
                     $reponse->closeCursor();
-                   ?>
+                    ?>
                     </td>
                 </tr>
                 </table></P>
                 <section id = "test">                 
                     <article class="testson">
-                    <?php 
-                    $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
-                    $reponse->execute(array($_GET["IDtest"]));
-                    $donnees = $reponse->fetch();
-                    $reponse->closeCursor();
-                    ?>
                         <h3>Test n°1: Réactivité à un son innatendu</h3>
-                        <p> Vous avez mis <?php echo $donnees["valeur"] ?> secondes à réagir. </p>
+                        <?php 
+                        $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
+                        $reponse->execute(array($_GET["IDtest"]));
+                        if($donnees = $reponse->fetch())
+                        {
+                            echo"<p> Vous avez mis ".$donnees["valeur"]." secondes à réagir.</p>";  
+                        }
+                        else
+                        {
+                            echo"Vous n'avez pas de résultats";
+                        }
+                        $reponse->closeCursor();
+                        ?>
                     </article>
 
                     <article class="testlumiere">
                         <h3>Test n°2: Réactivité à une lumière innatendue</h3>
-                        <div> 
-                           <?php                           
-                            $reponse= $bdd->prepare('SELECT id_test, users.id_user  FROM tests INNER JOIN users ON (users.id_user = tests.id_user)WHERE id_test = ?');
+                            <?php                           
+                            $reponse= $bdd->prepare('SELECT id_test FROM tests WHERE id_test = ?');
                             $reponse->execute(array($_GET["IDtest"]));
                             $donnees = $reponse->fetch();
-                            echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."'>"; 
+                            
+                               echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."' >";  
+                            
                             $reponse->closeCursor();                           
                             ?>
-                        </div>
                     </article>
 
                     <article class="testfreq">
@@ -95,7 +113,7 @@
                         <p> Graphique </p>
                     </article>
                 </section>
-                <a href=profil_utilisateur.php class="retour">Profil </a>
+                <a href="profil_utilisateur.php" class="retour">Profil </a>
             <?php
 
             }

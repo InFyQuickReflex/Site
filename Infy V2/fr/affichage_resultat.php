@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Vos résultats</title>
         <link rel="stylesheet" href="../css/header_footer.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/affichage_resultats.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>

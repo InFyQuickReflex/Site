@@ -19,6 +19,7 @@
     {
 
 	include('../php_fr/connexionbdd.php');
+    include('../php_fr/fonctions/fonctions_cgu.php');
     
     $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
     $req->execute(array($_SESSION["ID"]));
@@ -40,27 +41,26 @@
 	<br>
 	<h1> Conditions Générales d'Utilisateur </h1>
 	<div class=CGU>
+        
 	<?php
-	try
-	{
-		$bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
-	}   
-	catch (Exception $e)
-	{
-	    die("Erreur : " . $e->getMessage());
-	}
-
-	$req = $bdd->query("SELECT id_CGU,titre, paragraphe_fr FROM CGU");
-	while ($donnees = $req->fetch()){
-		echo "<h3>".$donnees["titre"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
-	}
-    $req->closeCursor();
+	$reqcgu = SelectCgu($bdd);
+    if($reqcgu->rowCount() == 0)
+    {
+        echo "Aucun texte";
+    }            
+    else
+    {
+	    while ($donnees = $reqcgu->fetch()){
+	       echo "<h3>".$donnees["titre"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
+	    }
+    }
+    $reqcgu->closeCursor();
 	?>
 	</div>
 
 	<br>
     <div class="gerer">
-        <a href="creer_cgu.php"> Ajouter un nouveau paragraphe</a>
+        <a href="creer_cgu.php" name = "action" value="ajouter"> Ajouter un nouveau paragraphe</a>
     </div>
 
     </main>

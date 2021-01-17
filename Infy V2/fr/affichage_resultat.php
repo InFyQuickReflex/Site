@@ -104,6 +104,7 @@
                         <p> Graphique </p>
                     </article>
                     <a href=profil_utilisateur.php> Retour au profil </a>
+            <?php
             }
         }
         ?>

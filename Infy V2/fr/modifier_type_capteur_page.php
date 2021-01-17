@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>Modifier le type de capteur</title>
         <link rel="stylesheet" href="../css/header_footer.css">
-        <link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -18,7 +17,7 @@
         if(isset($_SESSION["ID"]))
         {
         	include('../php_fr/connexionbdd.php');
-        	include('../php_fr/fonctions_gerer_capteurs.php');
+        	include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
         	$permission = permissionUser($bdd,$_SESSION["ID"]);
 
         if($permission != "administrateur")

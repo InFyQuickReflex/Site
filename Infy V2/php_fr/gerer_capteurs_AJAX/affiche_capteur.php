@@ -1,6 +1,6 @@
 <?php
 include('../connexionbdd.php');
-include('../fonctions_gerer_capteurs.php');
+include('../fonctions/fonctions_gerer_capteurs.php');
 $reqcapteurs = selectToutCapteur($bdd);
 
 if($reqcapteurs->rowCount() == 0)

@@ -21,7 +21,7 @@
 			<h2 class=TitreSection>Nos capteurs</h2>
 			<?php
 			include('../php_fr/connexionbdd.php');
-			include('../php_fr/fonctions_gerer_capteurs.php');
+			include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
 			$permission = permissionUser($bdd,$_SESSION["ID"]);
 			
 			if($permission != "administrateur")

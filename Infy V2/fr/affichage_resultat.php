@@ -43,9 +43,54 @@
                 }   
             }
             else
+<<<<<<< Updated upstream
             {
 	           $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
 	           $reponse->execute(array($_GET["IDtest"]));
+=======
+            {?>
+            <P><table>
+                <tr>
+                    <th> Température </th>
+                    <td> 
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température"');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    $donnees = $reponse->fetch();
+                        echo $donnees["valeur"];
+                    $reponse->closeCursor();
+                    ?>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th> Fréquence Cardiaque </th>
+                    <td>
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence"');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    $donnees = $reponse->fetch();
+                        echo $donnees["valeur"];
+                    $reponse->closeCursor();
+                   ?>
+                    </td>
+                </tr>
+                </table></P>
+                <section>
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    $donnees = $reponse->fetch();?>
+                    <article class="testson">
+                        <h3>Test n°1: Réactivité à un son innatendu</h3>
+                        <p> Vous avez mis <?php echo $donnees["valeur"] ?> secondes à réagir. </p>
+                    </article>
+
+                    <article class="testlumiere">
+                        <h3>Test n°2: Réactivité à une lumière innatendue</h3>
+                        <p> Graphique </p>
+                    </article>
+>>>>>>> Stashed changes
 
 	           while ($donnees = $reponse->fetch())
                 {

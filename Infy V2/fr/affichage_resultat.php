@@ -18,15 +18,8 @@
         {
             echo "<h2>Vos Résultats</h2>";
 
-            try
-            {
-                $bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "informatique");
-            }
-            catch (Exception $e)
-            {
-                die("Erreur : " . $e->getMessage());
-            }
-    
+            include('../php_fr/connexionbdd.php');
+
             $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
             $req->execute(array($_SESSION["ID"]));
             $donnees = $req->fetch();
@@ -43,10 +36,8 @@
                 }   
             }
             else
-            {
-	           $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
-	           $reponse->execute(array($_GET["IDtest"]));
-            ?>
+
+            {?>
             <P><table>
                 <tr>
                     <th> Température </th>
@@ -74,8 +65,7 @@
                     </td>
                 </tr>
                 </table></P>
-                <section id = "test">
-                    
+                <section id = "test">                 
                     <article class="testson">
                     <?php 
                     $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
@@ -107,6 +97,7 @@
                 </section>
                 <a href=profil_utilisateur.php class="retour">Profil </a>
             <?php
+
             }
         }
         ?>

@@ -33,6 +33,7 @@
 	}
 	?>
 	</div>
+	<br><br>
     </main>
 
       <?php include("header_footer/footer.php")?>

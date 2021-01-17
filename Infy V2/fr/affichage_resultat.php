@@ -43,12 +43,10 @@
                 }   
             }
             else
-<<<<<<< Updated upstream
             {
 	           $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
 	           $reponse->execute(array($_GET["IDtest"]));
-=======
-            {?>
+            ?>
             <P><table>
                 <tr>
                     <th> Température </th>
@@ -90,8 +88,6 @@
 
                     <article class="testlumiere">
                         <h3>Test n°2: Réactivité à une lumière innatendue</h3>
-<<<<<<< Updated upstream
-=======
                         <p> 
                             <?php 
                             $reponse= $bdd->prepare('SELECT id_test, users.id_user  FROM tests INNER JOIN users ON (users.id_user = tests.id_user)WHERE id_test = ?');
@@ -105,21 +101,10 @@
 
                     <article class="testfreq">
                         <h3>Test n°3: Reproduction d'une fréquence</h3>
->>>>>>> Stashed changes
                         <p> Graphique </p>
                     </article>
->>>>>>> Stashed changes
-
-	           while ($donnees = $reponse->fetch())
-                {
-                    echo $donnees["valeur"].' '.$donnees["unite_mesure"].'</br>';
-                }
-                echo "<a href=profil_utilisateur.php> Retour au profil </a>";
+                    <a href=profil_utilisateur.php> Retour au profil </a>
             }
-        }
-        else
-        {
-            echo"why";
         }
         ?>
     </main>

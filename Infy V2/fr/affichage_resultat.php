@@ -88,16 +88,19 @@
 
                     <article class="testlumiere">
                         <h3>Test n°2: Réactivité à une lumière innatendue</h3>
-                        <p> 
-                            <?php 
+                        <div> 
+                            
+                           <?php 
+                            
                             $reponse= $bdd->prepare('SELECT id_test, users.id_user  FROM tests INNER JOIN users ON (users.id_user = tests.id_user)WHERE id_test = ?');
                             $reponse->execute(array($_GET["IDtest"]));
                             $donnees = $reponse->fetch();
+                            echo "<img src='../../../jpgrahp_histo.php?IDtest=".$donnees["id_test"]."'>";
                             //echo "<a href='../../../jpgrahp_histo.php?IDtest=".$donnees["id_test"]."'> Graphique</a>"
-                            echo "<a href='type.php?ID=".$donnees["id_user"]."&IDtest=".$donnees["id_test"]."'> Graphique</a>"
+                            //echo "<a href='../../../jgraph_histo_or.php'> Graphique</a>"
                             ?>
-                        </p>
-                    </artcile>
+                        </div>
+                    </article>
 
                     <article class="testfreq">
                         <h3>Test n°3: Reproduction d'une fréquence</h3>

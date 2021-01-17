@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Vos résultats</title>
         <link rel="stylesheet" href="../css/header_footer.css">
-        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/affichage_resultats.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
@@ -37,42 +37,53 @@
             }
             else
             {?>
-            <?php $reponse= $bdd->prepare('SELECT valeur, unite_mesure FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? )');
-               $reponse->execute(array($_GET["IDtest"]));
-
-               while ($donnees = $reponse->fetch())
-                {
-                    echo $donnees["valeur"].' '.$donnees["unite_mesure"].'</br>';
-                }?>
             <P><table>
                 <tr>
-                    <td> Température </td>
+                    <th> Température </th>
                     <td> 
                     <?php 
-                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température');
+                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température"');
                     $reponse->execute(array($_GET["IDtest"]));
-                    while($donnees = $reponse->fetch())
-                    {
+                    $donnees = $reponse->fetch();
                         echo $donnees["valeur"];
-                    }
+                    $reponse->closeCursor();
                     ?>
                     </td>
                 </tr>
 
                 <tr>
-                    <td> Fréquence Cardiaque </td>
-                    <td> 
+                    <th> Fréquence Cardiaque </th>
+                    <td>
                     <?php 
-                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence');
+                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence"');
                     $reponse->execute(array($_GET["IDtest"]));
-                    while($donnees = $reponse->fetch())
-                    {
+                    $donnees = $reponse->fetch();
                         echo $donnees["valeur"];
-                    }
+                    $reponse->closeCursor();
                    ?>
                     </td>
                 </tr>
                 </table></P>
+                <section>
+                    <?php 
+                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
+                    $reponse->execute(array($_GET["IDtest"]));
+                    $donnees = $reponse->fetch();?>
+                    <article class="testson">
+                        <h3>Test n°1: Réactivité à un son innatendu</h3>
+                        <p> Vous avez mis <?php echo $donnees["valeur"] ?> secondes à réagir. </p>
+                    </article>
+
+                    <artcile class="testlumiere">
+                        <h3>Test n°2: Réactivité à une lumière innatendue</h3>
+                        <p> Graphique </p>
+                    </artcile>
+
+                    <article class="testfreq">
+                        <h3>Test n°3: Reproduction d'une fréquence</h3>
+                        <p> Graphique </p>
+                    </article>
+                </section>
                 <?php 
                 echo "<a href=profil_utilisateur.php> Retour au profil </a>";
             }

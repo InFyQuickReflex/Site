@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <head> 
         <meta charset="utf-8">
         <title>Modifier le capteur</title>
         <link rel="stylesheet" href="../css/header_footer.css">
@@ -37,6 +37,7 @@
 			$req = selectCapteur($bdd,$_GET['ID']);
             $donnees = $req->fetch();
 		?>
+		<br><br>
 		<h2>Modifier le capteur</h2>
 		<form method="POST" action="../php_fr/modifier_capteur.php">
 		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>

@@ -37,6 +37,7 @@
 			$req = selectBoitier($bdd,$_GET["ID"]);
             $donnees = $req->fetch();
 		?>
+        <br><br>
 		<h2>Modifier le boitier</h2>
 		<form method="POST" action="../php_fr/modifier_boitier.php">
 		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>

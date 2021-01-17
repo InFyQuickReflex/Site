@@ -3,7 +3,7 @@ session_start();
 ?>
 
 <header>
-    <a href="menu_principal.php"><img src="../img/infy_white.png" class="logo"></a>
+    <a href="menu_principal.php"><img src="../img/quick_reflex.PNG" class="logo"></a>
 
     <nav class="menu">
         <ul>

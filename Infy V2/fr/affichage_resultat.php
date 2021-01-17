@@ -78,9 +78,11 @@
                 </table></P>
                 <section>
                     <?php 
-                    $reponse= $bdd->prepare('SELECT valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
+                    $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
                     $reponse->execute(array($_GET["IDtest"]));
-                    $donnees = $reponse->fetch();?>
+                    $donnees = $reponse->fetch();
+                    $reponse->closeCursor()
+                    ?>
                     <article class="testson">
                         <h3>Test n°1: Réactivité à un son innatendu</h3>
                         <p> Vous avez mis <?php echo $donnees["valeur"] ?> secondes à réagir. </p>
@@ -88,6 +90,22 @@
 
                     <article class="testlumiere">
                         <h3>Test n°2: Réactivité à une lumière innatendue</h3>
+<<<<<<< Updated upstream
+=======
+                        <p> 
+                            <?php 
+                            $reponse= $bdd->prepare('SELECT id_test, users.id_user  FROM tests INNER JOIN users ON (users.id_user = tests.id_user)WHERE id_test = ?');
+                            $reponse->execute(array($_GET["IDtest"]));
+                            $donnees = $reponse->fetch();
+                            //echo "<a href='../../../jpgrahp_histo.php?IDtest=".$donnees["id_test"]."'> Graphique</a>"
+                            echo "<a href='type.php?ID=".$donnees["id_user"]."&IDtest=".$donnees["id_test"]."'> Graphique</a>"
+                            ?>
+                        </p>
+                    </artcile>
+
+                    <article class="testfreq">
+                        <h3>Test n°3: Reproduction d'une fréquence</h3>
+>>>>>>> Stashed changes
                         <p> Graphique </p>
                     </article>
 >>>>>>> Stashed changes

@@ -18,6 +18,7 @@
 	if(isset($_SESSION["ID"]))
     {
 	  include('../php_fr/connexionbdd.php');
+      include('../php_fr/fonctions/fonctions_cgu.php');
     
         $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
         $req->execute(array($_SESSION["ID"]));
@@ -38,9 +39,8 @@
 
         else
         {
-            $req = $bdd->prepare("SELECT * FROM CGU WHERE id_CGU = ?");
-            $req->execute(array($_GET["ID"]));
-            $donnees = $req->fetch();
+            $donnees = SelectOneCgu($bdd,$_GET["ID"]);
+            $donnees = $donnees->fetch();
             ?>
             <br>
             <h2>Modifier le paragraphe</h2>
@@ -51,9 +51,9 @@
 
                 <label for="nom">Paragraphe : </label><textarea rows="10" cols="100" name="paragraphe" id="paragraphe"><?php echo $donnees["paragraphe_fr"] ?></textarea><br><br>
 
-                <input type="submit" value="Valider">
+                <input type="submit" name = "action" value="Modifier">
                 <a href="gerer_cgu.php" class="cancel">Annuler</a>
-                <a href="../php_fr/supprimer_cgu.php?ID=<?php echo $_GET["ID"] ?>" class="delete">Supprimer</a>
+                <input type="submit" name = "action" value="Supprimer" class="delete">
             </form>
     <?php 
         }

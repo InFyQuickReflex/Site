@@ -22,7 +22,7 @@
 
 	$req = $bdd->query("SELECT titre_fr, paragraphe_fr FROM CGU");
 	while ($donnees = $req->fetch()){
-		echo "<h3>".$donnees["titre"]."</h3>";
+		echo "<h3>".$donnees["titre_fr"]."</h3>";
 		echo "<p>".$donnees["paragraphe_fr"]."</p>";
 	}
 	?>

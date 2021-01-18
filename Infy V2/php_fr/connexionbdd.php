@@ -1,7 +1,8 @@
 <?php
 try
 {
-	$bdd = new PDO("mysql:host=mysql-g5c.alwaysdata.net;dbname=g5c_infy;charset=utf8", "g5c", "g5cappbdd");
+	$bdd = new PDO("mysql:host=mysql-infy.alwaysdata.net;dbname=infy_qr;charset=utf8", "infy", "g5cappbdd");
+
 }
 catch (Exception $e)
 {

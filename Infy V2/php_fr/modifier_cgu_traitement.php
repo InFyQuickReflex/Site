@@ -1,7 +1,7 @@
 <?php 
 session_start(); 
 
-include('connexionbdd.php');
+include('connexionbdd.php'); 
 include('fonctions/fonctions_cgu.php');
 
 if(isset($_POST["action"]) && $_POST["action"]=="Modifier") {
@@ -17,7 +17,7 @@ elseif(isset($_POST["action"])  && $_POST["action"]=="Supprimer"){
 }
 
 elseif(isset($_POST["action"])  && $_POST["action"]=="Ajouter"){
-	$donnees = CreateCgu($bdd,$_POST["titre"],$_POST["paragraphe"]);
+	$donnees = CreateCgu($bdd,htmlspecialchars($_POST["titre"]),htmlspecialchars($_POST["paragraphe"]));
 	$donnees->closeCursor();
 	header("Location: ../fr/gerer_cgu.php");
 }

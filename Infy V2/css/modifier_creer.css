@@ -26,7 +26,7 @@ main form input[type = text], main form input[type = password]
     width: 300px;
 }
 
-main form input[type = submit]
+main form .modifier
 {
     background-color: #fff;
     font-size: 16px;
@@ -38,7 +38,7 @@ main form input[type = submit]
     border-radius: 5px;
 }
 
-main form input[type = submit]:hover
+main form .modifier:hover
 {
     background-color: green;
     color: #fff;

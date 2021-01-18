@@ -46,16 +46,17 @@ session_start();
             {
                 ?>
                 <li><a href="page_connexion.php">SE CONNECTER</a></li>
+                <nav class="langue">
+                    <ul>
+                        <li><a href=""><img src="../img/ic_fr.png" class="icone"></a></li>
+                        <li><a href="../en/menu_principal_en.php"><img src="../img/ic_en.png" class="icone"></a></li>
+                    </ul>
+    </nav>
                 <?php
             }
             ?>
         </ul>
     </nav>
 
-    <nav class="langue">
-        <ul>
-            <li><a href=""><img src="../img/ic_fr.png" class="icone"></a></li>
-            <li><a href=""><img src="../img/ic_en.png" class="icone"></a></li>
-        </ul>
-    </nav>
+    
 </header>

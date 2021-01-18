@@ -45,7 +45,7 @@
               ?>
               <br>
               <h2>Modifier l'utilisateur</h2>
-              <form method="POST" action="../php_fr/modifier.php">
+              <form method="POST" action="../php_fr/modifier_user_traitement.php">
                   <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 
                   <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" value="<?php echo $donnees["prenom"] ?>"><br><br>
@@ -61,9 +61,10 @@
                   <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
 
 
-                  <input type="submit" value="Valider">
+                  <input type="submit" name="action" value="Modifier">
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
-                  <a href="../php_fr/supprimer.php?ID=<?php echo $_GET["ID"] ?>" class="delete">Supprimer</a>
+                  <input type="submit" name = "action" value="Supprimer" class="delete">
+                  <!--<a href="../php_fr/supprimer.php?ID=<?php //echo $_GET["ID"] ?>" class="delete">Supprimer</a>-->
               </form>
 
               <?php

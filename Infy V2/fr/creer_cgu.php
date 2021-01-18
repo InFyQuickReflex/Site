@@ -35,7 +35,7 @@
           }
       }
 
-      else
+      else 
       { ?>
         <br>
         <h2>Ajouter un paragraphe</h2>
@@ -44,7 +44,7 @@
           <input type="text" name="titre" id="titre" required><br><br>
           <label for="paragraphe"> Paragraphe : </label><br>
           <textarea rows="10" cols="100" name="paragraphe" id="paragraphe" required></textarea><br><br>
-          <input type="submit" name="action" value="Ajouter">
+          <input type="submit" name="action" class = "modifier" value="Ajouter">
           <a href="gerer_cgu.php" class="cancel">Annuler</a>
         </form>
       </main>

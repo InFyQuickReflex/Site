@@ -47,11 +47,11 @@
             <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
                 <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 
-                <label for="prenom">Titre : </label><input type="text" name="titre" id="titre" value="<?php echo $donnees["titre"] ?>"><br><br>
+                <label for="prenom">Titre : </label><input type="text" name="titre" id="titre" value="<?php echo $donnees["titre_fr"] ?>"><br><br>
 
                 <label for="nom">Paragraphe : </label><textarea rows="10" cols="100" name="paragraphe" id="paragraphe"><?php echo $donnees["paragraphe_fr"] ?></textarea><br><br>
 
-                <input type="submit" name = "action" value="Modifier">
+                <input type="submit" name = "action" class = "modifier" value="Modifier">
                 <a href="gerer_cgu.php" class="cancel">Annuler</a>
                 <input type="submit" name = "action" value="Supprimer" class="delete">
             </form>

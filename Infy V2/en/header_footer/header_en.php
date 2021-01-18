@@ -7,8 +7,8 @@ session_start();
 
     <nav class="menu">
         <ul>
-            <li><a href="menu_principal.php">HOME</a></li>
-            <li><a href="notre_produit.php">OUR PRODUCT</a></li>
+            <li><a href="../en/menu_principal_en.php">HOME</a></li>
+            <li><a href="../en/notre_produit_en.php">OUR PRODUCT</a></li>
             <?php
             if(isset($_SESSION["ID"]))
             {
@@ -21,21 +21,21 @@ session_start();
                 if ($donnees["permission"] == "utilisateur")
                 {
                     ?>
-                    <li><a href="profil_utilisateur.php">MY PROFILE</a></li>
+                    <li><a href="profil_utilisateur_en.php">MY PROFILE</a></li>
                     <?php
                 }
 
                 else if($donnees["permission"] == "gestionnaire")
                 {
                     ?>
-                    <li><a href="profil_gestionnaire.php">MY PROFILE</a></li>
+                    <li><a href="profil_gestionnaire_en.php">MY PROFILE</a></li>
                     <?php
                 }
                 
                 if($donnees["permission"] == "administrateur")
                 {
                     ?>
-                    <li><a href="profil_administrateur.php">MY PROFILE</a></li>
+                    <li><a href="profil_administrateur_en.php">MY PROFILE</a></li>
                     <?php
                 }
                 
@@ -45,17 +45,18 @@ session_start();
             else
             {
                 ?>
-                <li><a href="page_connexion.php">LOG IN</a></li>
+                <li><a href="page_connexion_en.php">LOG IN</a></li>
+                <nav class="langue">
+                    <ul>
+                        <li><a href="../fr/menu_principal.php"><img src="../img/ic_fr.png" class="icone"></a></li>
+                        <li><a href=""><img src="../img/ic_en.png" class="icone"></a></li>
+                    </ul>
+    </nav>
                 <?php
             }
             ?>
         </ul>
     </nav>
 
-    <nav class="langue">
-        <ul>
-            <li><a href=""><img src="../img/ic_fr.png" class="icone"></a></li>
-            <li><a href=""><img src="../img/ic_en.png" class="icone"></a></li>
-        </ul>
-    </nav>
+    
 </header>

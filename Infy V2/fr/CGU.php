@@ -20,7 +20,7 @@
 
 	include('../php_fr/connexionbdd.php');
 
-	$req = $bdd->query("SELECT titre, paragraphe_fr FROM CGU");
+	$req = $bdd->query("SELECT titre_fr, paragraphe_fr FROM CGU");
 	while ($donnees = $req->fetch()){
 		echo "<h3>".$donnees["titre"]."</h3>";
 		echo "<p>".$donnees["paragraphe_fr"]."</p>";

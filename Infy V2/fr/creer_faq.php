@@ -2,7 +2,7 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <title>Ajouter un paragraphe</title>
+        <title>Ajouter une question</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -38,14 +38,14 @@
       else
       { ?>
         <br>
-        <h2>Ajouter un paragraphe</h2>
-        <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
-          <label for="titre">Titre : </label>
-          <input type="text" name="titre" id="titre" required><br><br>
-          <label for="paragraphe"> Paragraphe : </label><br>
-          <textarea rows="10" cols="100" name="paragraphe" id="paragraphe" required></textarea><br><br>
+        <h2>Ajouter une question</h2>
+        <form method="POST" action="../php_fr/modifier_faq_traitement.php">
+          <label for="question">Question : </label>
+          <input type="text" name="question" id="question" required><br><br>
+          <label for="reponse"> Reponse : </label><br>
+          <textarea rows="10" cols="100" name="reponse" id="reponse" required></textarea><br><br>
           <input type="submit" name="action" value="Ajouter">
-          <a href="gerer_cgu.php" class="cancel">Annuler</a>
+          <a href="gerer_faq.php" class="cancel">Annuler</a>
         </form>
       </main>
 

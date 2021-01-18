@@ -74,8 +74,8 @@
 		?>
 		</select>
 		<br><br>
-		<input type="submit" value="Valider">
-        <a href="gerer_capteurs.php">Retour aux capteurs</a>
+		<input type="submit" value="Valider" class=modifier>
+        <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php
 		  }

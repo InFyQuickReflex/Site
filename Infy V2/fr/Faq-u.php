@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="../css/stylefaq.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="stylefaq.css">
-    </head>
+    </head> 
 
     <body>
       <?php include("header_footer/header.php")?>

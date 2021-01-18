@@ -2,7 +2,7 @@
 <html> 
     <head>
         <meta charset="utf-8">
-        <title>Gérer les CGU</title>
+        <title>Modifier les CGU</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">

@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	</head>
 	<body>
-	<?php include("header_footer/header.php")?>
+	<?php include("header_footer/header_en.php")?>
 	<main>
 	<br>
 	<h1>Manage sensors</h1>
@@ -187,7 +187,7 @@
     }
     ?>
 	</main>
-	<?php include("header_footer/footer.php")?>
+	<?php include("header_footer/footer_en.php")?>
 	</body>
 	<script src='../css/gerer_capteurs.js'></script>
 </html>

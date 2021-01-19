@@ -10,7 +10,7 @@
     </head>
 
     <body>
-      <?php include("header_footer/header.php")?>
+      <?php include("header_footer/header_en.php")?>
 
       <main>
       <?php
@@ -52,6 +52,6 @@
       <?php 
       }
       }
-      include("header_footer/footer.php")?>
+      include("header_footer/footer_en.php")?>
     </body>
 </html>

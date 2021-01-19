@@ -60,7 +60,7 @@
 
             <br>
             <div class="start_test">
-                <a href="">Commencer un nouveau test</a>
+                <a href="commencer_test.php">Commencer un nouveau test</a>
             </div>
             
             <br>

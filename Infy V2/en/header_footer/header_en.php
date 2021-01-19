@@ -45,7 +45,7 @@ session_start();
             else
             {
                 ?>
-                <li><a href="page_connexion_en.php">LOG IN</a></li>
+                <li><a href="../en/page_connexion_en.php">LOG IN</a></li>
                 
                 <?php
             }

@@ -19,12 +19,12 @@
 	<?php
 
 	include('../php_fr/connexionbdd.php');
-
-	$req = $bdd->query("SELECT titre_fr, paragraphe_fr FROM CGU");
-	while ($donnees = $req->fetch()){
-		echo "<h3>".$donnees["titre_fr"]."</h3>";
-		echo "<p>".$donnees["paragraphe_fr"]."</p>";
-	}
+    include('../php_fr/fonctions/fonctions_cgu.php');
+    $reqcgu = SelectCgu($bdd);
+    while ($donnees = $reqcgu->fetch()){
+       echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p>";
+    }
+    $reqcgu->closeCursor();
 	?>
 	</div>
 

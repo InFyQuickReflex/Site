@@ -44,16 +44,9 @@
         
 	<?php
 	$reqcgu = SelectCgu($bdd);
-    if($reqcgu->rowCount() == 0)
-    {
-        echo "Aucun texte";
-    }            
-    else
-    {
-	    while ($donnees = $reqcgu->fetch()){
-	       echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
-	    }
-    }
+	while ($donnees = $reqcgu->fetch()){
+	   echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='modifier_cgu.php?ID=".$donnees["id_CGU"]."'>Modifier</a></p>";
+	}
     $reqcgu->closeCursor();
 	?>
 	</div>

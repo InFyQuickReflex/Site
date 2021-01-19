@@ -9,15 +9,16 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head> 
 
-    <body>
+    <body> 
       <?php include("header_footer/header.php");
-      include('../php_fr/connexionbdd.php');?>
+      include('../php_fr/connexionbdd.php');
+      include('../php_fr/fonctions/fonctions_faq.php');?>
 
       <main>
         <br><br>
         <h1>Consultez la FAQ !</h1>
         <?php
-        $req = $bdd->query('SELECT * FROM FAQ');
+        $req = SelectFaq($bdd);
 
         while($donnees = $req->fetch())
           {?>
@@ -28,7 +29,7 @@
               <?php echo $donnees['reponse_fr']?>
             </div>
         <?php }?>
-
+      </main>
       <script src="../css/faq.js"></script>
       <?php include("header_footer/footer.php")?>
     </body>

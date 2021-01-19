@@ -11,7 +11,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="Valider") {
 	header("Location: ../fr/profil_gestionnaire.php");
 }
 elseif (isset($_POST["action"]) && $_POST["action"]=="Modifier"){
-	$donnees = EditUser($bdd,htmlspecialchars($_POST["ID"]),htmlspecialchars($_POST["prenom"]), htmlspecialchars($_POST["nom"]),htmlspecialchars($_POST["identifiant"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["date_de_naissance"]),htmlspecialchars($_POST["telephone"]));
+	$donnees = EditUser($bdd,htmlspecialchars($_POST["ID"]),htmlspecialchars($_POST["prenom"]), htmlspecialchars($_POST["nom"]),htmlspecialchars($_POST["identifiant"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["date_de_naissance"]),htmlspecialchars($_POST["telephone"]),htmlspecialchars($_POST["permission"]));
 	$donnees->closeCursor();
 	header("Location: ../fr/profil_gestionnaire.php");
 }

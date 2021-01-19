@@ -61,10 +61,9 @@
                   <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
 
 
-                  <input type="submit" name="action" value="Modifier">
+                  <input type="submit" name="action" class="modifier" value="Modifier">
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
                   <input type="submit" name = "action" value="Supprimer" class="delete">
-                  <!--<a href="../php_fr/supprimer.php?ID=<?php //echo $_GET["ID"] ?>" class="delete">Supprimer</a>-->
               </form>
 
               <?php

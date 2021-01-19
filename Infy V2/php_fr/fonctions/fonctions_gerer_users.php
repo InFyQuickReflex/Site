@@ -5,9 +5,9 @@ function CreateUser ($bdd,$prenom, $nom, $identifiant, $email, $mot_de_passe, $d
 	return $req;
 }
 
-function EditUser ($bdd,$ID, $prenom, $nom, $identifiant, $email, $date_de_naissance, $telephone){
-	$req = $bdd->prepare("UPDATE users SET prenom = ?, nom = ?, identifiant = ?, email = ?, date_de_naissance = ?, telephone = ? WHERE id_user = ?");
-	$req->execute(array($prenom, $nom, $identifiant, $email, $date_de_naissance, $telephone, $ID));
+function EditUser ($bdd,$ID, $prenom, $nom, $identifiant, $email, $date_de_naissance, $telephone, $permission){
+	$req = $bdd->prepare("UPDATE users SET prenom = ?, nom = ?, identifiant = ?, email = ?, date_de_naissance = ?, telephone = ?, permission = ? WHERE id_user = ?");
+	$req->execute(array($prenom, $nom, $identifiant, $email, $date_de_naissance, $telephone, $permission, $ID));
 	return $req;
 }
 

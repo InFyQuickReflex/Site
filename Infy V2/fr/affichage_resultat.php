@@ -19,25 +19,9 @@
             echo "<h2>Vos Résultats</h2>";
 
             include('../php_fr/connexionbdd.php');
-
-            $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
-            $req->execute(array($_SESSION["ID"]));
-            $donnees = $req->fetch();
-
-            if($donnees["permission"] != "utilisateur")
-            {
-                if($donnees["permission"] == "administrateur")
-                {
-                    header("Location: profil_administrateur.php");
-                }
-                else if($donnees["permission"] == "gestionnaire")
-                {
-                header("Location: profil_gestionnaire.php");
-                }   
-            }
-            else
-
-            {?>
+            include('../php_fr/fonctions/fonctions_permission.php');
+            $rep = PermissionUser($bdd);
+            ?>
             <P><table>
                 <tr>
                     <th> Température </th>
@@ -114,9 +98,7 @@
                     </article>
                 </section>
                 <a href="profil_utilisateur.php" class="retour">Profil </a>
-            <?php
-
-            }
+        <?php
         }
         ?>
     </main>

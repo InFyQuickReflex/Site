@@ -16,7 +16,7 @@
       <br>
         <form method="post" action="timer.php" class="test_start">
             <p>
-                <label for="num_boitier">Box number : </label><input type="text" name= "num_boitier" id="num_boitier" required><br><br>
+                <label for="num_boitier">Case number : </label><input type="text" name= "num_boitier" id="num_boitier" required><br><br>
                 <input type="submit" value="Start the test" class="button">
             </p>
         </form>

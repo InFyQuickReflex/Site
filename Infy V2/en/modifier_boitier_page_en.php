@@ -37,10 +37,10 @@
             $donnees = $req->fetch();
 		?>
         <br><br>
-		<h2>Edit the box</h2>
+		<h2>Edit a case</h2>
 		<form method="POST" action="../php_en/modifier_boitier_en.php">
-		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>"" readonly><br><br>
-		<label for="numero">Box number : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_boitier'] ?>"><br><br>
+		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
+		<label for="numero">Case number : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_boitier'] ?>"><br><br>
 		<input type="submit" value="Valider" class=modifier>
         <a href="gerer_capteurs.php" class=cancel>Back to sensors</a>
 		</form>

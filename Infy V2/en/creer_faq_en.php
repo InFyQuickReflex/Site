@@ -44,7 +44,7 @@
           <input type="text" name="question" id="question" required><br><br>
           <label for="reponse"> Answer : </label><br>
           <textarea rows="10" cols="100" name="reponse" id="reponse" required></textarea><br><br>
-          <input type="submit" name="action" class="modifier" value="Ajouter">
+          <input type="submit" name="action" class="modifier" value="Add">
           <a href="gerer_faq.php" class="cancel">Cancel</a>
         </form>
       </main>

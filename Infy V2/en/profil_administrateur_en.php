@@ -10,7 +10,7 @@
     </head>
 
     <body>
-    <?php include("header_footer/header.php")?>
+    <?php include("header_footer/header_en.php")?>
 
     <main>
         <?php
@@ -59,10 +59,10 @@
 
             <br>
             <div class="button_container">
-                <a href="gerer_capteurs.php">Gérer les capteurs</a>
-                <a href="">Gérer les droits d'accès</a>
-                <a href="">Gérer la FAQ</a>
-                <a href="gerer_cgu.php"> Gérer les CGU</a>
+                <a href="gerer_capteurs.php">Manage sensors</a>
+                <a href="gerer_droits_en.php">Manage access rights</a>
+                <a href="gerer_faq.php">Manage FAQ</a>
+                <a href="gerer_cgu.php"> Manage legal notices </a>
             </div>
                        
             <?php
@@ -75,6 +75,6 @@
         ?>  
       </main>
 
-      <?php include("header_footer/footer.php")?>
+      <?php include("header_footer/footer_en.php")?>
     </body>
 </html>

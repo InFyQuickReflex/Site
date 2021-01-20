@@ -50,7 +50,7 @@
                   <label for="date_de_naissance"> Date of birth : </label><input type="date" name="date_de_naissance" id="date_de_naissance" required><br><br>
                   <label for="telephone">Phone : </label><input type="tel" name="telephone" id="telephone" required><br><br>
 
-                  <input type="submit" name="action" class="modifier"value="Valider">
+                  <input type="submit" name="action" class="modifier"value="Confirm">
                   <a href="profil_gestionnaire.php" class="cancel">Cancel</a>
               </form>
 

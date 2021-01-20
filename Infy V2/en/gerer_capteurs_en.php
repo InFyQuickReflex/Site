@@ -59,7 +59,7 @@
 					."<br>Associated case (ID) : ".$id_boitier."<br>
 					Type : ".$nom_type." (".$unite_type.") <br><br>
 					<button id=SupCap".$id_capteurs." class=BoutonSupprimer>Delete</button>
-					<a href='modifier_capteur_page_en.php?ID=".$id_capteurs."' class=BoutonModifier>Modifier</a>
+					<a href='modifier_capteur_page_en.php?ID=".$id_capteurs."' class=BoutonModifier>Edit</a>
 					</article>";
 				}
 				}
@@ -86,9 +86,9 @@
 					echo "<article class=Capteur>
 					<h2 class=TitreCapteur>".$nom_type."</h2>
 					ID : ".$id_type.
-					"<br>Unit of measure : ".$unite_capteur."<br><br>
+					"<br>Unit of measurement : ".$unite_capteur."<br><br>
 					<button id=SupTyp".$id_type." class=BoutonSupprimer>Delete</button>
-					<a href='modifier_type_capteur_page_en.php?ID=".$id_type."' class=BoutonModifier>Modifier</a>
+					<a href='modifier_type_capteur_page_en.php?ID=".$id_type."' class=BoutonModifier>Edit</a>
 					</article>";
 				}
 			}
@@ -160,9 +160,9 @@
 			<form method='post' action='../php_en/ajouter_type_capteur_en.php'>
 			<label for="nom">Sensor Type Name : </label>
 			<input type="text" name="nom" id="nom"><br><br>
-			<label for="unite">Sensor unit of measure : </label>
+			<label for="unite">Sensor unit of measurement : </label>
 			<input type="text" name="unite" id="unite"><br><br>
-			<input type="submit" value="Envoyer">
+			<input type="submit" value="Confirm">
 			<input type="reset" value="Reset">
 			</form>
 			</div>
@@ -171,9 +171,9 @@
 			<h1 class=TitreSection>Add new case</h1>
 			<div class='contenusection'>
 			<form method='post' action='../php_en/ajouter_boitier_en.php'>
-			<label for="numero">Box number : </label>
+			<label for="numero">Case number : </label>
 			<input type="text" name="numero" id="numero"><br><br>
-			<input type="submit" value="Envoyer">
+			<input type="submit" value="Confirm">
 			<input type="reset" value="Reset">
 			</form>
 			</div>

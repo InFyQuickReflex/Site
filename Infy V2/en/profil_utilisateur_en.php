@@ -18,7 +18,7 @@
           {
             ?>
             <br>
-            <h2>Users profile</h2>
+            <h2>User profile</h2>
 
             <div class="profil">
                 <img src="../img/pp.png">
@@ -73,7 +73,7 @@
 
                 while ($donnees = $reponse->fetch())
                 {
-                    echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Results </a> </br></p>';       
+                    echo '<p>Test of ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Results </a> </br></p>';       
                 }
                ?>
             </div>

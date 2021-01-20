@@ -59,7 +59,7 @@
 
             <br>
             <div class="button_container">
-                <a href="gerer_capteurs.php">Manage sensors</a>
+                <a href="gerer_capteurs_en.php">Manage sensors</a>
                 <a href="gerer_droits_en.php">Manage access rights</a>
                 <a href="gerer_faq_en.php">Manage FAQ</a>
                 <a href="gerer_cgu_en.php"> Manage legal notices </a>

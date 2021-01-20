@@ -189,5 +189,5 @@
 	</main>
 	<?php include("header_footer/footer_en.php")?>
 	</body>
-	<script src='../css/gerer_capteurs.js'></script>
+	<script src='../css/gerer_capteurs_en.js'></script>
 </html>

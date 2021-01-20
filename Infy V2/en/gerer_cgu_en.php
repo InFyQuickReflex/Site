@@ -2,7 +2,7 @@
 <html> 
     <head>
         <meta charset="utf-8">
-        <title>Manage legal notices</title>
+        <title>Manage General User Conditions</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/gerer_cgu.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -39,7 +39,7 @@
     }
 	?>
 	<br>
-	<h1> Legal Notices </h1>
+	<h1> General User Conditions </h1>
 	<div class=CGU>
         
 	<?php

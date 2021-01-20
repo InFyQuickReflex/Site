@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script language='javascript'>
+        function Confirmation()
+        {
+            if (confirm("Voulez-vous confirmer?"))
+            {
+                formulaire.submit();
+            }
+        }
+        </script>
     </head>
 
     <body>
@@ -63,7 +72,7 @@
                   <label for="permission">Permission : </label><input type="text" name="permission" id="permission" value="<?php echo $donnees["permission"] ?>"><br><br>
 
 
-                  <input type="submit" name="action" class="modifier" value="Modifier">
+                  <input type="submit" name="action" class="modifier" value="Modifier" onclick= 'Confirmation()';>
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
               </form>
 

@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src = "../css/popup.js"></script>
     </head>
 
     <body>
@@ -42,7 +43,7 @@
 		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 		<label for="nom">Nom du type : </label><input type="text" name="nom" id="nom" value="<?php echo $donnees['nom_type'] ?>"><br><br>
 		<label for="unite">Unité de mesure : </label><input type="text" name="unite" id="unite" value="<?php echo $donnees['unite_capteur'] ?>"><br><br>
-		<input type="submit" value="Valider" class=modifier>
+		<input type="submit" value="Valider" class=modifier onclick= 'Confirmation()';>
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php

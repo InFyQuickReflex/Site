@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src = "../css/popup.js"></script>
     </head>
 
     <body>
@@ -61,9 +62,9 @@
                   <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
 
 
-                  <input type="submit" name="action" class="modifier" value="Modifier">
+                  <input type="submit" name="action" class="modifier" value="Modifier" onclick= 'Confirmation()';>
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
-                  <input type="submit" name = "action" value="Supprimer" class="delete">
+                  <input type="submit" name = "action" value="Supprimer" class="delete" onclick= 'Confirmation()';>
               </form>
 
               <?php

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src = "../css/popup.js"></script>
     </head>
 
     <body>
@@ -51,9 +52,9 @@
 
                 <label for="paragraphe_en">Paragraph : </label><textarea rows="10" cols="100" name="paragraphe_en" id="paragraphe"><?php echo $donnees["paragraphe_en"] ?></textarea><br><br>
 
-                <input type="submit" name = "action" class = "modifier" value="Edit">
+                <input type="submit" name = "action" class = "modifier" value="Edit" onclick= 'Confirmation()';>
                 <a href="gerer_cgu_en.php" class="cancel">Cancel</a>
-                <input type="submit" name = "action" value="Delete" class="delete">
+                <input type="submit" name = "action" value="Delete" class="delete" onclick= 'ConfirmationEng()';>
             </form>
     <?php 
         }

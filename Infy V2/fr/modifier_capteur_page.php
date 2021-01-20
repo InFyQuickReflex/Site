@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src = "../css/popup.js"></script>
     </head>
 
     <body>
@@ -74,7 +75,7 @@
 		?>
 		</select>
 		<br><br>
-		<input type="submit" value="Valider" class=modifier>
+		<input type="submit" value="Valider" class=modifier onclick= 'Confirmation()';>
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php

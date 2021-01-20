@@ -40,10 +40,14 @@
         <br>
         <h2>Ajouter un paragraphe</h2>
         <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
-          <label for="titre">Titre : </label>
-          <input type="text" name="titre" id="titre" required><br><br>
-          <label for="paragraphe"> Paragraphe : </label><br>
-          <textarea rows="10" cols="100" name="paragraphe" id="paragraphe" required></textarea><br><br>
+          <label for="titre_fr">Titre (français) : </label>
+          <input type="text" name="titre_fr" id="titre" required><br><br>
+          <label for="paragraphe_fr"> Paragraphe (français) : </label><br>
+          <textarea rows="10" cols="100" name="paragraphe_fr" id="paragraphe" required></textarea><br><br>
+          <label for="titre_en">Titre (anglais) : </label>
+          <input type="text" name="titre_en" id="titre" required><br><br>
+          <label for="paragraphe_en"> Paragraphe (anglais): </label><br>
+          <textarea rows="10" cols="100" name="paragraphe_en" id="paragraphe" required></textarea><br><br>
           <input type="submit" name="action" class = "modifier" value="Ajouter">
           <a href="gerer_cgu.php" class="cancel">Annuler</a>
         </form>

@@ -1,5 +1,5 @@
 <footer>
-    <a href="CGU_en.php">Legal notice </a>
+    <a href="CGU_en.php">Legal notice s</a>
 
     <nav>
         <ul>

@@ -42,8 +42,8 @@
 		<form method="POST" action="../php_en/modifier_boitier_en.php">
 		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 		<label for="numero">Case number : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_boitier'] ?>"><br><br>
-		<input type="submit" value="Valider" class=modifier onclick= 'ConfirmationEng()';>
-        <a href="gerer_capteurs.php" class=cancel>Back to sensors</a>
+		<input type="submit" value="Submit" class=modifier onclick= 'ConfirmationEng()';>
+        <a href="gerer_capteurs_en.php" class=cancel>Back to sensors</a>
 		</form>
 		<?php
 		  }

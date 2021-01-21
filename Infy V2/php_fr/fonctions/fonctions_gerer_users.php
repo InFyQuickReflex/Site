@@ -11,8 +11,19 @@ function EditUser ($bdd,$ID, $prenom, $nom, $identifiant, $email, $date_de_naiss
 	return $req;
 }
 
-function DeleteUser($bdd,$ID){
+function DeleteUser($bdd, $ID){
 	$req = $bdd->prepare("DELETE FROM users WHERE id_user = ?");
 	$req->execute(array($ID));
+	return $req;
+}
+
+function SelectUser($bdd, $ID){
+	$req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
+    $req->execute(array($ID));
+    return $req;
+}
+
+function SelectAllUser($bdd){
+	$req = $bdd->query("SELECT id_user, prenom, nom, identifiant FROM users ORDER BY nom");
 	return $req;
 }

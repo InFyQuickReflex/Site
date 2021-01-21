@@ -1,7 +1,8 @@
 <?php
  
 function SelectFaq($bdd){
-	$req = $bdd->query("SELECT * FROM FAQ");
+	$req = $bdd->prepare("SELECT * FROM FAQ");
+	$req->execute();
 	return $req;
 }
 
@@ -24,8 +25,6 @@ function EditFaq($bdd,$ID,$titre,$paragraphe){
 }
 
 function DeleteFaq($bdd,$ID){
-	$ID = htmlspecialchars($_POST["ID"]);
-
 	$req = $bdd->prepare("DELETE FROM FAQ WHERE id_FAQ = ?");
 	$req->execute(array($ID));
 	return $req;

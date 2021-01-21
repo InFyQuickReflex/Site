@@ -1,7 +1,8 @@
 <?php
 
 function SelectCgu($bdd){
-	$req = $bdd->query("SELECT * FROM CGU");
+	$req = $bdd->prepare("SELECT * FROM CGU");
+	$req->execute();
 	return $req;
 }
 

@@ -20,76 +20,34 @@
 
             include('../php_fr/connexionbdd.php');
             include('../php_fr/fonctions/fonctions_permission.php');
+            include('../php_fr/fonctions/fonctions_affichage.php');
             PermissionUser($bdd);
+            $ID = $_GET["IDtest"];
             ?>
             <P><table>
                 <tr>
                     <th> Température </th>
                     <td> 
-                    <?php 
-                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température"');
-                    $reponse->execute(array($_GET["IDtest"]));
-                    if($donnees = $reponse->fetch())
-                    {
-                        echo $donnees["valeur"]." degrés";
-                    }
-                    else
-                    {
-                        echo "Vous n'avez pas de résultats";
-                    }
-                    $reponse->closeCursor();
-                    ?>
+                    <?php AfficherTemp($bdd,$ID) ?>
                     </td>
                 </tr>
 
                 <tr>
                     <th> Fréquence Cardiaque </th>
                     <td>
-                    <?php 
-                    $reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence"');
-                    $reponse->execute(array($_GET["IDtest"]));
-                    if($donnees = $reponse->fetch())
-                    {
-                        echo $donnees["valeur"]." bpms";
-                    }
-                    else
-                    {
-                        echo "Vous n'avez pas de résultats";
-                    }
-                    $reponse->closeCursor();
-                    ?>
+                    <?php AfficherFreq($bdd, $ID) ?>
                     </td>
                 </tr>
                 </table></P>
                 <section id = "test">                 
                     <article class="testson">
                         <h3>Test n°1: Réactivité à un son innatendu</h3>
-                        <?php 
-                        $reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
-                        $reponse->execute(array($_GET["IDtest"]));
-                        if($donnees = $reponse->fetch())
-                        {
-                            echo"<p> Vous avez mis ".$donnees["valeur"]." secondes à réagir.</p>";  
-                        }
-                        else
-                        {
-                            echo"Vous n'avez pas de résultats";
-                        }
-                        $reponse->closeCursor();
-                        ?>
+                        <?php AfficherSon($bdd,$ID) ?>
                     </article>
 
                     <article class="testlumiere">
                         <h3>Test n°2: Réactivité à une lumière innatendue</h3>
-                            <?php                           
-                            $reponse= $bdd->prepare('SELECT id_test FROM tests WHERE id_test = ?');
-                            $reponse->execute(array($_GET["IDtest"]));
-                            $donnees = $reponse->fetch();
-                            
-                               echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."' >";  
-                            
-                            $reponse->closeCursor();                           
-                            ?>
+                            <?php AfficherLum($bdd, $ID) ?>
                     </article>
 
                     <article class="testfreq">

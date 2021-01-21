@@ -16,7 +16,10 @@
           <?php
           if(isset($_SESSION["ID"]))
           {
-            ?>
+            include('../php_fr/connexionbdd.php');
+            include('../php_fr/fonctions/fonctions_permission.php');
+            include('../php_fr/fonctions/fonctions_gerer_users.php');
+            $donnees = PermissionGestion($bdd); ?>
             <br>
             <h2>Profil Gestionnaire</h2>
 
@@ -24,9 +27,6 @@
                 <img src="../img/pp.png">
                 <p>
                     <?php
-                    include('../php_fr/connexionbdd.php');
-                    include('../php_fr/fonctions/fonctions_permission.php');
-                    $donnees = PermissionGestion($bdd);
                         echo "<strong>Prénom</strong> : ".$donnees["prenom"]."<br>";
                         echo "<strong>Nom</strong> : ".$donnees["nom"]."<br>";
                         echo "<strong>Identifiant</strong> : ".$donnees["identifiant"]."<br>";
@@ -52,7 +52,6 @@
             <div class="result">
                 
                 <?php
-                include('../php_fr/connexionbdd.php');
 
                 if(isset($_GET["recherche"]))
                 {
@@ -70,7 +69,7 @@
 
                 else
                 {
-                    $reponse = $bdd->query("SELECT id_user, prenom, nom, identifiant FROM users ORDER BY nom");
+                    $reponse = SelectAllUser($bdd);
                 }
 
                 while($donnees = $reponse->fetch())

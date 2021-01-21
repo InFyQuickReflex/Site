@@ -15,15 +15,15 @@
 
       <main>
         <?php
-        if(isset($_SESSION["ID"]))
+        if(isset($_SESSION["ID"])) 
         {
           include('../php_fr/connexionbdd.php');
           include('../php_fr/fonctions/fonctions_permission.php');
-          PermissionGestion($bdd);   
-          $req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
-          $req->execute(array($_GET["ID"]));
+          include('../php_fr/fonctions/fonctions_gerer_users.php');
+          PermissionGestion($bdd);
+          $req = SelectUser($bdd, $_GET["ID"]);
           $donnees = $req->fetch();
-              ?>
+        ?>
               <br>
               <h2>Modifier l'utilisateur</h2>
               <form method="POST" action="../php_fr/modifier_user_traitement.php">

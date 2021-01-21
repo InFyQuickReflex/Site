@@ -39,7 +39,7 @@
 		?>
 		<br><br>
 		<h2>Edit the sensor</h2>
-		<form method="POST" action="../php_fr/modifier_capteur.php">
+		<form method="POST" action="../php_en/modifier_capteur_en.php">
 		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 		<label for="numero">Sensor n° : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_capteur'] ?>"><br><br>
 		<label for="boitier">Associated case : </label>

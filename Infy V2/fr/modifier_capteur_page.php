@@ -19,21 +19,8 @@
         {
         	include('../php_fr/connexionbdd.php');
         	include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
-        	$permission = permissionUser($bdd,$_SESSION["ID"]);
-
-        if($permission != "administrateur")
-		{
-			if($permission == "gestionnaire")
-                {
-					header("Location: profil_gestionnaire.php");
-				}
-			else if($permission == "utilisateur")
-			{
-				header("Location: profil_utilisateur.php");
-			}
-		}
-		else
-		{
+        	include('../php_fr/fonctions/fonctions_permission.php');
+            $donnees = PermissionAdmin($bdd);
 			$req = selectCapteur($bdd,$_GET['ID']);
             $donnees = $req->fetch();
 		?>
@@ -79,7 +66,6 @@
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php
-		  }
 		  $req->closeCursor();
 		  $reqtype->closeCursor();
 		  $reqboitier->closeCursor();

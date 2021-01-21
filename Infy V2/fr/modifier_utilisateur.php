@@ -18,31 +18,11 @@
         if(isset($_SESSION["ID"]))
         {
           include('../php_fr/connexionbdd.php');
-
-          $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-          $req->execute(array($_SESSION["ID"]));
+          include('../php_fr/fonctions/fonctions_permission.php');
+          PermissionGestion($bdd);   
+          $req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
+          $req->execute(array($_GET["ID"]));
           $donnees = $req->fetch();
-
-          if($donnees["permission"] != "gestionnaire")
-          {
-              if($donnees["permission"] == "administrateur")
-              {
-                  header("Location: profil_administrateur.php");
-              }
-
-              else if($donnees["permission"] == "utilisateur")
-              {
-                  header("Location: profil_utilisateur.php");
-              }
-          }
-          
-
-          else
-          {
-              
-              $req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
-              $req->execute(array($_GET["ID"]));
-              $donnees = $req->fetch();
               ?>
               <br>
               <h2>Modifier l'utilisateur</h2>
@@ -68,9 +48,6 @@
               </form>
 
               <?php
-
-              
-          }
           $req->closeCursor();
         }
 

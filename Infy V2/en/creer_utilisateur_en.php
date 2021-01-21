@@ -17,27 +17,8 @@
         if(isset($_SESSION["ID"]))
         {
           include('../php_fr/connexionbdd.php');
-
-          $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-          $req->execute(array($_SESSION["ID"]));
-          $donnees = $req->fetch();
-
-          if($donnees["permission"] != "gestionnaire")
-          {
-              if($donnees["permission"] == "administrateur")
-              {
-                  header("Location: profil_administrateur_en.php");
-              }
-
-              else if($donnees["permission"] == "utilisateur")
-              {
-                  header("Location: profil_utilisateur_en.php");
-              }
-          }
-          
-
-          else
-          {
+          include('../php_fr/fonctions/fonctions_permission.php');
+          PermissionAdmin($bdd);
               ?>
               <br>  
               <h2>Create new user</h2>

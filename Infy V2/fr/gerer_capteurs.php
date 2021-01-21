@@ -16,26 +16,14 @@
 	<?php
     if(isset($_SESSION["ID"]))
     {
+    	include('../php_fr/connexionbdd.php');
+		include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
+		include('../php_fr/fonctions/fonctions_permission.php');
+        PermissionAdmin($bdd);
     ?>
 		<section id=NosCapteurs>
 			<h2 class=TitreSection>Nos capteurs</h2>
-			<?php
-			include('../php_fr/connexionbdd.php');
-			include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
-			$permission = permissionUser($bdd,$_SESSION["ID"]);
-			
-			if($permission != "administrateur")
-			{
-				if($permission == "gestionnaire")
-                    {
-						header("Location: profil_gestionnaire.php");
-					}
-				else if($permission == "utilisateur")
-				{
-					header("Location: profil_utilisateur.php");
-				}
-			}
-			?>
+
 			<div class='contenusection'>
 				<?php
 				$reqcapteurs = selectToutCapteur($bdd);
@@ -180,7 +168,6 @@
 		</section>
 	<?php
     }
-
     else
     {
         header("Location: menu_principal.php");

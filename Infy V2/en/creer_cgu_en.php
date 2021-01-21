@@ -17,26 +17,8 @@
       if(isset($_SESSION["ID"]))
       {
       include('../php_fr/connexionbdd.php');
-
-      $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-      $req->execute(array($_SESSION["ID"]));
-      $donnees = $req->fetch();
-
-      if($donnees["permission"] != "administrateur")
-      {
-        if($donnees["permission"] == "gestionnaire")
-          {
-            header("Location: profil_gestionnaire_en.php");
-          }
-
-         else if($donnees["permission"] == "utilisateur")
-          {
-            header("Location: profil_utilisateur_en.php");
-          }
-      }
-
-      else 
-      { ?>
+      include('../php_fr/fonctions/fonctions_permission.php');
+      PermissionAdmin($bdd); ?>
         <br>
         <h2>Add paragraph</h2>
         <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
@@ -49,12 +31,11 @@
           <label for="paragraphe"> Paragraph (english): </label><br>
           <textarea rows="10" cols="100" name="paragraphe_en" id="paragraphe" required></textarea><br><br>
           <input type="submit" name="action" class = "modifier" value="Add">
-          <a href="gerer_cgu.php" class="cancel">Cancel</a>
+          <a href="gerer_cgu_en.php" class="cancel">Cancel</a>
         </form>
       </main>
 
       <?php 
-      }
       }
       include("header_footer/footer_en.php")?>
     </body>

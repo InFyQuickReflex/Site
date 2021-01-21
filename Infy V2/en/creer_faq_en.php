@@ -17,26 +17,8 @@
       if(isset($_SESSION["ID"]))
       {
       include('../php_fr/connexionbdd.php');
-
-      $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-      $req->execute(array($_SESSION["ID"]));
-      $donnees = $req->fetch();
-
-      if($donnees["permission"] != "administrateur")
-      {
-        if($donnees["permission"] == "gestionnaire")
-          {
-            header("Location: profil_gestionnaire_en.php");
-          }
-
-         else if($donnees["permission"] == "utilisateur")
-          {
-            header("Location: profil_utilisateur_en.php");
-          }
-      }
-
-      else
-      { ?>
+      include('../php_fr/fonctions/fonctions_permission.php');
+      PermissionAdmin($bdd);?>
         <br>
         <h2>Add question</h2>
         <form method="POST" action="../php_en/modifier_faq_traitement_en.php">
@@ -50,7 +32,6 @@
       </main>
 
       <?php 
-      }
       }
       include("header_footer/footer_en.php")?>
     </body>

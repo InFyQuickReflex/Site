@@ -18,28 +18,10 @@
 	<?php
 	if(isset($_SESSION["ID"]))
     {
-	  include('../php_fr/connexionbdd.php');
-      include('../php_fr/fonctions/fonctions_cgu.php');
-    
-        $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-        $req->execute(array($_SESSION["ID"]));
-        $donnees = $req->fetch();
-
-        if($donnees["permission"] != "administrateur")
-        {
-            if($donnees["permission"] == "gestionnaire")
-            {
-                header("Location: profil_gestionnaire.php");
-            }
-
-            else if($donnees["permission"] == "utilisateur")
-            {
-                header("Location: profil_utilisateur.php");
-            }
-        }
-
-        else
-        {
+        include('../php_fr/connexionbdd.php');
+        include('../php_fr/fonctions/fonctions_cgu.php');
+        include('../php_fr/fonctions/fonctions_permission.php');
+        PermissionAdmin($bdd);
             $donnees = SelectOneCgu($bdd,$_GET["ID"]);
             $donnees = $donnees->fetch();
             ?>
@@ -57,7 +39,6 @@
                 <input type="submit" name = "action" value="Delete" class="delete" onclick= 'ConfirmationEng()';>
             </form>
     <?php 
-        }
     }
     $req->closeCursor()
     ?>

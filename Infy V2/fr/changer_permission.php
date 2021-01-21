@@ -26,35 +26,13 @@
         if(isset($_SESSION["ID"]))
         {
           include('../php_fr/connexionbdd.php');
-
-          $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-          $req->execute(array($_SESSION["ID"]));
-          $donnees = $req->fetch();
-
-          if($donnees["permission"] != "administrateur")
-          {
-              if($donnees["permission"] == "gestionnaire")
-              {
-                  header("Location: profil_gestionnaire.php");
-              }
-
-              else if($donnees["permission"] == "utilisateur")
-              {
-                  header("Location: profil_utilisateur.php");
-              }
-          }
-          
-
-          else
-          {
-              
-              $req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
-              $req->execute(array($_GET["ID"]));
-              $donnees = $req->fetch();
-              ?>
-              <br>
-              <h2>Modifier l'utilisateur</h2>
-              <form method="POST" action="../php_fr/modifier_user_traitement.php">
+          include('../php_fr/fonctions/fonctions_permission.php');
+          PermissionAdmin($bdd);
+          $donnees = ChangePerm($bdd, $_GET["ID"]);
+          ?>
+          <br>
+          <h2>Modifier l'utilisateur</h2>
+          <form method="POST" action="../php_fr/modifier_user_traitement.php">
                   <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 
                   <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" value="<?php echo $donnees["prenom"] ?>"><br><br>
@@ -76,13 +54,8 @@
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
               </form>
 
-              <?php
-
-              
+          <?php  
           }
-          $req->closeCursor();
-        }
-
         else
           {
               header("Location: menu_principal.php");

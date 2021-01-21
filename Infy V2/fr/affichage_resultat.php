@@ -20,7 +20,7 @@
 
             include('../php_fr/connexionbdd.php');
             include('../php_fr/fonctions/fonctions_permission.php');
-            $rep = PermissionUser($bdd);
+            PermissionUser($bdd);
             ?>
             <P><table>
                 <tr>
@@ -94,7 +94,7 @@
 
                     <article class="testfreq">
                         <h3>Test n°3: Reproduction d'une fréquence</h3>
-                        <p> Graphique </p>
+                        <p>  </p>
                     </article>
                 </section>
                 <a href="profil_utilisateur.php" class="retour">Profil </a>

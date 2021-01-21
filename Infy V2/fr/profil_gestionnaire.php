@@ -25,32 +25,12 @@
                 <p>
                     <?php
                     include('../php_fr/connexionbdd.php');
-    
-                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
-                    $req->execute(array($_SESSION["ID"]));
-                    $donnees = $req->fetch();
-
-                    if($donnees["permission"] != "gestionnaire")
-                    {
-                        if($donnees["permission"] == "administrateur")
-                        {
-                            header("Location: profil_administrateur.php");
-                        }
-
-                        else if($donnees["permission"] == "utilisateur")
-                        {
-                            header("Location: profil_utilisateur.php");
-                        }
-                    }
-
-                    else
-                    {
+                    include('../php_fr/fonctions/fonctions_permission.php');
+                    $donnees = PermissionGestion($bdd);
                         echo "<strong>Prénom</strong> : ".$donnees["prenom"]."<br>";
                         echo "<strong>Nom</strong> : ".$donnees["nom"]."<br>";
                         echo "<strong>Identifiant</strong> : ".$donnees["identifiant"]."<br>";
                         echo "<strong>Adresse email</strong> : ".$donnees["email"]."<br><br>";
-                    }
-                    
                     $req->closeCursor();
                     ?>
                     <a href="../php_fr/deconnexion.php" class="button">Deconnexion</a>

@@ -17,27 +17,8 @@
         if(isset($_SESSION["ID"]))
         {
           include('../php_fr/connexionbdd.php');
-
-          $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
-          $req->execute(array($_SESSION["ID"]));
-          $donnees = $req->fetch();
-
-          if($donnees["permission"] != "gestionnaire")
-          {
-              if($donnees["permission"] == "administrateur")
-              {
-                  header("Location: profil_administrateur.php");
-              }
-
-              else if($donnees["permission"] == "utilisateur")
-              {
-                  header("Location: profil_utilisateur.php");
-              }
-          }
-          
-
-          else
-          {
+          include('../php_fr/fonctions/fonctions_permission.php');
+          PermissionGestion($bdd);
               ?>
               <br>  
               <h2>Créer un utilisateur</h2>
@@ -54,13 +35,8 @@
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
               </form>
 
-              <?php
-
-              
-          }
-          $req->closeCursor();
+        <?php
         }
-
         else
           {
               header("Location: menu_principal.php");

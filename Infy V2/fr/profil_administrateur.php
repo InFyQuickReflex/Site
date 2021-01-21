@@ -10,13 +10,13 @@
     </head>
 
     <body>
-      <?php include("header_footer/header.php")?>
+    <?php include("header_footer/header.php")?>
 
-      <main>
-          <?php
-          if(isset($_SESSION["ID"]))
-          {
-            ?>
+    <main>
+        <?php
+        if(isset($_SESSION["ID"]))
+        {
+        ?>
             <br>
             <h2>Profil Administrateur</h2>
 
@@ -25,33 +25,13 @@
                 <p>
                     <?php
                     include('../php_fr/connexionbdd.php');
-    
-                    $req = $bdd->prepare("SELECT prenom, nom, identifiant, email, permission FROM users WHERE id_user = ?");
-                    $req->execute(array($_SESSION["ID"]));
-                    $donnees = $req->fetch();
+                    include('../php_fr/fonctions/fonctions_permission.php');
+                    $donnees = PermissionAdmin($bdd);
 
-                    if($donnees["permission"] != "administrateur")
-                    {
-                        if($donnees["permission"] == "gestionnaire")
-                        {
-                            header("Location: profil_gestionnaire.php");
-                        }
-
-                        else if($donnees["permission"] == "utilisateur")
-                        {
-                            header("Location: profil_utilisateur.php");
-                        }
-                    }
-
-                    else
-                    {
                         echo "<strong>Prénom</strong> : ".$donnees["prenom"]."<br>";
                         echo "<strong>Nom</strong> : ".$donnees["nom"]."<br>";
                         echo "<strong>Identifiant</strong> : ".$donnees["identifiant"]."<br>";
                         echo "<strong>Adresse email</strong> : ".$donnees["email"]."<br><br>";
-                    }
-                    
-                    $req->closeCursor();
                     ?>
                     <a href="../php_fr/deconnexion.php" class="button">Deconnexion</a>
                 </p>

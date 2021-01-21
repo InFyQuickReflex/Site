@@ -19,21 +19,8 @@
         {
         	include('../php_fr/connexionbdd.php');
         	include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
-        	$permission = permissionUser($bdd,$_SESSION["ID"]);
-
-        if($permission != "administrateur")
-		{
-			if($permission == "gestionnaire")
-                {
-					header("Location: profil_gestionnaire_en.php");
-				}
-			else if($permission == "utilisateur")
-			{
-				header("Location: profil_utilisateur_en.php");
-			}
-		}
-			else
-			{
+        	include('../php_fr/fonctions/fonctions_permission.php');
+            PermissionAdmin($bdd);
 			$req = selectBoitier($bdd,$_GET["ID"]);
             $donnees = $req->fetch();
 		?>
@@ -46,8 +33,7 @@
         <a href="gerer_capteurs_en.php" class=cancel>Back to sensors</a>
 		</form>
 		<?php
-		  }
-		  $req->closeCursor();
+		$req->closeCursor(); 
         }
 		else
         {

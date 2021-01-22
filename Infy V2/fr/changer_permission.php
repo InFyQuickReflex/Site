@@ -66,7 +66,7 @@
                   </select>
                   <br><br>
                   <input type="submit" name="action" class="modifier" value="Modifier" onclick= 'Confirmation()';>
-                  <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
+                  <a href="gerer_droits.php" class="cancel">Annuler</a>
               </form>
 
           <?php  

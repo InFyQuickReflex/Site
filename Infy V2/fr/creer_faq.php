@@ -22,10 +22,14 @@
           <br>
           <h2>Ajouter une question</h2>
           <form method="POST" action="../php_fr/modifier_faq_traitement.php">
-            <label for="question">Question : </label>
+            <label for="question">Question (français) : </label>
             <input type="text" name="question" id="question" required><br><br>
-            <label for="reponse"> Reponse : </label><br>
+            <label for="reponse"> Reponse (français): </label><br>
             <textarea rows="10" cols="100" name="reponse" id="reponse" required></textarea><br><br>
+            <label for="question_en">Question (anglais) : </label>
+            <input type="text" name="question_en" id="question" required><br><br>
+            <label for="reponse_en"> Answer (anglais) : </label><br>
+            <textarea rows="10" cols="100" name="reponse_en" id="reponse" required></textarea><br><br>
             <input type="submit" name="action" class="modifier" value="Ajouter">
             <a href="gerer_faq.php" class="cancel">Annuler</a>
           </form>

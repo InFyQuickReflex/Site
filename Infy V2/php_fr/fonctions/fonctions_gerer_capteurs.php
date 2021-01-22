@@ -34,5 +34,11 @@ function selectBoitier($bdd,$ID) {
 	$req->execute(array($ID));
 	return $req;
 }
-
+function selectpermissionUser($bdd,$ID)
+{
+	$req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
+	$req->execute(array($ID));
+	$donnees = $req->fetch();
+	return $donnees['permission'];
+}
 ?>

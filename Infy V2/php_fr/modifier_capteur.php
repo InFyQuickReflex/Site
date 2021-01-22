@@ -4,7 +4,6 @@ if(isset($_SESSION["ID"]))
         {
 			include('connexionbdd.php');
 			include('fonctions/fonctions_gerer_capteurs.php');
-			include('../php_fr/fonctions/fonctions_permission.php');
 			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
@@ -12,9 +11,7 @@ if(isset($_SESSION["ID"]))
 				$numero_capteur = htmlspecialchars($_POST['numero']);
 				$id_boitier = htmlspecialchars($_POST['boitier']);
 				$id_type = htmlspecialchars($_POST['type']);
-				$req = $bdd->prepare("UPDATE capteurs SET numero_capteur = ?, id_boitier = ?, id_type = ? WHERE id_capteurs = ?");
-				$req->execute(array($numero_capteur, $id_boitier, $id_type, $id_capteurs));
-				$req->closeCursor();
+				modifierCapteur($bdd,$numero_capteur,$id_boitier,$id_type,$id_capteurs);
 			}
 		}
 header("Location: ../fr/gerer_capteurs.php");

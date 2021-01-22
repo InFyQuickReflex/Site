@@ -8,10 +8,7 @@ if(isset($_SESSION["ID"]))
 			if($permission == "administrateur")
 			{
 				$numero_boitier = htmlspecialchars($_POST['numero']);
-				$req = $bdd->prepare("INSERT INTO boitiers (numero_boitier) VALUES (?)");
-				$req->execute(array($numero_boitier));
-				$req->closeCursor();
-			
+				ajouterBoitier($bdd,$numero_boitier);			
 			}
 		}
 header("Location: ../en/gerer_capteurs_en.php");

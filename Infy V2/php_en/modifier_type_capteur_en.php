@@ -10,9 +10,7 @@ if(isset($_SESSION["ID"]))
 				$id_type = htmlspecialchars($_POST['ID']);
 				$nom_type = htmlspecialchars($_POST['nom']);
 				$unite_capteur = htmlspecialchars($_POST['unite']);
-				$req = $bdd->prepare("UPDATE type_capteurs SET nom_type = ?, unite_capteur = ? WHERE id_type = ?");
-				$req->execute(array($nom_type, $unite_capteur, $id_type));
-				$req->closeCursor();
+				modifierTypeCapteur($bdd,$nom_type,$unite_capteur,$id_type);
 			}
 		}
 header("Location: ../en/gerer_capteurs_en.php");

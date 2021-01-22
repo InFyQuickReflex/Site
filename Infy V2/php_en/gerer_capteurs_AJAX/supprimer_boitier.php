@@ -7,10 +7,7 @@ if(isset($_SESSION["ID"]))
 			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
-				$req = $bdd->prepare("DELETE FROM boitiers WHERE id_boitier = ?");
-				$req->execute(array($_POST["ID"]));
-
-				$req->closeCursor();
+				supprimerBoitier($bdd,$_POST['ID']);
 				
 			}
 		}

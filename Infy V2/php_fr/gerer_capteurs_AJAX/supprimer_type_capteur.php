@@ -7,11 +7,7 @@ if(isset($_SESSION["ID"]))
 			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
-				$req = $bdd->prepare("DELETE FROM type_capteurs WHERE id_type = ?");
-				$req->execute(array($_POST["ID"]));
-
-				$req->closeCursor();
-				
+				supprimerTypeCapteur($bdd,$_POST['ID']);	
 			}
 		}
 ?>

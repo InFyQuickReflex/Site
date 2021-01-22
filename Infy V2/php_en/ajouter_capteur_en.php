@@ -10,10 +10,7 @@ if(isset($_SESSION["ID"]))
 				$numero_capteur = htmlspecialchars($_POST['numero']);
 				$id_boitier = htmlspecialchars($_POST['boitier']);
 				$id_type = htmlspecialchars($_POST['type']);
-				$req = $bdd->prepare("INSERT INTO capteurs (numero_capteur,id_boitier,id_type) VALUES (?,?,?)");
-				$req->execute(array($numero_capteur,$id_boitier,$id_type));
-				$req->closeCursor();
-			
+				ajouterCapteur($bdd,$numero_capteur,$id_boitier,$id_type);
 			}
 		}
 header("Location: ../en/gerer_capteurs_en.php");

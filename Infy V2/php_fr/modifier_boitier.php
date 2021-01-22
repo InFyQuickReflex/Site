@@ -9,9 +9,7 @@ if(isset($_SESSION["ID"]))
 			{
 				$id_boitier = htmlspecialchars($_POST['ID']);
 				$numero_boitier = htmlspecialchars($_POST['numero']);
-				$req = $bdd->prepare("UPDATE boitiers SET numero_boitier = ? WHERE id_boitier = ?");
-				$req->execute(array($numero_boitier,$id_boitier));
-				$req->closeCursor();
+				modifierBoitier($bdd,$numero_boitier,$id_boitier);
 			}
 		}
 header("Location: ../fr/gerer_capteurs.php");

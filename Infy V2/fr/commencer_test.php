@@ -10,7 +10,7 @@
     </head>
 
     <body>
-      <?php include("header_footer/header.php")
+      <?php include("header_footer/header.php");
       include('../php_fr/fonctions/fonctions_permission.php');
       PermissionUser($bdd);?>
 

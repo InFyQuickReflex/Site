@@ -48,53 +48,56 @@ section
 }
 .BoutonSupprimer, form input[type = reset]
 {
-	background-color:#A2212C;
-	color:white;
-	font-size:18px;
+	color:#A2212C;
 	padding:2px;
-	border : 1px solid black;
 	margin:5px;
-	border-radius:5px;
     text-decoration:none;
-	transition: background-color 0.5s ease 0s;
+	transition: 0.5s ease 0s;
+	background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid #A2212C;
+    border-radius: 5px;
 }
 .BoutonSupprimer:hover, form input[type = reset]:hover
 {
-	background-color:#FF8C8C;
+	background-color:#A2212C;
 	color:white;
 }
 .BoutonModifier
 {
-	background-color:#374A81;
-	color:white;
-	font-size:18px;
+	color:#374A81;
 	padding:2px;
-	border : 1px solid black;
 	margin:5px;
-	border-radius:5px;
     text-decoration:none;
-	transition: background-color 0.5s ease 0s;
+	transition: 0.5s ease 0s;
+	background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid #374A81;
+    border-radius: 5px;
 }
 .BoutonModifier:hover
 {
-	background-color:#939DBB;
+	background-color:#374A81;
 	color:white;
 }
 form input[type = submit]
 {
-	background-color:green;
-	color:white;
-	font-size:18px;
+	color:green;
 	padding:2px;
-	border : 1px solid black;
 	margin:5px;
-	border-radius:5px;
     text-decoration:none;
-	transition: background-color 0.5s ease 0s;
+	transition: 0.5s ease 0s;
+	background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 3px solid green;
+    border-radius: 5px;
 }
 
 form input[type = submit]:hover
 {
-    background-color: lime;
+	background-color:green;
+	color:white;
 }
-

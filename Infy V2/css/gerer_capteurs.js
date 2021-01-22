@@ -84,6 +84,54 @@ if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 	{
 		contenu[2].innerHTML = xmlhttp.responseText;
 	}
+	// On remet les fonctions sur les boutons "Supprimer"
+	for (var j=0;j<boutonsSupprimer.length;j++)
+	{
+		boutonsSupprimer = document.getElementsByClassName('BoutonSupprimer');
+		boutonsSupprimer[j].onclick = function suppression() {
+		confirmSupprimer = confirm('Confimez-vous la suppression ?');
+		if (confirmSupprimer)
+		{
+			IDbouton = this.id;
+			IDelementsuppr = IDbouton.substring(6);
+
+			if (IDbouton[3] == 'C')
+			{
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/supprimer_capteur.php",false);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send("ID="+IDelementsuppr);
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/affiche_capteur.php",true);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send('');
+			}
+			if (IDbouton[3] == 'T')
+			{
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/supprimer_type_capteur.php",false);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send("ID="+IDelementsuppr);
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/affiche_type_capteur.php",true);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send('');
+			}
+			if (IDbouton[3] == 'B')
+			{
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/supprimer_boitier.php",false);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send("ID="+IDelementsuppr);
+				xmlhttp.open("POST",
+					"../php_fr/gerer_capteurs_AJAX/affiche_boitier.php",true);
+				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+				xmlhttp.send('');
+			}
+
+		}
+		}
+	}
 }
 }
 

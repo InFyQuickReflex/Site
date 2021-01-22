@@ -4,11 +4,21 @@ function AfficherTemp($bdd,$ID){
     $reponse->execute(array($ID));
     if($donnees = $reponse->fetch())
     {
-        echo $donnees["valeur"]." degrés";
+        echo $donnees["valeur"]." degrés  ";
     }
     else
     {
         echo "Vous n'avez pas de résultats";
+    }
+    
+    if($donnees["valeur"] >= 38){
+        echo "<strong> Température trop haute </strong>";
+    }
+    elseif($donnees["valeur"] <= 34){
+        echo "<strong> Température trop basse </strong>";
+    }
+    else{
+        echo "<em> Température normale </em>";
     }
     return $donnees;
 } 
@@ -23,6 +33,16 @@ function AfficherFreq($bdd, $ID){
     else
     {
         echo "Vous n'avez pas de résultats";
+    }
+
+    if($donnees["valeur"] >= 100){
+        echo "<strong> Fréquence cardiaque trop haute </strong>";
+    }
+    elseif($donnees["valeur"] <= 55){
+        echo "<strong> Fréquence cardiaque trop basse </strong>";
+    }
+    else{
+        echo "<em> Fréquence cardiaque normale </em>";
     }
     return $donnees;
 }
@@ -55,3 +75,4 @@ function AfficherTests($bdd, $ID){
     $req->execute(array($ID));
     return $req;
 }
+

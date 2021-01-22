@@ -4,7 +4,7 @@ if(isset($_SESSION["ID"]))
         {
 			include('connexionbdd.php');
 			include('fonctions/fonctions_gerer_capteurs.php');
-			$permission = permissionUser($bdd,$_SESSION["ID"]);
+			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
 				$nom_type = htmlspecialchars($_POST['nom']);

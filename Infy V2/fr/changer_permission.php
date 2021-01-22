@@ -47,9 +47,24 @@
 
                   <label for="telephone">Telephone : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
 
-                  <label for="permission">Permission : </label><input type="text" name="permission" id="permission" value="<?php echo $donnees["permission"] ?>"><br><br>
-
-
+                  <label for="permission">Permission : </label>
+                  <select name = 'permission' id='permission'>
+                  <?php 
+                  $permissions = ['administrateur','utilisateur','gestionnaire'];
+                  for ($j=0;$j<3;$j++)
+                  {
+                    if ($donnees['permission']==$permissions[$j])
+			              {
+			                echo "<option value = ".$permissions[$j]." selected>".$permissions[$j]."</option>";
+			              }
+			              else
+			              {
+			                echo "<option value = ".$permissions[$j].">".$permissions[$j]."</option>";
+			              }
+                  }
+                  ?>
+                  </select>
+                  <br><br>
                   <input type="submit" name="action" class="modifier" value="Modifier" onclick= 'Confirmation()';>
                   <a href="profil_gestionnaire.php" class="cancel">Annuler</a>
               </form>

@@ -21,18 +21,18 @@
       }
 
       ?>
-		<h2>Nous contacter</h2>
-		<form method="POST" action="../php_fr/envoi_mail.php" onsubmit="return validateFormEng()">
+		<h2>Contact us</h2>
+		<form method="POST" action="../php_en/envoi_mail_en.php" onsubmit="return validateFormEng()">
 		<label for="nom">Your last name : </label><input type="text" name="nom" id="nom" required><br><br>
 		<label for="prenom">Your first name : </label><input type="text" name="prenom" id="prenom" required><br><br>
         <label for="replyto">Your email : </label><input type="text" name="replyto" id="replyto" required><br><br>
 		<label for='sujet'>Subject : </label><input type="text" name="sujet" id="sujet" required><br><br>
         <label for='message'>Your message : </label><br><br>
         <textarea id='message' name='message' rows=10 cols=100 required></textarea><br><br>
-		<input type="submit" value="Valider">
+		<input type="submit" value="Confirm">
 		</form>
       </main>
       <script src='../css/nous_contacter.js'></script>
-      <?php include("header_footer/footer.php")?>
+      <?php include("header_footer/footer_en.php")?>
     </body>
 </html>

@@ -5,7 +5,9 @@ if(isset($_SESSION["ID"]))
 			include('connexionbdd.php');
 			include('fonctions/fonctions_gerer_capteurs.php');
 			include('../php_fr/fonctions/fonctions_permission.php');
-			PermissionUser($bdd);
+			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
+			if($permission == "administrateur")
+			{
 				$nom_type = htmlspecialchars($_POST['nom']);
 				$unite_capteur = htmlspecialchars($_POST['unite']);
 				$req = $bdd->prepare("INSERT INTO type_capteurs (nom_type,unite_capteur) VALUES (?,?)");

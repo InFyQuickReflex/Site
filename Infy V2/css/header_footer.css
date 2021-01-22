@@ -27,7 +27,7 @@ header
 {
     font-family: Montserrat;
     font-weight: bold;
-    background-color: rgb(59, 59, 107);
+    background-color: black;
     padding-inline-start: 10px;
 
     
@@ -151,3 +151,10 @@ footer a:hover
     color: rgb(210, 72, 72);
 }
 /* Code Footer */
+
+@media screen and (max-width: 600px) {
+  .menu a {
+    float: none;
+    width: 100%;
+  }
+}

@@ -9,7 +9,7 @@ require_once("jpgraph_bar.php");
 include('connexionbdd.php');
 
 
-$reponse= $bdd->prepare('SELECT valeur, type FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "rouge" OR type = "bleu" OR type = "blanc" OR type = "vert" ORDER BY type ASC ');
+$reponse= $bdd->prepare('SELECT valeur, type_mesures.type FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND id_test = ?) WHERE type_mesures.type = "rouge" OR type_mesures.type = "bleu" OR type_mesures.type = "blanc" OR type_mesures.type = "vert" ORDER BY type ASC');
 $reponse->execute(array($_GET["IDtest"]));
 while($donnees = $reponse->fetch())
 {

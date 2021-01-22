@@ -34,7 +34,7 @@
         		  	Après que son compte ait été créé, il pourra s’identifier sur le site et accéder à plusieurs rubriques. 
         		  	<ul>
         		    	<li>Il pourra bien évidemment commencer un nouveau test, en s’assurant qu’il ai bien inscrit le numéro après s'être procuré un boîtier. </li>
-        		    	<li>Il pourra également visionner ses résultats, mis sous forme de tableau, mais aussi un graphique le plaçant au milieu de résultats d’autres tests, afin qu’il puisse se retrouver dans une moyenne. </li>
+        		    	<li>Il pourra également visionner ses résultats, mis sous forme de tableau et de graphiques. </li>
         		    	<li>Enfin, l’utilisateur pourra aussi accéder à une FAQ. La FAQ lui permettra de visionner des questions déjà posées, mais aussi d’envoyer un mail à l’administrateur. </li>
               		</ul>
                 </p>

@@ -34,7 +34,7 @@
                     After the creation of his account, the user will be able to log-in and access several sections:
                     <ul>
                         <li>He will of course be able to start a new test, after having made sure the box number he registered is the right one. </li>
-                        <li>He will also be able to take a look at his previous tests' results, organised in a table, but also a graph, situating him in the midst of other users' results (anonymously),to locate himself on an average. </li>
+                        <li>He will also be able to take a look at his previous tests' results, organised in a table and graphs. </li>
                         <li>Finally, he will be able to access an FAQ, which will help him if he has any questions, but also to send an email to the administrator. </li>
                     </ul>
                 </p>

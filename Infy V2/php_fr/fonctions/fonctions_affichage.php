@@ -1,6 +1,6 @@
 <?php
 function AfficherTemp($bdd,$ID){
-	$reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "température"');
+	$reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND mesures.id_test = ? ) WHERE type_mesures.type = "température"');
     $reponse->execute(array($ID));
     if($donnees = $reponse->fetch())
     {
@@ -24,7 +24,7 @@ function AfficherTemp($bdd,$ID){
 } 
 
 function AfficherFreq($bdd, $ID){
-	$reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "fréquence"');
+	$reponse= $bdd->prepare('SELECT ROUND(valeur,0) AS valeur FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND mesures.id_test = ? ) WHERE type_mesures.type = "fréquence"');
     $reponse->execute(array($ID));
     if($donnees = $reponse->fetch())
     {
@@ -48,7 +48,7 @@ function AfficherFreq($bdd, $ID){
 }
 
 function AfficherSon($bdd,$ID){
-	$reponse= $bdd->prepare('SELECT tests.id_test valeur FROM mesures INNER JOIN tests ON (tests.id_test = mesures.id_test AND tests.id_test = ? ) WHERE type = "son"');
+	$reponse= $bdd->prepare('SELECT ROUND(valeur,3) AS valeur FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND mesures.id_test = ? ) WHERE type_mesures.type = "son"');
     $reponse->execute(array($_GET["IDtest"]));
     if($donnees = $reponse->fetch())
     {
@@ -66,6 +66,15 @@ function AfficherLum($bdd, $ID){
     $reponse->execute(array($_GET["IDtest"]));
     $donnees = $reponse->fetch();
     echo "<img src='../php_fr/graphique_lumiere.php?IDtest=".$donnees["id_test"]."' >";  
+    $reponse->closeCursor();
+    return $donnees;
+}
+
+function AfficherComp($bdd, $ID){
+    $reponse= $bdd->prepare('SELECT id_test FROM tests WHERE id_test = ?');
+    $reponse->execute(array($_GET["IDtest"]));
+    $donnees = $reponse->fetch();
+    echo "<img src='../php_fr/graphique_comparaison.php?IDtest=".$donnees["id_test"]."' >";  
     $reponse->closeCursor();
     return $donnees;
 }

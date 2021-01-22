@@ -54,6 +54,11 @@
                         <h3>Test n°3: Reproduction d'une fréquence</h3>
                         <p>  </p>
                     </article>
+
+                    <article>
+                        <h3> Où vous situez-vous dans la moyenne ?</h3>
+                        <?php AfficherComp($bdd, $ID) ?>
+                    </article>
                 </section>
                 <a href="profil_utilisateur.php" class="retour">Profil </a>
         <?php

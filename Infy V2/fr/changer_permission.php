@@ -55,11 +55,11 @@
                   {
                     if ($donnees['permission']==$permissions[$j])
 			              {
-			                echo "<option value = ".$permissions[$j]." selected>".$permissions[$j]."</option>";
+			                echo "<option value = '".$permissions[$j]."' selected>".$permissions[$j]."</option>";
 			              }
 			              else
 			              {
-			                echo "<option value = ".$permissions[$j].">".$permissions[$j]."</option>";
+			                echo "<option value = '".$permissions[$j]."'>".$permissions[$j]."</option>";
 			              }
                   }
                   ?>

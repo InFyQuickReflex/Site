@@ -27,6 +27,6 @@ $mail->IsHTML(true);
 if(!$mail->Send()) {
 echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
-header('Location: ../fr/nous_contacter.php?envoi=true');
+header('Location: ../en/nous_contacter_en.php?envoi=true');
 } 
 ?>

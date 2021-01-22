@@ -34,6 +34,7 @@
           <input type="submit" name="action" class = "modifier" value="Ajouter">
           <a href="gerer_cgu.php" class="cancel">Annuler</a>
         </form>
+        <br><br>
       </main>
 
       <?php 

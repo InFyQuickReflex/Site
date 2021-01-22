@@ -10,6 +10,7 @@ echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."<br>";
 $mail->IsSMTP();
 $mail->SMTPAuth = true;
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$mail->CharSet = "utf-8";
 $mail->Host       = "mail.gmx.com";  
 $mail->Port       = 587;
 $mail->Username   = "infy@gmx.fr";

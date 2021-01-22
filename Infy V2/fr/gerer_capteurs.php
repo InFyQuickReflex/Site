@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/header_footer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src = "../css/popup.js"></script>
 	</head>
 	<body>
 	<?php include("header_footer/header.php")?>
@@ -112,11 +113,11 @@
 		<section id=AjouterCapteur>
 			<h2 class=TitreSection>Ajouter un nouveau capteur</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_capteur.php'>
+			<form method='post' action='../php_fr/ajouter_capteur.php' onsubmit="return valideForm()">
 			<label for="numero">Numero du Capteur : </label>
-			<input type="number" name="numero" id="numero"><br><br>
+			<input type="number" name="numero" id="numero" required><br><br>
 			<label for="boitier">Boitier : </label>
-			<select name='boitier' id='boitier'>
+			<select name='boitier' id='boitier' required>
 			<?php $reqboitier = selectToutBoitier($bdd); 
 			while($donnees_boitiers = $reqboitier->fetch())
 			{
@@ -127,7 +128,7 @@
 			?>
 			</select><br><br>
 			<label for="type">Type : </label>
-			<select name='type' id='type'>
+			<select name='type' id='type' required>
 			<?php $reqtype = selectToutTypeCapteur($bdd); 
 			while($donnees_types = $reqtype->fetch())
 			{
@@ -145,11 +146,11 @@
 		<section id=AjouterTypeCapteur>
 			<h1 class=TitreSection>Ajouter un nouveau type de capteur</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_type_capteur.php'>
+			<form method='post' action='../php_fr/ajouter_type_capteur.php' onsubmit="return valideForm()">
 			<label for="nom">Nom du type de capteur : </label>
-			<input type="text" name="nom" id="nom"><br><br>
+			<input type="text" name="nom" id="nom" required><br><br>
 			<label for="unite">Unité de mesure du capteur : </label>
-			<input type="text" name="unite" id="unite"><br><br>
+			<input type="text" name="unite" id="unite" required><br><br>
 			<input type="submit" value="Envoyer">
 			<input type="reset" value="Reset">
 			</form>
@@ -158,9 +159,9 @@
 		<section id=AjouterBoitier>
 			<h1 class=TitreSection>Ajouter un nouveau boitier</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_boitier.php'>
+			<form method='post' action='../php_fr/ajouter_boitier.php' onsubmit="return valideForm()">
 			<label for="numero">Numero du boitier : </label>
-			<input type="text" name="numero" id="numero"><br><br>
+			<input type="text" name="numero" id="numero" required><br><br>
 			<input type="submit" value="Envoyer">
 			<input type="reset" value="Reset">
 			</form>

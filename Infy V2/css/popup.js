@@ -14,3 +14,11 @@ function ConfirmationEng()
     }
 }
 
+function valideForm()
+{
+    return confirm("Voulez-vous confirmer?");
+}
+function valideFormEng()
+{
+    return confirm("Do you want to confirm ?");
+}

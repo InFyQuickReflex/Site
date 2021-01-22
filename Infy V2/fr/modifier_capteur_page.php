@@ -26,9 +26,11 @@
 		?>
 		<br><br>
 		<h2>Modifier le capteur</h2>
-		<form method="POST" action="../php_fr/modifier_capteur.php">
-		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
-		<label for="numero">Numero du Capteur : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_capteur'] ?>"><br><br>
+		<form method="POST" action="../php_fr/modifier_capteur.php" onsubmit="return valideForm()">
+		<label for="ID">ID : </label>
+		<input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
+		<label for="numero">Numero du Capteur : </label>
+		<input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_capteur'] ?>" required><br><br>
 		<label for="boitier">Boitier : </label>
 		<select name='boitier' id='boitier'>
 		<?php $reqboitier = selectToutBoitier($bdd); 
@@ -62,7 +64,7 @@
 		?>
 		</select>
 		<br><br>
-		<input type="submit" value="Valider" class=modifier onclick= 'Confirmation()';>
+		<input type="submit" value="Valider" class=modifier>
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php

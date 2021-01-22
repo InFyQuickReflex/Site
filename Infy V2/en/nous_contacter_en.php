@@ -2,7 +2,7 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <title>Nous contacter</title>
+        <title>Contact us</title>
         <link rel="stylesheet" href="../css/header_footer.css">
 		<link rel="stylesheet" href="../css/nous_contacter.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -10,24 +10,24 @@
     </head>
 
     <body>
-      <?php include("header_footer/header.php")?>
+      <?php include("header_footer/header_en.php")?>
 
       <main>
       <br><br>
       <?php
       if ((isset($_GET['envoi'])) and ($_GET['envoi']==true))
       {
-          echo "<span id=SuccesMessage>Message envoyé avec succès !</span><br>";
+          echo "<span id=SuccesMessage>Message sent successfully !</span><br>";
       }
 
       ?>
 		<h2>Nous contacter</h2>
-		<form method="POST" action="../php_fr/envoi_mail.php" onsubmit="return validateForm()">
-		<label for="nom">Votre nom : </label><input type="text" name="nom" id="nom" required><br><br>
-		<label for="prenom">Votre prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
-        <label for="replyto">Votre adresse mail : </label><input type="text" name="replyto" id="replyto" required><br><br>
-		<label for='sujet'>Sujet du message : </label><input type="text" name="sujet" id="sujet" required><br><br>
-        <label for='message'>Votre message : </label><br><br>
+		<form method="POST" action="../php_fr/envoi_mail.php" onsubmit="return validateFormEng()">
+		<label for="nom">Your last name : </label><input type="text" name="nom" id="nom" required><br><br>
+		<label for="prenom">Your first name : </label><input type="text" name="prenom" id="prenom" required><br><br>
+        <label for="replyto">Your email : </label><input type="text" name="replyto" id="replyto" required><br><br>
+		<label for='sujet'>Subject : </label><input type="text" name="sujet" id="sujet" required><br><br>
+        <label for='message'>Your message : </label><br><br>
         <textarea id='message' name='message' rows=10 cols=100 required></textarea><br><br>
 		<input type="submit" value="Valider">
 		</form>

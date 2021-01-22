@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/header_footer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src='../css/popup.js'></script>
 	</head>
 	<body>
 	<?php include("header_footer/header_en.php")?>
@@ -111,11 +112,11 @@
 		<section id=AjouterCapteur>
 			<h2 class=TitreSection>Add new sensor</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_en/ajouter_capteur_en.php'>
+			<form method='post' action='../php_en/ajouter_capteur_en.php' onsubmit="return valideFormEng()">
 			<label for="numero">Sensor Number : </label>
-			<input type="number" name="numero" id="numero"><br><br>
+			<input type="number" name="numero" id="numero" required><br><br>
 			<label for="boitier">Case : </label>
-			<select name='boitier' id='boitier'>
+			<select name='boitier' id='boitier' required>
 			<?php $reqboitier = selectToutBoitier($bdd); 
 			while($donnees_boitiers = $reqboitier->fetch())
 			{
@@ -126,7 +127,7 @@
 			?>
 			</select><br><br>
 			<label for="type">Type : </label>
-			<select name='type' id='type'>
+			<select name='type' id='type' required>
 			<?php $reqtype = selectToutTypeCapteur($bdd); 
 			while($donnees_types = $reqtype->fetch())
 			{
@@ -136,7 +137,7 @@
 			$reqtype->closeCursor();
 			?>
 			</select><br><br>
-			<input type="submit" value="Envoyer">
+			<input type="submit" value="Confirm">
 			<input type="reset" value="Reset">
 			</form>
 			</div>
@@ -144,11 +145,11 @@
 		<section id=AjouterTypeCapteur>
 			<h1 class=TitreSection>Add a new type of sensor</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_en/ajouter_type_capteur_en.php'>
+			<form method='post' action='../php_en/ajouter_type_capteur_en.php' onsubmit="return valideFormEng()">
 			<label for="nom">Sensor Type Name : </label>
-			<input type="text" name="nom" id="nom"><br><br>
+			<input type="text" name="nom" id="nom" required><br><br>
 			<label for="unite">Sensor unit of measurement : </label>
-			<input type="text" name="unite" id="unite"><br><br>
+			<input type="text" name="unite" id="unite" required><br><br>
 			<input type="submit" value="Confirm">
 			<input type="reset" value="Reset">
 			</form>
@@ -157,9 +158,9 @@
 		<section id=AjouterBoitier>
 			<h1 class=TitreSection>Add new case</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_en/ajouter_boitier_en.php'>
+			<form method='post' action='../php_en/ajouter_boitier_en.php' onsubmit="return valideFormEng()">
 			<label for="numero">Case number : </label>
-			<input type="text" name="numero" id="numero"><br><br>
+			<input type="text" name="numero" id="numero" required><br><br>
 			<input type="submit" value="Confirm">
 			<input type="reset" value="Reset">
 			</form>

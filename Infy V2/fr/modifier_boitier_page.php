@@ -26,10 +26,12 @@
 		?>
         <br><br>
 		<h2>Modifier le boitier</h2>
-		<form method="POST" action="../php_fr/modifier_boitier.php">
-		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
-		<label for="numero">Numero du boitier : </label><input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_boitier'] ?>"><br><br>
-		<input type="submit" value="Valider" class=modifier onclick= 'Confirmation()';>
+		<form method="POST" action="../php_fr/modifier_boitier.php" onsubmit="return valideForm()">
+		<label for="ID">ID : </label>
+        <input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
+		<label for="numero">Numero du boitier : </label>
+        <input type="number" name="numero" id="numero" value="<?php echo $donnees['numero_boitier'] ?>" required><br><br>
+		<input type="submit" value="Valider" class=modifier>
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php

@@ -56,6 +56,7 @@
                     </article>
                 </section>
                 <a href="profil_utilisateur.php" class="retour">Profil </a>
+                <br><br>
         <?php
         }
         ?>

@@ -26,11 +26,14 @@
 		?>
         <br><br>
 		<h2>Modifier le type de capteur</h2>
-		<form method="POST" action="../php_fr/modifier_type_capteur.php">
-		<label for="ID">ID : </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
-		<label for="nom">Nom du type : </label><input type="text" name="nom" id="nom" value="<?php echo $donnees['nom_type'] ?>"><br><br>
-		<label for="unite">Unité de mesure : </label><input type="text" name="unite" id="unite" value="<?php echo $donnees['unite_capteur'] ?>"><br><br>
-		<input type="submit" value="Valider" class=modifier onclick= 'Confirmation()';>
+		<form method="POST" action="../php_fr/modifier_type_capteur.php" onsubmit="return valideForm()">
+		<label for="ID">ID : </label>
+        <input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
+		<label for="nom">Nom du type : </label>
+        <input type="text" name="nom" id="nom" value="<?php echo $donnees['nom_type'] ?>" required><br><br>
+		<label for="unite">Unité de mesure : </label>
+        <input type="text" name="unite" id="unite" value="<?php echo $donnees['unite_capteur'] ?>" required><br><br>
+		<input type="submit" value="Valider" class=modifier>
         <a href="gerer_capteurs.php" class=cancel>Retour aux capteurs</a>
 		</form>
 		<?php

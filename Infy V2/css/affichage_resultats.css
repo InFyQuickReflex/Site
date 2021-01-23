@@ -5,6 +5,7 @@ main
     text-align:center;
 
 }
+
 main h2
 {
     font-size: 35px;
@@ -12,6 +13,10 @@ main h2
     text-align:center;
 }
 
+main article h3
+{
+    font-size: 28px;
+}
 table
 {
     border-collapse: collapse;
@@ -33,11 +38,11 @@ td,th
 
 main section article 
 {
-  border: 2px black solid;
-  border-radius: 10px; 
-  text-align: center;
-  padding: 5px;
-  margin:20px;
+    border: 4px black solid;
+    border-radius: 10px; 
+    text-align: center;
+    padding: 5px;
+    margin:20px;
 }
 
 .retour

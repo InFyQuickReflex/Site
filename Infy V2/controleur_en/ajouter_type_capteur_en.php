@@ -7,9 +7,10 @@ if(isset($_SESSION["ID"]))
 			$permission = selectpermissionUser($bdd,$_SESSION["ID"]);
 			if($permission == "administrateur")
 			{
-				$numero_boitier = htmlspecialchars($_POST['numero']);
-				ajouterBoitier($bdd,$numero_boitier);
+				$nom_type = htmlspecialchars($_POST['nom']);
+				$unite_capteur = htmlspecialchars($_POST['unite']);
+				ajouterTypeCapteur($bdd,$nom_type,$unite_capteur);	
 			}
 		}
-header("Location: ../vues_fr/gerer_capteurs.php");
+header("Location: ../vues_en/gerer_capteurs_en.php");
 ?>

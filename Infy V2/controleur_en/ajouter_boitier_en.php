@@ -8,8 +8,8 @@ if(isset($_SESSION["ID"]))
 			if($permission == "administrateur")
 			{
 				$numero_boitier = htmlspecialchars($_POST['numero']);
-				ajouterBoitier($bdd,$numero_boitier);
+				ajouterBoitier($bdd,$numero_boitier);			
 			}
 		}
-header("Location: ../vues_fr/gerer_capteurs.php");
+header("Location: ../vues_en/gerer_capteurs_en.php");
 ?>

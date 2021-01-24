@@ -1,0 +1,5 @@
+RewriteEngine On 
+
+RewriteRule ^article/([0-9]+)-([0-9]+)$ article.php?ID=$1&IDtest=$2
+
+RewriteRule ^resultats/([0-9]+)-([0-9]+)$ affichage_resultat.php?ID=$1&IDtest=$2

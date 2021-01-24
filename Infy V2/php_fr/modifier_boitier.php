@@ -12,5 +12,5 @@ if(isset($_SESSION["ID"]))
 				modifierBoitier($bdd,$numero_boitier,$id_boitier);
 			}
 		}
-header("Location: ../fr/gerer_capteurs.php");
+header("Location: ../vues_fr/gerer_capteurs.php");
 ?>

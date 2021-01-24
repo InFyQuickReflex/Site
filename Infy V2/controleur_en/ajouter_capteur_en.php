@@ -10,8 +10,8 @@ if(isset($_SESSION["ID"]))
 				$numero_capteur = htmlspecialchars($_POST['numero']);
 				$id_boitier = htmlspecialchars($_POST['boitier']);
 				$id_type = htmlspecialchars($_POST['type']);
-				ajouterCapteur($bdd,$numero_capteur,$id_boitier,$id_type);				
+				ajouterCapteur($bdd,$numero_capteur,$id_boitier,$id_type);
 			}
 		}
-header("Location: ../vues_fr/gerer_capteurs.php");
+header("Location: ../vues_en/gerer_capteurs_en.php");
 ?>

@@ -12,5 +12,5 @@ if(isset($_SESSION["ID"]))
 				ajouterTypeCapteur($bdd,$nom_type,$unite_capteur);
 			}
 		}
-header("Location: ../fr/gerer_capteurs.php");
+header("Location: ../vues_fr/gerer_capteurs.php");
 ?>

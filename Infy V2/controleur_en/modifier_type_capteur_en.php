@@ -13,5 +13,5 @@ if(isset($_SESSION["ID"]))
 				modifierTypeCapteur($bdd,$nom_type,$unite_capteur,$id_type);
 			}
 		}
-header("Location: ../vues_fr/gerer_capteurs.php");
+header("Location: ../vues_en/gerer_capteurs_en.php");
 ?>

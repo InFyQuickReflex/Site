@@ -27,22 +27,22 @@ if($_verif)
 {
     if($_permission  == "utilisateur")
     {
-        header("Location: ../fr/profil_utilisateur.php");
+        header("Location: ../vues_fr/profil_utilisateur.php");
     }
 
     else if($_permission  == "gestionnaire")
     {
-        header("Location: ../fr/profil_gestionnaire.php");
+        header("Location: ../vues_fr/profil_gestionnaire.php");
     }
 
     else if($_permission  == "administrateur")
     {
-        header("Location: ../fr/profil_administrateur.php");
+        header("Location: ../vues_fr/profil_administrateur.php");
     }   
 }
 
 else
 {
-    header("Location: ../fr/page_connexion_erreur.php");
+    header("Location: ../vues_fr/page_connexion_erreur.php");
 }
 ?>

@@ -18,9 +18,9 @@
     if(isset($_SESSION["ID"]))
     {
 
-	include('../php_fr/connexionbdd.php');
-    include('../php_fr/fonctions/fonctions_faq.php');
-    include('../php_fr/fonctions/fonctions_permission.php');
+	include('../controleur_fr/connexionbdd.php');
+    include('../controleur_fr/fonctions/fonctions_faq.php');
+    include('../controleur_fr/fonctions/fonctions_permission.php');
     $donnees = PermissionAdmin($bdd);
 	?>
 	<br>

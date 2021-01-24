@@ -16,9 +16,9 @@
           <?php
           if(isset($_SESSION["ID"]))
           {
-            include('../php_fr/connexionbdd.php');
-            include('../php_fr/fonctions/fonctions_permission.php');
-            include('../php_fr/fonctions/fonctions_gerer_users.php');
+            include('../controleur_fr/connexionbdd.php');
+            include('../controleur_fr/fonctions/fonctions_permission.php');
+            include('../controleur_fr/fonctions/fonctions_gerer_users.php');
             $donnees = PermissionGestion($bdd); ?>
             <br>
             <h2>Profil Gestionnaire</h2>
@@ -33,7 +33,7 @@
                         echo "<strong>Adresse email</strong> : ".$donnees["email"]."<br><br>";
                     $req->closeCursor();
                     ?>
-                    <a href="../php_fr/deconnexion.php" class="button">Deconnexion</a>
+                    <a href="../controleur_fr/deconnexion.php" class="button">Deconnexion</a>
                 </p>
             </div>
 

@@ -12,7 +12,7 @@ session_start();
             <?php
             if(isset($_SESSION["ID"]))
             {
-                include('../php_fr/connexionbdd.php');
+                include('../controleur_fr/connexionbdd.php');
 
                 $req = $bdd->prepare("SELECT permission FROM users WHERE id_user = ?");
                 $req->execute(array($_SESSION["ID"]));

@@ -17,9 +17,9 @@
 	<?php
     if(isset($_SESSION["ID"]))
     {
-    	include('../php_fr/connexionbdd.php');
-		include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
-		include('../php_fr/fonctions/fonctions_permission.php');
+    	include('../controleur_fr/connexionbdd.php');
+		include('../controleur_fr/fonctions/fonctions_gerer_capteurs.php');
+		include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd);
     ?>
 		<section id=NosCapteurs>
@@ -113,7 +113,7 @@
 		<section id=AjouterCapteur>
 			<h2 class=TitreSection>Ajouter un nouveau capteur</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_capteur.php' onsubmit="return valideForm()">
+			<form method='post' action='../controleur_fr/ajouter_capteur.php' onsubmit="return valideForm()">
 			<label for="numero">Numero du Capteur : </label>
 			<input type="number" name="numero" id="numero" required><br><br>
 			<label for="boitier">Boitier : </label>
@@ -146,7 +146,7 @@
 		<section id=AjouterTypeCapteur>
 			<h1 class=TitreSection>Ajouter un nouveau type de capteur</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_type_capteur.php' onsubmit="return valideForm()">
+			<form method='post' action='../controleur_fr/ajouter_type_capteur.php' onsubmit="return valideForm()">
 			<label for="nom">Nom du type de capteur : </label>
 			<input type="text" name="nom" id="nom" required><br><br>
 			<label for="unite">Unité de mesure du capteur : </label>
@@ -159,7 +159,7 @@
 		<section id=AjouterBoitier>
 			<h1 class=TitreSection>Ajouter un nouveau boitier</h1>
 			<div class='contenusection'>
-			<form method='post' action='../php_fr/ajouter_boitier.php' onsubmit="return valideForm()">
+			<form method='post' action='../controleur_fr/ajouter_boitier.php' onsubmit="return valideForm()">
 			<label for="numero">Numero du boitier : </label>
 			<input type="text" name="numero" id="numero" required><br><br>
 			<input type="submit" value="Envoyer">

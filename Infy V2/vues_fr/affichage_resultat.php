@@ -18,9 +18,9 @@
         {
             echo "<h2>Vos Résultats</h2>";
 
-            include('../php_fr/connexionbdd.php');
-            include('../php_fr/fonctions/fonctions_permission.php');
-            include('../php_fr/fonctions/fonctions_affichage.php');
+            include('../controleur_fr/connexionbdd.php');
+            include('../controleur_frv/fonctions/fonctions_permission.php');
+            include('../controleur_fr/fonctions/fonctions_affichage.php');
             PermissionUser($bdd);
             $ID = $_GET["IDtest"];
             ?>

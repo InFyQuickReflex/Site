@@ -22,7 +22,7 @@
 
       ?>
 		<h2>Nous contacter</h2>
-		<form method="POST" action="../php_fr/envoi_mail.php" onsubmit="return validateForm()">
+		<form method="POST" action="../controleur_fr/envoi_mail.php" onsubmit="return validateForm()">
 		<label for="nom">Votre nom : </label><input type="text" name="nom" id="nom" required><br><br>
 		<label for="prenom">Votre prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
         <label for="replyto">Votre adresse mail : </label><input type="text" name="replyto" id="replyto" required><br><br>

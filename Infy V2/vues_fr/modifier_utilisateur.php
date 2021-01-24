@@ -17,16 +17,16 @@
         <?php
         if(isset($_SESSION["ID"])) 
         {
-          include('../php_fr/connexionbdd.php');
-          include('../php_fr/fonctions/fonctions_permission.php');
-          include('../php_fr/fonctions/fonctions_gerer_users.php');
+          include('../controleur_fr/connexionbdd.php');
+          include('../controleur_fr/fonctions/fonctions_permission.php');
+          include('../controleur_fr/fonctions/fonctions_gerer_users.php');
           PermissionGestion($bdd);
           $req = SelectUser($bdd, $_GET["ID"]);
           $donnees = $req->fetch();
         ?>
               <br>
               <h2>Modifier l'utilisateur</h2>
-              <form method="POST" action="../php_fr/modifier_user_traitement.php">
+              <form method="POST" action="../controleur_fr/modifier_user_traitement.php">
                   <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 
                   <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" value="<?php echo $donnees["prenom"] ?>"><br><br>

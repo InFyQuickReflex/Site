@@ -16,8 +16,8 @@
         <?php
         if(isset($_SESSION["ID"]))
         {
-            include('../php_fr/connexionbdd.php');
-            include('../php_fr/fonctions/fonctions_permission.php');
+            include('../controleur_fr/connexionbdd.php');
+            include('../controleur_fr/fonctions/fonctions_permission.php');
             PermissionAdmin($bdd);
             ?>                   
             <br>
@@ -30,7 +30,7 @@
             <br>
             <div class="result">
                 <?php
-                include('../php_fr/connexionbdd.php');
+                include('../controleur_fr/connexionbdd.php');
 
                 if(isset($_GET["recherche"]))
                 {

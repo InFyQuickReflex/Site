@@ -16,13 +16,13 @@
         <?php
         if(isset($_SESSION["ID"]))
         {
-          include('../php_fr/connexionbdd.php');
-          include('../php_fr/fonctions/fonctions_permission.php');
+          include('../controleur_fr/connexionbdd.php');
+          include('../controleur_fr/fonctions/fonctions_permission.php');
           PermissionGestion($bdd);
               ?>
               <br>  
               <h2>Créer un utilisateur</h2>
-              <form method="POST" action="../php_fr/modifier_user_traitement.php">
+              <form method="POST" action="../controleur_fr/modifier_user_traitement.php">
                   <label for="prenom">Prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
                   <label for="nom">Nom : </label><input type="text" name="nom" id="nom" required><br><br>
                   <label for="identifiant">Identifiant : </label><input type="text" name="identifiant" id="identifiant" required><br><br>

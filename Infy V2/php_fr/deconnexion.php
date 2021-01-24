@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../fr/menu_principal.php");
+header("Location: ../vues_fr/menu_principal.php");
 ?>

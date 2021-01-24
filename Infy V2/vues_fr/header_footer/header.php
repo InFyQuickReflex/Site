@@ -53,7 +53,7 @@ session_start();
             <nav class="langue">
                 <ul>
                     <li><a href=""><img src="../img/ic_fr.png" class="icone"></a></li>
-                    <li><a href="../en/menu_principal_en.php"><img src="../img/ic_en.png" class="icone"></a></li>
+                    <li><a href="../vues_en/menu_principal_en.php"><img src="../img/ic_en.png" class="icone"></a></li>
                 </ul>
             </nav>
         </ul>

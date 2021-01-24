@@ -35,7 +35,7 @@
                     $req->closeCursor();
                     ?>
     
-                    <input type="submit" name = "logout" href="../php_en/connexion_en.php" value = "Log out" class="button"></input>
+                    <a href="../controleur_en/deconnexion_en.php" class="button"> Log Out</a>
                 </p>
             </div>
 

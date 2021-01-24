@@ -33,7 +33,7 @@
           echo "<strong>Identifiant</strong> : ".$donnees["identifiant"]."<br>";
           echo "<strong>Adresse email</strong> : ".$donnees["email"]."<br><br>";
         ?>
-          <a name="logout" href="../php_fr/deconnexion.php" value="Deconnexion" class="button"> Deconnexion</a>
+          <a href="../php_fr/deconnexion.php" class="button"> Deconnexion</a>
           </p>
       </div>
       <br>

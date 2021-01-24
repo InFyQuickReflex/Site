@@ -1,3 +1,3 @@
 <?php
-header("Location: fr/menu_principal.php");
+header("Location: vues_fr/menu_principal.php");
 ?>

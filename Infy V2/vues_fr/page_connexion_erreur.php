@@ -22,7 +22,7 @@
                         <input type="text" name = "identifiant" id="identifiant" required><br><br>
                         <label for="mot_de_passe">Mot de passe</label><br>
                         <input type="password" name = "mot_de_passe" id="mot_de_passe" required><br><br>
-                        <input type="submit" value="Se connecter" class="button"><br><br>
+                        <input type="submit" value="Connexion" class="button"><br><br>
                         <p class="erreur">Identifiant ou mot de passe incorrect</p>
                     </p>
                 </form>

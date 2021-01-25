@@ -33,33 +33,33 @@ for (var j=0;j<boutonsSupprimer.length;j++)
 			if (IDbouton[3] == 'C')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_capteur.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_capteur.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_capteur.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_capteur.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}
 			if (IDbouton[3] == 'T')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_type_capteur.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_type_capteur.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_type_capteur.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_type_capteur.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}
 			if (IDbouton[3] == 'B')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_boitier.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_boitier.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_boitier.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_boitier.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}
@@ -98,33 +98,33 @@ if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			if (IDbouton[3] == 'C')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_capteur.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_capteur.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_capteur.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_capteur.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}
 			if (IDbouton[3] == 'T')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_type_capteur.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_type_capteur.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_type_capteur.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_type_capteur.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}
 			if (IDbouton[3] == 'B')
 			{
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/supprimer_boitier.php",false);
+					"../controleur_fr/gerer_capteurs_AJAX/supprimer_boitier.php",false);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send("ID="+IDelementsuppr);
 				xmlhttp.open("POST",
-					"../php_fr/gerer_capteurs_AJAX/affiche_boitier.php",true);
+					"../controleur_fr/gerer_capteurs_AJAX/affiche_boitier.php",true);
 				xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 				xmlhttp.send('');
 			}

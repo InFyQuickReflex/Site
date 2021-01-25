@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
-
+ 
     <body>
       <?php include("header_footer/header.php")?>
 
@@ -29,16 +29,6 @@
         
 	<?php
 	$reqfaq = SelectFaq($bdd);
-    if($reqfaq->rowCount() == 0)
-    {
-        echo "Aucun texte";
-    }            
-    else
-    {
-	    while ($donnees = $reqfaq->fetch()){
-	       echo "<h3>".$donnees["question_fr"]."</h3><p> ".$donnees["reponse_fr"]." </p><a href='FAQ-".$donnees["id_FAQ"]."'>Modifier</a></p>";
-	    }
-    }
     $reqfaq->closeCursor();
 	?>
 	</div>

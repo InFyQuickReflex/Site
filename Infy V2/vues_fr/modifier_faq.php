@@ -23,7 +23,6 @@
         include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd);
         $donnees = SelectOneFaq($bdd,$_GET["ID"]);
-        $donnees = $donnees->fetch();
         ?>
         <br>
         <h2>Modifier la question</h2>
@@ -34,6 +33,10 @@
 
                 <label for="reponse">Réponse : </label><textarea rows="10" cols="100" name="reponse" id="reponse"><?php echo $donnees["reponse_fr"] ?></textarea><br><br>
 
+                <label for="question_en">Question (anglais) : </label><input type="text" name="question_en" id="question" value="<?php echo $donnees["question_en"] ?>"><br><br>
+
+                <label for="reponse_en">Réponse (anglais) : </label><textarea rows="10" cols="100" name="reponse_en" id="reponse"><?php echo $donnees["reponse_en"] ?></textarea><br><br>
+                
                 <input type="submit" name = "action" class = "modifier"value="Modifier" onclick= 'Confirmation()';>
                 <a href="gerer_faq.php" class="cancel">Annuler</a>
                 <input type="submit" name = "action" value="Supprimer" class="delete" onclick= 'Confirmation()';>

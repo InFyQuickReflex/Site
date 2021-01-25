@@ -20,7 +20,8 @@ function DeleteUser($bdd, $ID){
 function SelectUser($bdd, $ID){
 	$req = $bdd->prepare("SELECT * FROM users WHERE id_user = ?");
     $req->execute(array($ID));
-    return $req;
+    $rep = $req->fetch();
+    return $rep;
 }
 
 function SelectAllUser($bdd){

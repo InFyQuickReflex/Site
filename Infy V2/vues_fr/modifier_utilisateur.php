@@ -21,8 +21,7 @@
           include('../controleur_fr/fonctions/fonctions_permission.php');
           include('../controleur_fr/fonctions/fonctions_gerer_users.php');
           PermissionGestion($bdd);
-          $req = SelectUser($bdd, $_GET["ID"]);
-          $donnees = $req->fetch();
+          $donnees = SelectUser($bdd, $_GET["ID"]);
         ?>
               <br>
               <h2>Modifier l'utilisateur</h2>
@@ -48,7 +47,6 @@
               </form>
 
               <?php
-          $req->closeCursor();
         }
 
         else

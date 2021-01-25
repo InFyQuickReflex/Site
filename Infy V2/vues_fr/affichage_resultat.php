@@ -13,13 +13,13 @@
       <?php include("header_footer/header.php")?>
     <main>
         <br>
+        <h2> Vos Résultats </h2>
         <?php
+
         if(isset($_SESSION["ID"]))
         {
-            echo "<h2>Vos Résultats</h2>";
-
             include('../controleur_fr/connexionbdd.php');
-            include('../controleur_frv/fonctions/fonctions_permission.php');
+            include('../controleur_fr/fonctions/fonctions_permission.php');
             include('../controleur_fr/fonctions/fonctions_affichage.php');
             PermissionUser($bdd);
             $ID = $_GET["IDtest"];

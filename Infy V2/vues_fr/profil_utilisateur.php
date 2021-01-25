@@ -44,12 +44,7 @@
       <h3>Historique des tests</h3>
       <div class="test">
       <?php
-        $reponse = AfficherTests($bdd,$_SESSION["ID"]) ;       
-        while ($donnees = $reponse->fetch())
-          {
-            //echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="affichage_resultat.php?ID='.$donnees["id_user"].'&IDtest='.$donnees["id_test"].'"> Voir les résultats </a> </br></p>'; 
-            echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="resultats-'.$donnees["id_user"].'-'.$donnees["id_test"].'"> Voir les résultats </a> </br></p>';      
-          }
+      AfficherTests($bdd,$_SESSION["ID"]) 
       ?>
       </div>
                        

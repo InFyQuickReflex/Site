@@ -20,10 +20,7 @@
 
 	include('../controleur_fr/connexionbdd.php');
     include('../controleur_fr/fonctions/fonctions_cgu.php');
-    $reqcgu = SelectCgu($bdd);
-    while ($donnees = $reqcgu->fetch()){
-       echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p>";
-    }
+    $reqcgu = SelectCguUser($bdd);
     $reqcgu->closeCursor();
 	?>
 	</div>

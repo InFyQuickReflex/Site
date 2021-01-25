@@ -23,7 +23,6 @@
         include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd);
             $donnees = SelectOneCgu($bdd,$_GET["ID"]);
-            //$donnees = $donnees->fetch();
             ?> 
             <br>
             <h2>Modifier le paragraphe</h2>

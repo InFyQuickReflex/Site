@@ -7,15 +7,8 @@
         <link rel="stylesheet" href="../css/modifier_creer.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <script language='javascript'>
-        function Confirmation()
-        {
-            if (confirm("Voulez-vous confirmer?"))
-            {
-                formulaire.submit();
-            }
-        }
-        </script>
+        <script src = "../css/popup.js"></script>
+
     </head>
 
     <body>
@@ -73,7 +66,7 @@
           }
         else
           {
-              header("Location: menu_principal.php");
+            header("Location: menu_principal.php");
           }
         ?>
       </main>

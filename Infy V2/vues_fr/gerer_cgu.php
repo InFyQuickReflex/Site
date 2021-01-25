@@ -28,12 +28,7 @@
 	<div class=CGU>
         
 	<?php
-	$reqcgu = SelectCgu($bdd);
-	while ($donnees = $reqcgu->fetch()){
-	   echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='CGU-".$donnees["id_CGU"]."'>Modifier</a></p>";
-	}
-    $reqcgu->closeCursor();
-	?>
+	SelectCgu($bdd)?>
 	</div>
 
 	<br>

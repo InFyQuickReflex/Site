@@ -18,19 +18,10 @@
         <br><br>
         <h1>Consultez la FAQ !</h1>
         <?php
-        $req = SelectFaq($bdd);
-
-        while($donnees = $req->fetch())
-          {?>
-            <button class="accordion">
-              <h3><?php echo $donnees['question_fr']?></h3>
-              </button>
-            <div class="panel">    
-              <?php echo $donnees['reponse_fr']?>
-            </div>
-        <?php }?>
+        SelectFaqUser($bdd);?>
       </main>
       <script src="../css/faq.js"></script>
       <?php include("header_footer/footer.php")?>
     </body>
 </html>
+

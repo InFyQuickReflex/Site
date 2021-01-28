@@ -43,6 +43,6 @@ if($_verif)
 
 else
 {
-    header("Location: ../vues_fr/page_connexion_erreur.php");
+    header("Location: ../vues_en/page_connexion_erreur_en.php");
 }
 ?>

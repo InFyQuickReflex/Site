@@ -33,7 +33,7 @@
                         echo "<strong>Email address</strong> : ".$donnees["email"]."<br><br>";
                     $req->closeCursor();
                     ?>
-                    <a href="../controleur_fr/deconnexion.php" class="button">Logout</a>
+                    <a href="../controleur_en/deconnexion_en.php" class="button">Logout</a>
                 </p>
             </div>
 

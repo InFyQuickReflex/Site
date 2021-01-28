@@ -37,10 +37,8 @@
 
               <?php
 
-              
+          $req->closeCursor();   
           }
-          $req->closeCursor();
-        }
 
         else
           {

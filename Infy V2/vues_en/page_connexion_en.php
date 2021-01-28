@@ -16,7 +16,7 @@
             <div>
                 <h2>Connexion</h2>
                 
-                <form method="POST" action="../controleur_fr/connexion.php">
+                <form method="POST" action="../controleur_en/connexion_en.php">
                     <p>
                         <label for="identifiant">Username</label><br>
                         <input type="text" name = "identifiant" id="identifiant" required><br><br>

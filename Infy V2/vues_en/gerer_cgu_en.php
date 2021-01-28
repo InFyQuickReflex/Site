@@ -30,7 +30,7 @@
 	<?php
 	$reqcgu = SelectCgu($bdd);
 	while ($donnees = $reqcgu->fetch()){
-	   echo "<h3>".$donnees["titre_en"]."</h3><p> ".$donnees["paragraphe_en"]." </p><a href='modifier_cgu_en.php?ID=".$donnees["id_CGU"]."'>Edit</a></p>";
+	   echo "<h3>".$donnees["titre_en"]."</h3><p> ".$donnees["paragraphe_en"]." </p><a href='Legal-notice-".$donnees["id_CGU"]."'>Edit</a></p>";
 	}
     $reqcgu->closeCursor();
 	?>

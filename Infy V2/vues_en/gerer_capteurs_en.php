@@ -47,7 +47,7 @@
 					."<br>Associated case (ID) : ".$id_boitier."<br>
 					Type : ".$nom_type." (".$unite_type.") <br><br>
 					<button id=SupCap".$id_capteurs." class=BoutonSupprimer>Delete</button>
-					<a href='modifier_capteur_page_en.php?ID=".$id_capteurs."' class=BoutonModifier>Edit</a>
+					<a href='edit-sensor-".$id_capteurs."' class=BoutonModifier>Edit</a>
 					</article>";
 				}
 				}
@@ -76,7 +76,7 @@
 					ID : ".$id_type.
 					"<br>Unit of measurement : ".$unite_capteur."<br><br>
 					<button id=SupTyp".$id_type." class=BoutonSupprimer>Delete</button>
-					<a href='modifier_type_capteur_page_en.php?ID=".$id_type."' class=BoutonModifier>Edit</a>
+					<a href='edit-type-".$id_type."' class=BoutonModifier>Edit</a>
 					</article>";
 				}
 			}
@@ -102,7 +102,7 @@
 					<h2 class=TitreCapteur>Case n° ".$numero_boitier."</h2>
 					ID : ".$id_boitier."<br><br>
 					<button id=SupBoi".$id_boitier." class=BoutonSupprimer>Delete</button>
-					<a href='modifier_boitier_page_en.php?ID=".$id_boitier."' class=BoutonModifier>Edit</a>
+					<a href='edit-case-".$id_boitier."' class=BoutonModifier>Edit</a>
 					</article>";
 				}
 			}

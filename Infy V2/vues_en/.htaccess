@@ -1,0 +1,18 @@
+RewriteEngine On
+
+
+RewriteRule ^edit-user-([0-9]+)$ modifier_utilisateur_en.php?ID=$1
+
+RewriteRule ^change-access-([0-9]+)$ changer_permission_en.php?ID=$1
+
+RewriteRule ^results-([0-9]+)-([0-9]+)$ affichage_resultats_en.php?ID=$1&IDtest=$2
+
+RewriteRUle ^edit-sensor-([0-9]+)$ modifier_capteur_page_en.php?ID=$1
+
+RewriteRule ^edit-type-([0-9]+)$ modifier_type_capteur_page_en.php?ID=$1
+
+RewriteRule ^edit-case-([0-9]+)$ modifier_boitier_page_en.php?ID=$1
+
+RewriteRule ^FAQ-([0-9]+)$ modifier_faq_en.php?ID=$1
+
+RewriteRule ^Legal-notice-([0-9]+)$ modifier_cgu_en.php?ID=$1

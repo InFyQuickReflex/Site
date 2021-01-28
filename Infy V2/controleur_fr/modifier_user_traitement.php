@@ -15,7 +15,7 @@ if(isset($_POST["action"]) && $_POST["action"]=="Valider"||$_POST["action"]=="Ad
 	}
 
 }
-elseif (isset($_POST["action"]) && $_POST["action"]=="Modifier" ||$_POST["action"]=="Changer" || $_POST["action"]=="Edit"){
+elseif (isset($_POST["action"]) && $_POST["action"]=="Modifier" ||$_POST["action"]=="Changer" || $_POST["action"]=="Change" || $_POST["action"]=="Edit"){
 	$donnees = EditUser($bdd,htmlspecialchars($_POST["ID"]),htmlspecialchars($_POST["prenom"]), htmlspecialchars($_POST["nom"]),htmlspecialchars($_POST["identifiant"]), htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["date_de_naissance"]),htmlspecialchars($_POST["telephone"]),htmlspecialchars($_POST["permission"]));
 	$donnees->closeCursor();
 	if($_POST["action"] == "Modifier"){
@@ -23,6 +23,9 @@ elseif (isset($_POST["action"]) && $_POST["action"]=="Modifier" ||$_POST["action
 	}
 	elseif($_POST["action"] == "Changer"){
 		header("Location: ../vues_fr/gerer_droits.php");
+	}
+	elseif($_POST["action"] == "Change"){
+		header("Location: ../vues_en/gerer_droits_en.php");
 	}
 	elseif($_POST["action"] == "Edit"){
 		header("Location: ../vues_en/profil_gestionnaire_en.php");

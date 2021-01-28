@@ -2,7 +2,7 @@
 <html> 
     <head>
         <meta charset="utf-8">
-        <title>Gérer la FAQ</title>
+        <title>Manage FAQ</title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/gerer_cgu.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -36,7 +36,7 @@
     else
     {
 	    while ($donnees = $reqfaq->fetch()){
-	       echo "<h3>".$donnees["question_en"]."</h3><p> ".$donnees["reponse_en"]." </p><a href='modifier_faq_en.php?ID=".$donnees["id_FAQ"]."'>Edit</a></p>";
+	       echo "<h3>".$donnees["question_en"]."</h3><p> ".$donnees["reponse_en"]." </p><a href='FAQ-".$donnees["id_FAQ"]."'>Edit</a></p>";
 	    }
     }
     $reqfaq->closeCursor();

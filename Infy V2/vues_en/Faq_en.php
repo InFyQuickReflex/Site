@@ -18,7 +18,7 @@
         <br><br>
         <h1> FAQ !</h1>
         <?php
-        $req = SelectFaq($bdd);
+        $req = SelectFaqUser($bdd);
 
         while($donnees = $req->fetch())
           {?>

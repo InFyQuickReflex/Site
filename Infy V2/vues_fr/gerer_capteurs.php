@@ -103,7 +103,7 @@
 					<h2 class=TitreCapteur>Boitier n° ".$numero_boitier."</h2>
 					ID : ".$id_boitier."<br><br>
 					<button id=SupBoi".$id_boitier." class=BoutonSupprimer>Supprimer</button>
-					<a href='modifier_boitier_page.php?ID=".$id_boitier."' class=BoutonModifier>Modifier</a>
+					<a href='modifier-boitier-".$id_boitier."' class=BoutonModifier>Modifier</a>
 					</article>";
 				}
 			}

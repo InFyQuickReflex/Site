@@ -3,17 +3,12 @@
 function SelectCgu($bdd){
 	$req = $bdd->prepare("SELECT * FROM CGU");
 	$req->execute();
-	while ($donnees = $req->fetch()){
-	   echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p><a href='CGU-".$donnees["id_CGU"]."'>Modifier</a></p>";
-	}
+    return $req;
 }
 
 function SelectCguUser($bdd){
 	$req = $bdd->prepare("SELECT * FROM CGU");
 	$req->execute();
-	while ($donnees = $req->fetch()){
-       echo "<h3>".$donnees["titre_fr"]."</h3><p> ".$donnees["paragraphe_fr"]." </p>";
-    }
 	return $req;
 } 
 
@@ -33,12 +28,6 @@ function SelectOneCgu($bdd, $ID){
 function EditCgu($bdd, $ID, $titre_fr, $paragraphe_fr, $titre_en, $paragraphe_en){
 	$req = $bdd->prepare("UPDATE CGU SET titre_fr = ?, paragraphe_fr = ?, titre_en = ?, paragraphe_en = ? WHERE id_CGU = ?");
 	$req->execute(array($titre_fr, $paragraphe_fr, $titre_en, $paragraphe_en, $ID));
-	return $req;
-}
-
-function EditCguEn($bdd, $ID, $titre, $paragraphe){
-	$req = $bdd->prepare("UPDATE CGU SET titre_en = ?, paragraphe_en = ? WHERE id_CGU = ?");
-	$req->execute(array($titre, $paragraphe, $ID));
 	return $req;
 }
 

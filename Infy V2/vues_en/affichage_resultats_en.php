@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Infy - Vos résultats</title>
+        <title>Infy - Your Results </title>
         <link rel="stylesheet" href="../css/header_footer.css">
         <link rel="stylesheet" href="../css/affichage_resultats.css">
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -10,10 +10,10 @@
     </head>
 
     <body>
-      <?php include("header_footer/header.php")?>
+      <?php include("header_footer/header_en.php")?>
     <main>
         <br>
-        <h2> Vos Résultats </h2>
+        <h2> Your Results </h2>
         <?php
 
         if(isset($_SESSION["ID"]))
@@ -26,34 +26,32 @@
             ?>
             <P><table>
                 <tr>
-                    <th> Température </th>
+                    <th> Temperature </th>
                     <td> 
-                    <?php 
-                    $reponse = AfficherTemp($bdd,$ID);
+                    <?php $reponse = AfficherTemp($bdd,$ID);
                     if($donnees = $reponse->fetch())
                     { 
-                        echo $donnees["valeur"]." degrés  ";
+                        echo $donnees["valeur"]." degrees  ";
                     } 
                     else
                     {
-                        echo "Vous n'avez pas de résultats";
+                        echo "You d'ont have any results";
                     }
                     
                     if($donnees["valeur"] >= 38){
-                        echo "<strong> Température trop haute </strong>";
+                        echo "<strong> Temperature too high </strong>";
                     }
                     elseif($donnees["valeur"] <= 34){
-                        echo "<strong> Température trop basse </strong>";
+                        echo "<strong> Temperature too low </strong>";
                     }
                     else{
-                        echo "<em> Température normale </em>";
-                    }
-                     ?>
+                        echo "<em> Normal Temperature </em>";
+                    } ?>
                     </td>
                 </tr>
 
                 <tr>
-                    <th> Fréquence Cardiaque </th>
+                    <th> Heartbeat </th>
                     <td>
                     <?php 
                     $reponse = AfficherFreq($bdd, $ID);
@@ -63,60 +61,57 @@
                     }
                     else
                     {
-                        echo "Vous n'avez pas de résultats";
+                        echo "You don't have any results";
                     }
 
                     if($donnees["valeur"] >= 100){
-                        echo "<strong> Fréquence cardiaque trop haute </strong>";
+                        echo "<strong> Heartbeat too fast </strong>";
                     }
                     elseif($donnees["valeur"] <= 55){
-                        echo "<strong> Fréquence cardiaque trop basse </strong>";
+                        echo "<strong> Heartbeat too slow </strong>";
                     }
                     else{
-                        echo "<em> Fréquence cardiaque normale </em>";
+                        echo "<em> Normal Heartbeat </em>";
                     }?>
                     </td>
                 </tr>
                 </table></P>
                 <section id = "test">                 
                     <article class="testson">
-                        <h3>Test n°1: Réactivité à un son innatendu</h3>
+                        <h3>Test n°1: Responsiveness to unexpected sound</h3>
                         <?php 
                         $reponse = AfficherSon($bdd,$ID);
                         if($donnees = $reponse->fetch())
                         {
-                            echo"<p> Vous avez mis ".$donnees["valeur"]." secondes à réagir.</p>";  
+                            echo"<p> you took ".$donnees["valeur"]." seconds to react.</p>";  
                         }
                         else
                         {
-                            echo"Vous n'avez pas de résultats";
+                            echo"You don't have any results";
                         }?>
                     </article>
 
                     <article class="testlumiere">
-                        <h3>Test n°2: Réactivité à une lumière innatendue</h3>
-                        <?php 
-                        echo "<img src='../controleur_fr/graphique_lumiere.php?IDtest=".$ID."' >"; ?>
+                        <h3>Test n°2: Responsiveness to unexpected light</h3>
+                            <?php AfficherLum($bdd, $ID) ?>
                     </article>
 
                     <article class="testfreq">
-                        <h3>Test n°3: Reproduction d'une fréquence</h3>
+                        <h3>Test n°3: Reproducing a frequency</h3>
                         <p>  </p>
                     </article>
 
                     <article>
-                        <h3> Où vous situez-vous dans la moyenne ?</h3>
-                        <?php 
-                        echo "<img src='../controleur_fr/graphique_comparaison.php?IDtest=".$ID."' >"; 
-                        ?>
+                        <h3> Where do you rank in the average?</h3>
+                        <?php AfficherComp($bdd, $ID) ?>
                     </article>
                 </section>
-                <a href="profil_utilisateur.php" class="retour">Profil </a>
+                <a href="profil_utilisateur_en.php" class="retour">Profile </a>
                 <br><br>
         <?php
         }
         ?>
     </main>
-    <?php include("header_footer/footer.php")?>
+    <?php include("header_footer/footer_en.php")?>
     </body>
 </html>

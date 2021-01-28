@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     </head>
 
-    <body>
+    <body> 
     <?php include("header_footer/header.php")?>
 
       <main>
@@ -44,7 +44,11 @@
       <h3>Historique des tests</h3>
       <div class="test">
       <?php
-      AfficherTests($bdd,$_SESSION["ID"]) 
+      $req = AfficherTests($bdd,$_SESSION["ID"]);
+      while ($donnees = $req->fetch())
+      {
+        echo '<p>Test du ' .$donnees["date_test"]. ' : <a href="resultats-'.$donnees["id_user"].'-'.$donnees["id_test"].'"> Voir les résultats </a> </br></p>';      
+      }
       ?>
       </div>
                        

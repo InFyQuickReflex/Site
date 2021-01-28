@@ -23,7 +23,6 @@
         include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd);
         $donnees = SelectOneFaq($bdd,$_GET["ID"]);
-        $donnees = $donnees->fetch();
         ?>
         <br>
         <h2>Edit the question</h2>
@@ -38,9 +37,9 @@
 
                 <label for="reponse">Answer (french) : </label><textarea rows="10" cols="100" name="reponse" id="reponse"><?php echo $donnees["reponse_fr"] ?></textarea><br><br>
 
-                <input type="submit" name = "action" class = "modifier"value="Edit" onclick= 'Confirmation()';>
+                <input type="submit" name = "action" class = "modifier"value="Edit" onclick= 'ConfirmationEng()';>
                 <a href="gerer_faq_en.php" class="cancel">Cancel</a>
-                <input type="submit" name = "action" value="Delete" class="delete" onclick= 'Confirmation()';>
+                <input type="submit" name = "action" value="Delete" class="delete" onclick= 'ConfirmationEng()';>
             </form>
     <?php 
     }

@@ -1,14 +1,15 @@
 RewriteEngine On 
 
-#RewriteRule ^article/([0-9]+)-([0-9]+)$ article.php?ID=$1&IDtest=$2
 
 RewriteRule ^resultats-([0-9]+)-([0-9]+)$ affichage_resultat.php?ID=$1&IDtest=$2
 
 RewriteRule ^modifier_utilisateur-([0-9]+)$ modifier_utilisateur.php?ID=$1
-
+ 
 RewriteRUle ^capteur-([0-9]+)$ modifier_capteur_page.php?ID=$1
 
 RewriteRule ^type-de-capteur-([0-9]+)$ modifier_type_capteur_page.php?ID=$1
+
+RewriteRule ^modifier-boitier-([0-9]+)$ modifier_boitier_page.php?ID=$1
 
 RewriteRule ^changer-permission-([0-9]+)$ changer_permission.php?ID=$1
 

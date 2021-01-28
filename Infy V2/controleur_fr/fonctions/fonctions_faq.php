@@ -11,9 +11,9 @@ function SelectFaq($bdd){
 	return $req;
 }
 
-function CreateFaq($bdd, $titre, $paragraphe){
-	$req = $bdd->prepare("INSERT INTO FAQ(question_fr,reponse_fr) VALUES(?, ?)");
-	$req->execute(array($titre, $paragraphe));
+function CreateFaq($bdd, $titre, $paragraphe, $titre_en, $paragraphe_en){
+	$req = $bdd->prepare("INSERT INTO FAQ(question_fr,reponse_fr,question_en,reponse_en) VALUES(?, ?, ?, ?)");
+	$req->execute(array($titre, $paragraphe, $titre_en, $paragraphe_en));
 	return $req;
 }
 

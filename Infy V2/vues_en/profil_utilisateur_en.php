@@ -24,8 +24,8 @@
                 <img src="../img/pp.png">
                 <p>
                     <?php
-                    include('../php_fr/connexionbdd.php');
-                    include('../php_fr/fonctions/fonctions_permission.php');
+                    include('../controleur_fr/connexionbdd.php');
+                    include('../controleur_fr/fonctions/fonctions_permission.php');
                     $donnees = PermissionUser($bdd);
                         echo "<strong>First name</strong> : ".$donnees["prenom"]."<br>";
                         echo "<strong>Last name</strong> : ".$donnees["nom"]."<br>";

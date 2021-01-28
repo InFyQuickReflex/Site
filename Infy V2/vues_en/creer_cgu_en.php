@@ -16,12 +16,12 @@
       <?php
       if(isset($_SESSION["ID"]))
       {
-      include('../php_fr/connexionbdd.php');
-      include('../php_fr/fonctions/fonctions_permission.php');
+      include('../controleur_fr/connexionbdd.php');
+      include('../controleur_fr/fonctions/fonctions_permission.php');
       PermissionAdmin($bdd); ?>
         <br>
         <h2>Add paragraph</h2>
-        <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
+        <form method="POST" action="../controleur_fr/modifier_cgu_traitement.php">
           <label for="titre_en">Title (english) : </label>
           <input type="text" name="titre_en" id="titre" required><br><br>
 

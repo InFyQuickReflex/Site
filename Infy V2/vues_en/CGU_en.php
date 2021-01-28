@@ -18,8 +18,8 @@
 	<div class=CGU>
 	<?php
 
-	include('../php_fr/connexionbdd.php');
-    include('../php_fr/fonctions/fonctions_cgu.php');
+	include('../controleur_fr/connexionbdd.php');
+    include('../controleur_fr/fonctions/fonctions_cgu.php');
     $reqcgu = SelectCgu($bdd);
     while ($donnees = $reqcgu->fetch()){
        echo "<h3>".$donnees["titre_en"]."</h3><p> ".$donnees["paragraphe_en"]." </p>";

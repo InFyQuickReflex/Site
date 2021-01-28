@@ -18,16 +18,16 @@
 	<?php
 	if(isset($_SESSION["ID"]))
     {
-        include('../php_fr/connexionbdd.php');
-        include('../php_fr/fonctions/fonctions_cgu.php');
-        include('../php_fr/fonctions/fonctions_permission.php');
+        include('../controleur_fr/connexionbdd.php');
+        include('../controleur_fr/fonctions/fonctions_cgu.php');
+        include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd);
             $donnees = SelectOneCgu($bdd,$_GET["ID"]);
             $donnees = $donnees->fetch();
             ?>
             <br>
             <h2>Edit the paragraph</h2>
-            <form method="POST" action="../php_fr/modifier_cgu_traitement.php">
+            <form method="POST" action="../controleur_fr/modifier_cgu_traitement.php">
                 <label for="ID">ID: </label><input type="number" name="ID" id="ID" value="<?php echo $_GET["ID"] ?>" readonly><br><br>
 
                 <label for="titre_en"> Title (english): </label><input type="text" name="titre_en" id="titre" value="<?php echo $donnees["titre_en"] ?>"><br><br>

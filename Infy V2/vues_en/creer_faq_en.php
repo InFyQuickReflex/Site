@@ -16,12 +16,12 @@
       <?php
       if(isset($_SESSION["ID"]))
       {
-        include('../php_fr/connexionbdd.php');
-        include('../php_fr/fonctions/fonctions_permission.php');
+        include('../controleur_fr/connexionbdd.php');
+        include('../controleur_fr/fonctions/fonctions_permission.php');
         PermissionAdmin($bdd); ?>
           <br>
           <h2>Add a question</h2>
-          <form method="POST" action="../php_fr/modifier_faq_traitement.php">
+          <form method="POST" action="../controleur_fr/modifier_faq_traitement.php">
             <label for="question">Question (french) : </label>
             <input type="text" name="question" id="question" required><br><br>
             <label for="reponse"> Answer (french) : </label><br>

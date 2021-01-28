@@ -24,8 +24,8 @@
                 <img src="../img/pp.png">
                 <p>
                     <?php
-                    include('../php_fr/connexionbdd.php');
-                    include('../php_fr/fonctions/fonctions_permission.php');
+                    include('../controleur_fr/connexionbdd.php');
+                    include('../controleur_fr/fonctions/fonctions_permission.php');
                     $donnees = PermissionAdmin($bdd);
                         echo "<strong>Name</strong> : ".$donnees["prenom"]."<br>";
                         echo "<strong>Surname</strong> : ".$donnees["nom"]."<br>";
@@ -33,7 +33,7 @@
                         echo "<strong>Email address</strong> : ".$donnees["email"]."<br><br>";
                     $req->closeCursor();
                     ?>
-                    <a href="../php_fr/deconnexion.php" class="button">Logout</a>
+                    <a href="../controleur_fr/deconnexion.php" class="button">Logout</a>
                 </p>
             </div>
 

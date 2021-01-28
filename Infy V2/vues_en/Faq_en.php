@@ -11,8 +11,8 @@
 
     <body> 
       <?php include("header_footer/header_en.php");
-      include('../php_fr/connexionbdd.php');
-      include('../php_fr/fonctions/fonctions_faq.php');?>
+      include('../controleur_fr/connexionbdd.php');
+      include('../controleur_fr/fonctions/fonctions_faq.php');?>
 
       <main>
         <br><br>

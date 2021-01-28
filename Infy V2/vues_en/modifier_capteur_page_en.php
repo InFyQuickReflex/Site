@@ -17,9 +17,9 @@
         <?php
 		if(isset($_SESSION["ID"]))
         {
-        	include('../php_fr/connexionbdd.php');
-        	include('../php_fr/fonctions/fonctions_gerer_capteurs.php');
-        	include('../php_fr/fonctions/fonctions_permission.php');
+        	include('../controleur_fr/connexionbdd.php');
+        	include('../controleur_fr/fonctions/fonctions_gerer_capteurs.php');
+        	include('../controleur_fr/fonctions/fonctions_permission.php');
             PermissionAdmin($bdd);
 			$req = selectCapteur($bdd,$_GET['ID']);
             $donnees = $req->fetch();

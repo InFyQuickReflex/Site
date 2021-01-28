@@ -39,7 +39,7 @@ elseif (isset($_POST["action"]) && $_POST["action"]=="Supprimer" || $_POST["acti
 		header("Location: ../vues_fr/profil_gestionnaire.php");
 	}
 	elseif($_POST["action"] == "Delete"){
-		header("Location: ../vues_en/profil_gestionnaire.php");
+		header("Location: ../vues_en/profil_gestionnaire_en.php");
 	}
 }
 ?>

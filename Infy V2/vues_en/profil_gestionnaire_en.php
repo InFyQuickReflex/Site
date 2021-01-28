@@ -38,7 +38,7 @@
 
             <br>
             <div class="create_user">
-                <a href="creer_utilisateur.php">Add a new user</a>
+                <a href="creer_utilisateur_en.php">Add a new user</a>
             </div>
 
             <br>

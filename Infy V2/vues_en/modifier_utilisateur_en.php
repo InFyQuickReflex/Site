@@ -41,8 +41,8 @@
                   <label for="telephone">Phone Number : </label><input type="tel" name="telephone" id="telephone" value="<?php echo $donnees["telephone"] ?>"><br><br>
 
 
-                  <input type="submit" name="action" class="modifier" value="Edit" onclick= 'Confirmation()';>
-                  <a href="profil_gestionnaire_en.php" class="cancel">Annuler</a>
+                  <input type="submit" name="action" class="modifier" value="Edit" onclick= 'ConfirmationEng()';>
+                  <a href="profil_gestionnaire_en.php" class="cancel">Cancel</a>
                   <input type="submit" name = "action" value="Delete" class="delete" onclick= 'ConfirmationEng()';>
               </form>
 

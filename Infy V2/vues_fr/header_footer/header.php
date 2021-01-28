@@ -61,3 +61,9 @@ session_start();
 
     
 </header>
+<script>
+let lien = document.createElement('link');
+lien.rel = "icon";
+lien.href = "../img/QuickReflexTranspZoom.png";
+document.head.append(lien);
+</script>

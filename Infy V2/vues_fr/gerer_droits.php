@@ -18,6 +18,7 @@
         {
             include('../controleur_fr/connexionbdd.php');
             include('../controleur_fr/fonctions/fonctions_permission.php');
+            include('../controleur_fr/fonctions/fonctions_gerer_users.php');
             PermissionAdmin($bdd);
             ?>                   
             <br>
@@ -30,33 +31,11 @@
             <br>
             <div class="result">
                 <?php
-                include('../controleur_fr/connexionbdd.php');
-
-                if(isset($_GET["recherche"]))
-                {
-                    $recherche = htmlspecialchars($_GET["recherche"]);
-                    $recherche=str_replace(' ','',$recherche);
-
-                    $reponse = $bdd->prepare("SELECT id_user, prenom, nom, identifiant, permission FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
-                    $reponse->execute(array("%".$recherche."%"));
-
-                    if($reponse->rowCount() == 0)
-                    {
-                        echo "Aucun utilisateur trouvé";
-                    }
-                }
-
-                else
-                {
-                    $reponse = $bdd->query("SELECT id_user, prenom, nom, identifiant, permission FROM users ORDER BY nom");
-                }
-
+                $reponse = RechercherUser($bdd);
                 while($donnees = $reponse->fetch())
                 {
-                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." - ".$donnees["permission"]."<a href='changer-permission-".$donnees["id_user"]."'>Modifier</a><hr></p>";
+                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='changer-permission-".$donnees["id_user"]."'>Modifier</a><hr></p>";
                 }
-
-                $reponse->closeCursor();
                 ?>
             </div>
 

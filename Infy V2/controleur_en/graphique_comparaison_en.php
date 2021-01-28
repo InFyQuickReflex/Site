@@ -3,8 +3,8 @@ session_start();
 require_once("../include_path_inc.php");
 
 require_once("jpgraph.php");
-require_once("jpgraph_line.php");
 require_once("jpgraph_bar.php");
+require_once("jpgraph_line.php");
 
 include('connexionbdd.php');
 
@@ -31,17 +31,17 @@ FROM mesures WHERE id_type_mesures = 7 ');
 $reponse->execute();
 while($donnees = $reponse->fetch())
 {
-	$Moyenne[] = $donnees['moyenne'];
+	$Average[] = $donnees['moyenne'];
 }
 
 //Resultat du User
-$reponse= $bdd->prepare('SELECT valeur, type_mesures.type AS type FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND id_test = ?) WHERE type_mesures.type = "son" OR type_mesures.type = "rouge" OR type_mesures.type = "bleu" OR type_mesures.type = "blanc" OR type_mesures.type = "vert"');
+$reponse= $bdd->prepare('SELECT valeur, type_mesures.type_en AS type FROM mesures INNER JOIN type_mesures ON (type_mesures.id_type_mesures = mesures.id_type_mesures AND id_test = ?) WHERE type_mesures.type_en = "sound" OR type_mesures.type_en = "red" OR type_mesures.type_en = "blue" OR type_mesures.type_en = "white" OR type_mesures.type_en = "green"');
 $reponse->execute(array($_GET["IDtest"]));
 
 while($donnees = $reponse->fetch())
 {
 	$Tests[] = $donnees['type'];
-	$Resultats[] = $donnees['valeur'];
+	$Results[] = $donnees['valeur'];
 }
 
 //Nouveau graphique
@@ -49,21 +49,21 @@ $graph = new Graph(400,400);
 $graph->SetScale('textlin');
 $graph->img->SetMargin(80,20,20,80);
 //Nouveau histogrammes
-$bplot = new BarPlot($Moyenne);
-$bplot->SetLegend('Moyenne des résultats');
+$bplot = new BarPlot($Average);
+$bplot->SetLegend('Average');
 $bplot->SetFillColor(array('pink','white', '#1093b0', '#991e0e', '#4f852c'));
 //Nouvelle courbe
-$l1plot=new LinePlot($Resultats);
+$l1plot=new LinePlot($Results);
 $l1plot->SetColor('black');
 $l1plot->SetWeight(2);
-$l1plot->SetLegend('Vos résultats');
+$l1plot->SetLegend('Your Results');
 //On ajoute les deux courbes
 $graph->Add($bplot);
 $graph->Add($l1plot);
  
-$graph->title->Set('Placement dans la moyenne');
+$graph->title->Set('Your spot in the average');
 $graph->xaxis->title->Set('Tests');
-$graph->yaxis->title->Set('Temps');
+$graph->yaxis->title->Set('Time');
  
 $graph->title->SetFont(FF_FONT1,FS_BOLD);
 $graph->yaxis->title->SetFont(FF_FONT1,FS_BOLD);

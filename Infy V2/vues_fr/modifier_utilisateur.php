@@ -10,7 +10,7 @@
         <script src = "../css/popup.js"></script>
     </head>
 
-    <body>
+    <body> 
       <?php include("header_footer/header.php")?>
 
       <main>

@@ -50,34 +50,12 @@
 
             <br>
             <div class="result">
-                
-                <?php
-
-                if(isset($_GET["recherche"]))
-                {
-                    $recherche = htmlspecialchars($_GET["recherche"]);
-                    $recherche=str_replace(' ','',$recherche);
-
-                    $reponse = $bdd->prepare("SELECT id_user, prenom, nom, identifiant FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
-                    $reponse->execute(array("%".$recherche."%"));
-
-                    if($reponse->rowCount() == 0)
-                    {
-                        echo "Aucun utilisateur trouvé";
-                    }
-                }
-
-                else
-                {
-                    $reponse = SelectAllUser($bdd);
-                }
-
+             <?php
+                $reponse = RechercherUser($bdd);
                 while($donnees = $reponse->fetch())
                 {
                     echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='modifier_utilisateur-".$donnees["id_user"]."'>Modifier</a><hr></p>";
                 }
-
-                $reponse->closeCursor();
                 ?>
             </div>
 

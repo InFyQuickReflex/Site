@@ -18,45 +18,24 @@
         {
             include('../controleur_fr/connexionbdd.php');
             include('../controleur_fr/fonctions/fonctions_permission.php');
+            include('../controleur_fr/fonctions/fonctions_gerer_users.php');
             PermissionAdmin($bdd);
             ?>                   
             <br>
-            <h2>Droits d'accès</h2>
+            <h2>Access Rights</h2>
             <br>
             <form method="$_GET">
-                <input type="search" placeholder="Find a user" name ="Search" required>
-                <input type="submit" value="Find">
+                <input type="search" placeholder="Find a user" name ="recherche" required>
+                <input type="submit" value="Search">
             </form>
             <br>
             <div class="result">
                 <?php
-                include('../controleur_fr/connexionbdd.php');
-
-                if(isset($_GET["recherche"]))
-                {
-                    $recherche = htmlspecialchars($_GET["recherche"]);
-                    $recherche=str_replace(' ','',$recherche);
-
-                    $reponse = $bdd->prepare("SELECT id_user, prenom, nom, identifiant, permission FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
-                    $reponse->execute(array("%".$recherche."%"));
-
-                    if($reponse->rowCount() == 0)
-                    {
-                        echo "No user found";
-                    }
-                }
-
-                else
-                {
-                    $reponse = $bdd->query("SELECT id_user, prenom, nom, identifiant, permission FROM users ORDER BY nom");
-                }
-
+                $reponse = RechercherUser($bdd);
                 while($donnees = $reponse->fetch())
                 {
-                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." - ".$donnees["permission"]."<a href='change-access-".$donnees["id_user"]."'>Edit</a><hr></p>";
+                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='change-access-".$donnees["id_user"]."'>Edit</a><hr></p>";
                 }
-
-                $reponse->closeCursor();
                 ?>
             </div>
 

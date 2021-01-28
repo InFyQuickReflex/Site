@@ -35,7 +35,7 @@
                     } 
                     else
                     {
-                        echo "You d'ont have any results";
+                        echo "You don't have any results";
                     }
                     
                     if($donnees["valeur"] >= 38){
@@ -93,7 +93,8 @@
 
                     <article class="testlumiere">
                         <h3>Test n°2: Responsiveness to unexpected light</h3>
-                            <?php AfficherLum($bdd, $ID) ?>
+                            <?php 
+                        echo "<img src='../controleur_en/graphique_lumiere_en.php?IDtest=".$ID."' >"; ?>
                     </article>
 
                     <article class="testfreq">
@@ -103,7 +104,9 @@
 
                     <article>
                         <h3> Where do you rank in the average?</h3>
-                        <?php AfficherComp($bdd, $ID) ?>
+                        <?php 
+                        echo "<img src='../controleur_en/graphique_comparaison_en.php?IDtest=".$ID."' >"; 
+                        ?>
                     </article>
                 </section>
                 <a href="profil_utilisateur_en.php" class="retour">Profile </a>

@@ -31,7 +31,6 @@
                         echo "<strong>Last Name</strong> : ".$donnees["nom"]."<br>";
                         echo "<strong>Username</strong> : ".$donnees["identifiant"]."<br>";
                         echo "<strong>Email</strong> : ".$donnees["email"]."<br><br>";
-                    $req->closeCursor();
                     ?>
                     <a href="../controleur_en/deconnexion_en.php" class="button">Log Out</a>
                 </p>
@@ -50,34 +49,12 @@
 
             <br>
             <div class="result">
-                
                 <?php
-
-                if(isset($_GET["recherche"]))
-                {
-                    $recherche = htmlspecialchars($_GET["recherche"]);
-                    $recherche=str_replace(' ','',$recherche);
-
-                    $reponse = $bdd->prepare("SELECT id_user, prenom, nom, identifiant FROM users WHERE CONCAT(prenom, nom, identifiant) LIKE ? ORDER BY nom");
-                    $reponse->execute(array("%".$recherche."%"));
-
-                    if($reponse->rowCount() == 0)
-                    {
-                        echo "Nobody found";
-                    }
-                }
-
-                else
-                {
-                    $reponse = SelectAllUser($bdd);
-                }
-
+                $reponse = RechercherUser($bdd);
                 while($donnees = $reponse->fetch())
                 {
-                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='edit_user-".$donnees["id_user"]."'>Edit</a><hr></p>";
+                    echo "<p>".$donnees["nom"]." ".$donnees["prenom"]." - ".$donnees["identifiant"]." <a href='edit-user-".$donnees["id_user"]."'>Edit</a><hr></p>";
                 }
-
-                $reponse->closeCursor();
                 ?>
             </div>
 

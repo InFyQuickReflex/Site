@@ -45,22 +45,23 @@ while($donnees = $reponse->fetch())
 }
 
 //Nouveau graphique
-$graph = new Graph(400,400);    
+$graph = new Graph(600, 500);   
 $graph->SetScale('textlin');
 $graph->img->SetMargin(80,20,20,80);
 //Nouveau histogrammes
 $bplot = new BarPlot($Average);
 $bplot->SetLegend('Average');
-$bplot->SetFillColor(array('pink','white', '#1093b0', '#991e0e', '#4f852c'));
+$bplot->SetFillGradient('#a63c3c','#822f2f', GRAD_HOR,);
 //Nouvelle courbe
 $l1plot=new LinePlot($Results);
 $l1plot->SetColor('black');
 $l1plot->SetWeight(2);
 $l1plot->SetLegend('Your Results');
+$l1plot->SetBarCenter();
 //On ajoute les deux courbes
 $graph->Add($bplot);
 $graph->Add($l1plot);
- 
+
 $graph->title->Set('Your spot in the average');
 $graph->xaxis->title->Set('Tests');
 $graph->yaxis->title->Set('Time');

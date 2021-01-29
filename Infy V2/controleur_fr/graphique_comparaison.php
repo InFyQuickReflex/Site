@@ -45,13 +45,13 @@ while($donnees = $reponse->fetch())
 }
 
 //Nouveau graphique
-$graph = new Graph(400,400);    
+$graph = new Graph(600, 500);    
 $graph->SetScale('textlin');
 $graph->img->SetMargin(80,20,20,80);
 //Nouveau histogrammes
 $bplot = new BarPlot($Moyenne);
 $bplot->SetLegend('Moyenne des résultats');
-$bplot->SetFillColor(array('pink','white', '#1093b0', '#991e0e', '#4f852c'));
+$bplot->SetFillGradient('#a63c3c','#822f2f', GRAD_HOR,);
 //Nouvelle courbe
 $l1plot=new LinePlot($Resultats);
 $l1plot->SetColor('black');

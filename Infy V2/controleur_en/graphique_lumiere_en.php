@@ -18,7 +18,7 @@ while($donnees = $reponse->fetch())
 }
 
 // Initialisation du graphique
-$graph = new Graph(400, 400);
+$graph = new Graph(600, 500);
 
 // Echelle lineaire ('lin') en ordonnee et pas de valeur en abscisse ('text')
 // Valeurs min et max seront determinees automatiquement
@@ -26,7 +26,6 @@ $graph->setScale("textlin");
 
 // Fixer les marges
 $graph->img->SetMargin(80,20,20,80);
-
 
 // Creation de l'histogramme
 $bplot = new BarPlot($tableauTime);
@@ -37,8 +36,9 @@ $graph->add($bplot);
 // Afficher les valeurs pour chaque barre
 //$bplot->value->Show();
 
-// Spécification des couleurs des barres
-$bplot->SetFillColor(array('white', '#1093b0', '#991e0e', '#4f852c'));
+// Spécification des couleurs des barres: vert, bleu, rouge, blanc
+$bplot->SetFillColor(array('#206339', '#196682', '#8a152e', 'white'));
+
 // Ajout du titre du graphique
 //$graph->title->set("Temps de réaction en fonction de la couleur");
 

@@ -38,7 +38,7 @@ $graph->add($bplot);
 //$bplot->value->Show();
 
 // Spécification des couleurs des barres
-$bplot->SetFillColor(array('#206339', '#196682', '#8a152e', 'white'));
+$bplot->SetFillColor(array('white','#196682','#8a152e','#206339'));
 // Ajout du titre du graphique
 //$graph->title->set("Temps de réaction en fonction de la couleur");
 

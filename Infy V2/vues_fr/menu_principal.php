@@ -31,7 +31,7 @@
               <br>
               <h2>Passer un test</h2>
               <p>
-                  Pour effectuer un test, vous devrez dans un premier temps accéder à un centre d'évaluation afin de vous inscrire. Vous recevrez par la suite un boitier, dont vous pouvez consulter le fonctionnement dans la rubrique "Notre métier". Enfin, il vous restera simplement à vous installer devant un ordinateur, où vous devrew préciser le numéro de boitier, afin de pouvoir suivre en temps réel l'avancée de votre test. 
+                  Pour effectuer un test, vous devrez dans un premier temps accéder à un centre d'évaluation afin de vous inscrire. Vous recevrez par la suite un boitier, dont vous pouvez consulter le fonctionnement dans la rubrique "Notre produit". Enfin, il vous restera simplement à vous installer devant un ordinateur, où vous devrez préciser le numéro de boitier, afin de pouvoir suivre en temps réel l'avancée de votre test. 
               </p>
               <hr>
       

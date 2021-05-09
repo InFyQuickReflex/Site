@@ -17,11 +17,11 @@
                 <br>
                 <h2>Quick Reflex</h2>
                 <p>
-                    Le boîtier sera composé de capteurs, d’un écran, d’un micro et de boutons. Après avoir lancé le test sur ordinateur, l’utilisateur fera face à trois test :
+                    Le boîtier sera composé de capteurs, d’un écran, d’un micro et de boutons. Après avoir lancé le test sur ordinateur, l’utilisateur fera face à trois tests :
                     <ol>
                         <li> <strong>Test de réactivité par rapport à un son inattendu:</strong> un son sortira du boîtier et l’utilisateur devra appuyer le plus vite possible sur un des boutons </li>
                         <li> <strong>Test de réactivité à une lumière inattendue en extérieur:</strong> les boutons présents sur le boîtier s’illumineront un par un de manière aléatoire. Le but du test sera d’appuyer sur le bon bouton le plus rapidement.</li>
-                        <li> <strong>Test de capacité à reproduire une fréquence sonore:</strong> un son d’une certaines fréquence sera émis. L’utilisateur devra produire un son avec un maximum de ressemblance, son score sera évalué en fonction de la précision de la reconnaissance. Ce test permettra de trouver un quelconque trouble auditif, qui pourrait être nuisible au conducteur pendant une course. </li>
+                        <li> <strong>Test de capacité à reproduire une fréquence sonore:</strong> un son d’une certaine fréquence sera émis. L’utilisateur devra produire un son avec un maximum de ressemblance, son score sera évalué en fonction de la précision de la reconnaissance. Ce test permettra de trouver un quelconque trouble auditif, qui pourrait être nuisible au conducteur pendant une course. </li>
                     </ol>
                     A la fin du test, l’utilisateur sera requis de prendre sa température, et sa fréquence cardiaque, afin de détecter une éventuelle anomalie due au stress, d’où la présence de capteur au dos de la boîte.
                 </p>  

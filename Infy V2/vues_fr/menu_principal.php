@@ -20,6 +20,7 @@
           <article>
               <br>
               <h2>Innovation For You !</h2>
+              <a href="recup_log.php"> Recuperer Log</a>
               <p>
                   Afin de répondre à la demande de notre client, Infinite Measures, concernant des tests psychotechniques, notre entreprise InFy Corp a décidé de concevoir et fournir des boitiers permettant de tester la réactivité des pilotes de Formule 1. </br>
                   En effet, nous avons remarqué que de nos jours, les tests faits aux apprentis pilotes de courses n’étaient pas assez développés, les pilotes se préparaient uniquement avec un petit test de lâcher de balle, où ils devaient rattraper une balle qui tombait, le plus rapidement possible. </br>
